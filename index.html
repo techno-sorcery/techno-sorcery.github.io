@@ -38,12 +38,18 @@ html, body {
 
 .main {
   background-image: url(files/images/bg_content.png);
-  margin-left: 350px; /* Same as the width of the sidenav */
-  margin-right: 200px; /* Same as the width of the sidenav */
+  margin-left: 26%; /* Same as the width of the sidenav */
+  margin-right: 10%; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 25px 75px;
   box-shadow: 1px -4px 10px, -1px -4px 10px;
   min-height: 100vh
+}
+
+@media screen and (max-width: 1200px) {
+  .main {margin-left: 150px;}
+  .sidenav {width: 150px;}
+  .sidenav a {font-size: 18px;}
 }
 
 @media screen and (max-height: 450px) {
@@ -79,7 +85,7 @@ body {
 	margin: 0
 }
 
-hr {
+.border hr {
     border: none;
     height: 3px;
     color: #383838;
@@ -95,32 +101,36 @@ hr {
 
 p {
 	line-height: 1.25;
+	font-size:18px;
 }
 
 </style>
 </head>
 <body>
 
-<div class="sidenav">
-  <a href="index.html">Home</a><br>
-  <a href="academics.html">Academics</a>
-  <a href="projects.html">Projects</a>
-  <a href="coolstuff.html">Cool stuff</a>
-  <a href="ramblings.html">Ramblings</a>
-  <a href="news.html">News</a><br>
-  <a href="about.html">About</a>
+<div class="sidenav" id="sidenav"><br>
+    <a href="index.html">Index</a><br>
+    <a href="academics.html">Academics</a>
+    <a href="projects.html">Projects</a>
+    <a href="coolstuff.html">Cool stuff</a>
+    <a href="ramblings.html">Ramblings</a>
+    <a href="news.html">News</a><br>
+    <a href="about.html">About</a>
 </div>
 
-<div class="main">
+
+<div class="main" id="main">
 	<div class="title">
 		<br>
 		<h1>Techno-Sorcery</h1>
 		<h2>"Man is still the most extraordinary computer of all."</h2>
 		<br>
 	</div>
-	<hr>
-	<p>Welcome to my personal webpage. Take a look around, there's plenty to explore.</p>
-	<hr>
+	<div class="border">
+	    <hr>
+	    <p>Welcome to my personal webpage. Take a look around, there's plenty to explore.</p>
+	    <hr>
+	</div>
 	<h3>Index</h3>
 	<p><a href="index.html">Home</a><br>The page you're looking at right now. An index of the most important pages.</p>
 	<p><a href="academics.html">Academics</a><br>Academic materials that I've made and shared over the years.</p>
@@ -129,8 +139,10 @@ p {
 	<p><a href="ramblings.html">Ramblings</a><br>Off-the-cuff babble that doesn't fit anywhere else on this site.</p>
 	<p><a href="news.html">News</a><br>News relating to the development of this site.</p>
 	<p><a href="about.html">About</a><br>Some basic info on who I am, and what the purpose of this site is.</p>
-	<br><br><br><br><br><br>
+	
+	<br><br><br><br><hr><br>
 	<p>© Hayden Buscher ~ 2022</p>
 </div>
+
 </body>
 </html> 
