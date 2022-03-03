@@ -1,0 +1,140 @@
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  box-shadow: 2px -4px 8px;
+  background-image: url(files/images/bg_navbar.png);
+  overflow-x: hidden;
+  padding-top: 15px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: silver;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: white;
+  
+}
+
+.topnav {
+  overflow: hidden;
+  background-image: url(files/images/bg_navbar.png);
+  position: sticky;
+  top: 0;
+  display: none;
+}
+
+.topnav #myLinks {
+  display: none;
+  background-image: url(files/images/bg_navbar.png);
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  color: white;
+}
+
+
+.main {
+  background-image: url(files/images/bg_content.png);
+  margin-left: 26%; /* Same as the width of the sidenav */
+  margin-right: 10%; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 25px 75px;
+  box-shadow: 1px -4px 10px, -1px -4px 10px;
+  min-height: 100vh
+}
+
+@media screen and (max-width: 1200px) {
+  .main {margin-left: 150px;}
+  .sidenav {width: 150px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 800px) {
+  .sidenav a {display: none;}
+  .sidenav {display: none;}
+  .main {margin-left: 0px;}
+  .topnav {display: block;}
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 10px;}
+  .sidenav a {font-size: 18px;}
+}
+
+h1 {
+  text-shadow: 1px 1px 2px silver;
+  color: #282828;
+}
+
+h2 {
+  text-shadow: 1px 1px 2px silver;
+  color: DimGray;
+}
+
+h3 {
+  text-shadow: 1px 1px 2px silver;
+  color: #505050;
+  font-size: 32px;
+}
+
+body {  
+	background-image: url(files/images/bg_main.png); 
+	}
+	
+.title h1 {
+	margin: 0
+}
+
+.title h2 {
+	margin: 0
+}
+
+.border hr {
+    border: none;
+    height: 3px;
+    color: #383838;
+    background-color: #383838;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 1.5rem; 
+}
+
+p {
+	line-height: 1.25;
+	font-size:18px;
+}
