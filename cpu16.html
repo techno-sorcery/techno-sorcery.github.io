@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>CPU-16 ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="ramblings.html">Ramblings</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="ramblings.html">Ramblings</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>A 16-bit Von Neumann architecture CPU with an extremely orthagonal CISC instruction set, much akin to the Motorola 68k.</p>
+	            <hr>
+	        </div>
+            <h3>ATLAS CPU-16</h3>
+	        <p>The CPU-16, from Atlas Digital Industries, is a 16-bit CISC minicomputer based around the 74LS181 ALU. Its custom architecture is somewhat inspired by the Motorola 68000.<br><br>
+            <b>Links</b><br>
+	        <a href="https://github.com/techno-sorcery/CPU-16">Github</a><br>
+	        <a href="https://docs.google.com/spreadsheets/d/1oUmNbYWaNhDA6R6yvVTsaPwRNyT6d51xgqEzrvvlCoQ/edit?usp=sharing">Infosheet</a><br>
+	        <a href="https://www.youtube.com/watch?v=J5K6y3BfLHA">Assembler demo</a><br>
+	        <a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br>
+            
+            <b>Architecture</b><br>
+            <img src="files/images/cpu16_arch.png" alt="PDC-8 architectural diagram" width="100%"><br><br>
+            Eight general-purpose registers are at the user's disposal (D0-D7). As they are addressed within the instruction word, any data register can be used as an opperand for supported addressing modes. For implicit stack operations, such as subroutine jumps and link operations, D7 is used as the stack. And like the 68000, the stack grows DOWN. Separate from the general purpose register file is a 16-bit condition register (split into processor control status and flags), and a 16-bit program counter.<br><br>
+
+            The instruction set is extremely orthagonal, allowing the user to use any set of addressing modes with (nearly) any instruction. Supported addressing modes include register, direct, program counter relative, register indirect, register indirect + offset, register indirect with post-increment, register indirect with pre-decrement, and immediate. In addition, special "quick" instructions can store an immediate from 0-7 in the instruction word. Because they are only a single word long, these instructions save significant time and memory.<br><br>
+
+            As the computer's address bus is 16-bits wide, it can directly address up to 64K words at once. For the sake of simplicity, it will (for now) feature a flat memory map with the first 48k delegated to the RAM, the next 8k delegated to device IO, and the final 8k delegated to ROM<br><br>
+
+            The instruction set includes a variety of different conditional branching instructions, which make use of the program counter relative addressing mode. They test for each of the arithmetic flags: negative, zero, overflow, and carry.<br><br>
+
+            The architecture includes seven individually maskable interrupts. It can also be halted both internally and externally, allowing for direct memory access.<br><br>
+
+            Although CISC architectures tend to get a bad-rap these days, I felt that a well-designed one would be a perfect fit for the CPU-16. Not only would going with a microcoded CISC architecture increase my instruction density and thus save memory, but it would also let me use a memory word-size of 16-bits (versus the 48-bit microcode width).<br><br>
+
+            A two-phase clock is used in order to avoid clock skew. The microcode flip-flops are loaded on the first phase, and all other synchronous chips are clocked on the second.<br><br>
+
+            A paging unit and modifications to add permission levels are in the works. However, they won't be realized until I've finished building the base system</p>
+	        <br><br><br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 

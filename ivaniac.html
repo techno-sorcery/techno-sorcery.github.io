@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>IVANIAC ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="ramblings.html">Ramblings</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="ramblings.html">Ramblings</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>My first CPU, a 4-bit Harvard architecture machine built in Minecraft. It was named after my old high school nickname, "Ivan".</p>
+	            <hr>
+	        </div>
+            <h3>IVANIAC</h3>
+	        <p>
+	        The IVANIAC is my first ever CPU architecture, designed and built in Minecraft using redstone. With redstone, you can build working logic gates that are analagous in function to their real-life counterparts and, by extension, put together a computer.<br><br>
+	        <b>Links</b><br>
+	        <a href="https://youtu.be/TZ7_-GC8dOE">YouTube demo and explanation</a><br>
+	        <a href="http://www.mediafire.com/file/opm06dq...">World download</a><br><br>
+	         <b>Architecture</b><br>
+            <img src="files/images/ivaniac_arch.png" alt="IVANIAC architectural diagram" width="100%"><br><br>
+            The IVANIAC is a 4-bit computer, meaning it can operate on unsigned integers ranging from 0 to 15. It is a Harvard architecture machine, which means that its program memory is separate from data memory. The IVANIAC lacks a dedicated RAM data store but, rather, has two general-purpose registers-- A and B. Both of these registers act as ALU inputs, and can freely read and store from/to each other. There's also a 4-bit display register, which is connected to a 7-segment display, and a 4-bit program counter.<br><br>
+            The ALU can perform four functions on the values of A and B: ADD, AND, OR, and XOR. Calculated values are then latched into a sum register, from which they are stored at their destination.<br><br>
+            <b>Instruction set</b><br>
+            There are 16 bytes of memory, of which the first half of each byte is an instruction opcode, and the last half is an immediate integer or an address depending on the instruction.<br>
+            <ol>
+                <li>0001xxxx - MOV xxxx TO A</li>
+                <li>0010xxxx - MOV xxxx TO B</li>
+                <li>00110000 - MOV B TO A</li>
+                <li>01000000 - MOV A TO B</li>
+                <li>01010000 - ADD B TO A</li>
+                <li>01100000 - ADD A TO B</li>
+                <li>01110000 - AND B TO A</li>
+                <li>10000000 - XOR B TO A</li>
+                <li>10010000 - OR B TO A</li>
+                <li>10100000 - MOV INPUT TO A</li>
+                <li>10110000 - MOV INPUT TO B</li>
+                <li>11000000 - MOV A TO DISP</li>
+                <li>11010000 - MOV B TO DISP</li>
+                <li>1110xxxx - JMP TO xxxx</li>
+                <li>1111xxxx - JMP TO xxxx IF C != 1</li>
+            </ol></p><p>
+            In the demo I uploaded to YouTube, the machine was shown calculating fibonacci numbers. This program alternated between adding the two registers to each other, moving them to the display register, and performing a conditional check at the end to see if the carry bit wasn't on (if it were, it would jump back to the beginning and restart the program).<br><br>
+            <b>Background</b><br>
+            <img src="files/images/ivaniac_flyover.png" alt="IVANIAC flyover (in Minecraft)" width="70%"><br><br>
+            I started building the IVANIAC back in late 2019, when I was in 10th grade. I had already been studying computer engineering in my free time for a few months, though not as religiously as I do now. Since I didn't really know much of anything, the project quickly fizzled out. Fast foward to April 2020, and I had an almost unlimited amount of free time on my hands due to the quarantine. I also knew a lot more than I had when I started the project. I started working on it again and, within a week, I had finished.<br><br>
+            I'm still amazed that it worked at all, considering I started without any clear plan or schematic, and came up with everything as I went along. However, it's clear that the design features several deficiencies as a result of my naivety. If I could go back and redesign it, I would make use of one of a two phase clock for control timing, a feature which is virtually ubiquitous in my CPU designs. I would also use a RISC-style design instead of making a bloated and complicated instruction decoder.<br><br>
+            Despite all of its inherent quirks and inadequicies, I'll always be proud of building the IVANIAC since it was my first-ever custom CPU architecture. And, of course, because it has served as an essential stepping-stone for every design I've made since.
+            </p>
+	        <br><br><br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 
