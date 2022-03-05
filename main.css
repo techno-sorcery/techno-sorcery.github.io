@@ -81,36 +81,13 @@ h3 {
 
 .main {
   background-image: url(files/images/bg_content.png);
-  margin-left: 24%; /* Same as the width of the sidenav */
-  margin-right: 10%; /* Same as the width of the sidenav */
+  margin-left: 310px; /* Same as the width of the sidenav */
+  margin-right: 140px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 25px 75px;
   box-shadow: 1px -4px 10px, -1px -4px 10px;
   min-height: 100vh
 }
-
-@media screen and (max-width: 1200px) {
-  .main {margin-left: 170px;}
-}
-
-@media screen and (max-width: 800px) {
-  .sidenav a {display: none;}
-  .sidenav {display: none;}
-  .main {margin-left: 0px;}
-  .main {margin-right: 47px;}
-  .main {padding: 25px 25px;}
-  .topnav {display: block;}
-  h1 {font-size: 32px;}
-  h2 {font-size: 28px;}
-  h3 {font-size: 28px;}
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 10px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
 
 body {  
 	background-image: url(files/images/bg_main.png); 
@@ -146,4 +123,41 @@ p {
 li {
     line-height: 1.25;
 	font-size:18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main {margin-left: 170px;}
+}
+
+@media screen and (min-width: 1600px) {
+  .main {margin-left: 400px;}
+  .main {margin-right: 200px;}
+  .main {padding: 35px 85px;}
+  .sidenav {width: 200px;}
+  .sidenav a {font-size: 24px;}
+  .sidenav {padding-top: 35px;}
+
+}
+
+@media screen and (max-width: 800px) {
+  .sidenav a {display: none;}
+  .sidenav {display: none;}
+  .main {margin-left: 0px;}
+  .main {margin-right: 47px;}
+  .main {padding: 25px 25px;}
+  .topnav {display: block;}
+  h1 {font-size: 32px;}
+  h2 {font-size: 28px;}
+  h3 {font-size: 28px;}
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 10px;}
+  .sidenav a {font-size: 18px;}
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
 }

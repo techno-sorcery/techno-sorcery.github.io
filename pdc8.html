@@ -63,7 +63,7 @@
             For the sake of my own time and sanity, it has been designed to be simple and easy to assemble. At the same time, I've designed it to be capable of running complex programs (not a 4-bit "toy" machine with 16 bytes of memory), and to have a high degree of expandability.<br><br>
 
             <b>Architecture</b><br>
-            <img src="files/images/pdc_arch.png" alt="PDC-8 architectural diagram" width="100%"><br><br>
+            <img src="files/images/pdc_arch.png" alt="PDC-8 architectural diagram"><br><br>
             The PDC-8 is a Harvard architecture machine, with program memory separate from data memory, and no provisions for randomly reading from/writing to program memory. This has been done for the sake of simplicity, as it greatly reduces the amount of neccessary decoding and control logic.<br><br>
 
             It features several registers, which can be directly manipulated by the programmer.
@@ -120,9 +120,9 @@
             00001011 00000000 - STORE SUM INTO ACC<br><br>
             
             <b>Implementation</b><br>
-            <img src="files/images/pdc_sim.png" alt="PDC-8 simulator" width="80%"><br><br>
+            <img src="files/images/pdc_sim.png" alt="PDC-8 simulator"><br><br>
             I created a logical simulator of the PDC-8's architecture in the amazing program hneemann digital, which is pretty much a modernized derivative of logisim. It has come in handy when deciding new elements to implement/change, since I can mock everything up on my computer, as well as when testing programs I've written. If you would like to try it out for yourself, you can download a copy of the entire project in the Github repository linked at the top of this page.<br><br>
-            <img src="files/images/pdc_card1.jpg" alt="PDC-8 ALU card" width="80%"><br><br>
+            <img src="files/images/pdc_card1.jpg" alt="PDC-8 ALU card"><br><br>
             I've also started work on building a physical implementation of the PDC-8 that I can use as my high school senior project. It is being built across four individual perfboard cards, which will slot into a custom 6 slot backplane. I am using the wire wrap technique as opposed to making PCBs or directly soldering down wires, as it is cheap, easily modifiable, and doesn't require me to learn how to use any CAD software. It also allows me to test everything as I go, which can't be said for a batch of PCBs ordered from China.
             </p>
 	        <br><br><br><br><hr><br>

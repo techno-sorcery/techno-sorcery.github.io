@@ -59,7 +59,7 @@
 	        <a href="https://youtu.be/TZ7_-GC8dOE">YouTube demo and explanation</a><br>
 	        <a href="http://www.mediafire.com/file/opm06dq...">World download</a><br><br>
 	         <b>Architecture</b><br>
-            <img src="files/images/ivaniac_arch.png" alt="IVANIAC architectural diagram" width="100%"><br><br>
+            <img src="files/images/ivaniac_arch.png" alt="IVANIAC architectural diagram"><br><br>
             The IVANIAC is a 4-bit computer, meaning it can operate on unsigned integers ranging from 0 to 15. It is a Harvard architecture machine, which means that its program memory is separate from data memory. The IVANIAC lacks a dedicated RAM data store but, rather, has two general-purpose registers-- A and B. Both of these registers act as ALU inputs, and can freely read and store from/to each other. There's also a 4-bit display register, which is connected to a 7-segment display, and a 4-bit program counter.<br><br>
             The ALU can perform four functions on the values of A and B: ADD, AND, OR, and XOR. Calculated values are then latched into a sum register, from which they are stored at their destination.<br><br>
             <b>Instruction set</b><br>
@@ -83,7 +83,7 @@
             </ol></p><p>
             In the demo I uploaded to YouTube, the machine was shown calculating fibonacci numbers. This program alternated between adding the two registers to each other, moving them to the display register, and performing a conditional check at the end to see if the carry bit wasn't on (if it were, it would jump back to the beginning and restart the program).<br><br>
             <b>Background</b><br>
-            <img src="files/images/ivaniac_flyover.png" alt="IVANIAC flyover (in Minecraft)" width="70%"><br><br>
+            <img src="files/images/ivaniac_flyover.png" alt="IVANIAC flyover (in Minecraft)"><br><br>
             I started building the IVANIAC back in late 2019, when I was in 10th grade. I had already been studying computer engineering in my free time for a few months, though not as religiously as I do now. Since I didn't really know much of anything, the project quickly fizzled out. Fast foward to April 2020, and I had an almost unlimited amount of free time on my hands due to the quarantine. I also knew a lot more than I had when I started the project. I started working on it again and, within a week, I had finished.<br><br>
             I'm still amazed that it worked at all, considering I started without any clear plan or schematic, and came up with everything as I went along. However, it's clear that the design features several deficiencies as a result of my naivety. If I could go back and redesign it, I would make use of one of a two phase clock for control timing, a feature which is virtually ubiquitous in my CPU designs. I would also use a RISC-style design instead of making a bloated and complicated instruction decoder.<br><br>
             Despite all of its inherent quirks and inadequicies, I'll always be proud of building the IVANIAC since it was my first-ever custom CPU architecture. And, of course, because it has served as an essential stepping-stone for every design I've made since.

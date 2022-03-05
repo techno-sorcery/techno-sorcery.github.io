@@ -61,7 +61,7 @@
 	        <a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br>
             
             <b>Architecture</b><br>
-            <img src="files/images/cpu16_arch.png" alt="PDC-8 architectural diagram" width="100%"><br><br>
+            <img src="files/images/cpu16_arch.png" alt="PDC-8 architectural diagram"><br><br>
             Eight general-purpose registers are at the user's disposal (D0-D7). As they are addressed within the instruction word, any data register can be used as an opperand for supported addressing modes. For implicit stack operations, such as subroutine jumps and link operations, D7 is used as the stack. And like the 68000, the stack grows DOWN. Separate from the general purpose register file is a 16-bit condition register (split into processor control status and flags), and a 16-bit program counter.<br><br>
 
             The instruction set is extremely orthagonal, allowing the user to use any set of addressing modes with (nearly) any instruction. Supported addressing modes include register, direct, program counter relative, register indirect, register indirect + offset, register indirect with post-increment, register indirect with pre-decrement, and immediate. In addition, special "quick" instructions can store an immediate from 0-7 in the instruction word. Because they are only a single word long, these instructions save significant time and memory.<br><br>
