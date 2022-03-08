@@ -104,7 +104,9 @@
             
             Instruction parameters are arranged as "source,destination". Instructions and addressing modes are written exactly as they appear on the instruction set infosheet.<br><br>
             
-            The assembler reads through the assembly in two passes, parsing instructions on the first pass, and filling in labels on the second.
+            The assembler reads through the assembly in two passes, parsing instructions on the first pass, and filling in labels on the second.<br><br>
+            
+            One of the hardest functions to write was the "dw" directive, which defines as many individual strings, integers, or characters as the programmer desires. Especially difficult was getting it to work with both Strings and one-character datatypes in the same line.
 	        </p><br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
