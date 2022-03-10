@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>PDC-8 Emulator ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="entertainment.html">Entertainment</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>An emulator for the PDC-8, writen in Javascript.</p>
+	            <hr>
+	        </div>
+	        <h3>ATLAS PDC-8 Emulator</h3>
+	        
+	         <table>
+	            <tr>
+	                <th style="width:55%">Register</th>
+	                <th style="width:15%">Dec</th>
+	                <th style="width:15%">Hex</th>
+	                <th style="width:15%">Bin</th>
+	            </tr>
+	            <tr>
+	                <td>ACC</td>
+	                <td id="regDispAccDec">0</td>
+	                <td id="regDispAccHex">0</td>
+	                <td id="regDispAccBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>MAR</td>
+	                <td id="regDispMarDec">0</td>
+	                <td id="regDispMarHex">0</td>
+	                <td id="regDispMarBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>OP</td>
+	                <td id="regDispOpDec">0</td>
+	                <td id="regDispOpHex">0</td>
+	                <td id="regDispOpBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>SUM</td>
+	                <td id="regDispSumDec">0</td>
+	                <td id="regDispSumHex">0</td>
+	                <td id="regDispSumBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>PC</td>
+	                <td id="regDispPcDec">0</td>
+	                <td id="regDispPcHex">0</td>
+	                <td id="regDispPcBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>DISP</td>
+	                <td id="regDispDispDec">0</td>
+	                <td id="regDispDispHex">0</td>
+	                <td id="regDispDispBin">00000000</td>
+	            </tr>
+	             <tr>
+	                <td>FLAGS (CE)</td>
+	                <td id="regDispFlagsDec">0</td>
+	                <td id="regDispFlagsHex">0</td>
+	                <td id="regDispFlagsBin">00</td>
+	            </tr>
+	         </table><br>
+	         
+	         <table>
+	            <tr>
+	                <th style="width:55%">Instruction</th>
+	                <th style="width:20%">Hex</th>
+	                <th style="width:25%">Bin</th>
+	            </tr>
+	            <tr>
+	                <td id="instructionAsm">0</td>
+	                <td id="instructionHex">0</td>
+	                <td id="instructionBin">0</td>
+	            </tr>
+	         </table><br>
+	         
+	         <button type="button" onclick="alert('Hello world!')">Start</button>
+	         <button type="button" onclick=step()>Step</button>
+	         <button type="button" onclick=inputJump()>Jump</button>
+	         <button type="button" onclick=reset()>Reset</button><br>
+	         <br><br>
+                <div style="float:left;"> 
+                    <div> 
+                        <div style="float:left;"> 
+                            Program memory:
+                        </div> 
+                        <div style="float:right;"> 
+                            <button onClick="compile();">Load</button> 
+                        </div> 
+                    </div> 
+                    <br /> 
+                    <br /> 
+                    <textarea id="prgMemDisp" cols="35" rows="16" style="font-family:courier; font-size:14px;resize: none;" readonly></textarea> 
+                </div> 
+                <div style="float:left; margin-left:49px;"> 
+                    <div> 
+                        <div style="float:left;"> 
+                            Data memory:
+                        </div> 
+                        <div style="float:right;"> 
+                            <button onClick="compile();">Edit</button> 
+                        </div> 
+                </div> 
+                <br /> 
+                <br /> 
+                <textarea id="datMemDisp" cols="28" rows="16" style="font-family:courier; font-size:14px;resize: none" readonly></textarea> 
+            </div> 
+	        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+	        <br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+
+        <script type="text/javascript" src='files/pdc8emu.js'>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 

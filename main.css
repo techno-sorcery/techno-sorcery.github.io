@@ -161,3 +161,26 @@ img {
     height: auto;
     width: auto\9; /* ie8 */
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+button {
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
