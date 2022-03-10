@@ -53,6 +53,8 @@
 	            <hr>
 	        </div>
 	        <h3>ATLAS PDC-8 Emulator</h3>
+	        <p><b>Display</b></p>
+	        <textarea id="regDispDispBig" cols="3" rows="1" style="font-family:courier; font-size:32px;resize: none;text-align:right;" readonly></textarea> <br><br>
 	        
 	         <table>
 	            <tr>
@@ -118,11 +120,25 @@
 	            </tr>
 	         </table><br>
 	         
-	         <button type="button" onclick="alert('Hello world!')">Start</button>
-	         <button type="button" onclick=step()>Step</button>
+	         <button id='start' type="button" onclick=toggle()>Start</button>
+	         <button type="button" onclick=execute()>Step</button>
 	         <button type="button" onclick=inputJump()>Jump</button>
-	         <button type="button" onclick=reset()>Reset</button><br>
-	         <br><br>
+	         <button type="button" onclick=reset()>Reset</button>
+	         <div style='display:inline;white-space: nowrap;float:right'><p style="font-size:14px;line-height:0px;display:inline">Clock (Hz)</p>
+	         <select id = "myList" style="height:25px;display:inline" onchange = changeClock()>
+                <option>1</option>
+                <option>2</option>
+                <option selected='selected'>5</option>
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+                <option>100</option>
+                <option>200</option>
+                <option>500</option>
+                <option>5000</option>
+                <option>20000</option>
+            </select></div>
+<br><br><br><hr><br>
                 <div style="float:left;"> 
                     <div> 
                         <div style="float:left;"> 
@@ -134,7 +150,7 @@
                     </div> 
                     <br /> 
                     <br /> 
-                    <textarea id="prgMemDisp" cols="35" rows="16" style="font-family:courier; font-size:14px;resize: none;" readonly></textarea> 
+                    <textarea id="prgMemDisp" cols="33" rows="16" style="font-family:courier; font-size:14px;resize: none;" readonly></textarea> 
                 </div> 
                 <div style="float:left; margin-left:49px;"> 
                     <div> 
@@ -142,19 +158,21 @@
                             Data memory:
                         </div> 
                         <div style="float:right;"> 
-                            <button onClick="compile();">Edit</button> 
+                            <button onClick="memEdit();">Edit</button> 
                         </div> 
                 </div> 
                 <br /> 
                 <br /> 
-                <textarea id="datMemDisp" cols="28" rows="16" style="font-family:courier; font-size:14px;resize: none" readonly></textarea> 
+                <textarea id="datMemDisp" cols="27" rows="16" style="font-family:courier; font-size:14px;resize: none" readonly></textarea> 
             </div> 
 	        <br><br><br><br><br><br><br><br><br><br><br><br><br>
 	        <br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
 
-        <script type="text/javascript" src='files/pdc8emu.js'>
+		<script type="text/javascript" src='files/pdc8debug.js'></script>
+        <script type="text/javascript" src='files/pdc8emu.js'></script>
+        <script>
             function myFunction() {
                 var x = document.getElementById("myLinks");
                 if (x.style.display === "block") {
@@ -162,7 +180,7 @@
                 } else {
                     x.style.display = "block";
                 }
-            }
+            }			
         </script>
     </body>
 </html> 
