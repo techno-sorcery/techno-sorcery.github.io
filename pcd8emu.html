@@ -139,20 +139,7 @@
                 <option>20000</option>
             </select></div>
 <br><br><br><hr><br>
-                <div style="float:left;"> 
-                    <div> 
-                        <div style="float:left;"> 
-                            Program memory:
-                        </div> 
-                        <div style="float:right;"> 
-                            <button onClick="compile();">Load</button> 
-                        </div> 
-                    </div> 
-                    <br /> 
-                    <br /> 
-                    <textarea id="prgMemDisp" cols="33" rows="16" style="font-family:courier; font-size:14px;resize: none;" readonly></textarea> 
-                </div> 
-                <div style="float:left; margin-left:49px;"> 
+                <div> 
                     <div> 
                         <div style="float:left;"> 
                             Data memory:
@@ -163,15 +150,43 @@
                 </div> 
                 <br /> 
                 <br /> 
-                <textarea id="datMemDisp" cols="27" rows="16" style="font-family:courier; font-size:14px;resize: none" readonly></textarea> 
+                <textarea id="datMemDisp" cols="34" rows="16" style="font-family:courier; font-size:14px;resize: none" readonly></textarea> 
             </div> 
-	        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br>
+                <div> 
+                    <div> 
+                        <div style="float:left;"> 
+                            Program memory:
+                        </div> 
+                        <div style="float:right;"> 
+                            <button onClick="compile();">Load</button> 
+                        </div> 
+                    </div> 
+                    <br /> 
+                    <br /> 
+                    <textarea id="prgMemDisp" cols="34" rows="16" style="font-family:courier; font-size:14px;resize: none;" readonly></textarea> 
+                </div>
+	        <br><br><hr><br>
+	        <div> 
+                    <div> 
+                        <div style="float:left;"> 
+                            Assembler:
+                        </div> 
+                        <div style="float:right"> 
+                            <button onClick="assemble();">Load into mem</button> 
+                        </div> 
+                </div> 
+                <br /> 
+                <br /> 
+                <textarea id="asmInput" cols='34' rows="16" style="font-family:courier; font-size:14px;resize: horizontal"></textarea> 
+            </div> 
 	        <br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
 
 		<script type="text/javascript" src='files/pdc8debug.js'></script>
         <script type="text/javascript" src='files/pdc8emu.js'></script>
+        <script type="text/javascript" src='files/pdc8asm.js'></script>
         <script>
             function myFunction() {
                 var x = document.getElementById("myLinks");

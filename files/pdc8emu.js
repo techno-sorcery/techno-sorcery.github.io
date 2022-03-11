@@ -23,31 +23,29 @@ var instruction = 0
 // Operation dictionaries
 let dout = {
     "000": "",
-    "001": "ACC DOUT",
-    "010": "MEM DOUT",
-    "011": "SUM DOUT",
-    "100": "IMM DOUT",
+    "001": "ACC_DOUT",
+    "010": "MEM_DOUT",
+    "011": "SUM_DOUT",
+    "100": "IMM_DOUT",
     "101": "INVALID",
     "110": "INVALID",
     "111": "INVALID"
 }
-
 let st = {
     "000":"",
-    "001":"ACC ST",
-    "010":"MEM ST",
-    "011":"SUM ST",
-    "100":"MAR ST",
-    "101":"OP ST",
-    "110":"PC ST",
-    "111":"DISP ST"
+    "001":"ACC_ST",
+    "010":"MEM_ST",
+    "011":"SUM_ST",
+    "100":"MAR_ST",
+    "101":"OP_ST",
+    "110":"PC_ST",
+    "111":"DISP_ST"
 }
-
 let cond = {
     "00":"",
-    "01":"C = 1",
-    "10":"E = 1",
-    "11":"E != 1"
+    "01":"C=1",
+    "10":"E=1",
+    "11":"E!=1"
 }
 
 // Initialize arrays
@@ -71,50 +69,50 @@ function execute(){
     // Data out
     let condExec = true; 
     let tempCode = dout[instruction.substr(instruction.length-11, 3)]
-    if(tempCode == 'ACC DOUT') {
+    if(tempCode == 'ACC_DOUT') {
         dbus = regAcc;
-    } else if (tempCode == 'MEM DOUT') {
+    } else if (tempCode == 'MEM_DOUT') {
         dbus = parseInt(datMem[regMar], 16);
-    } else if (tempCode == 'SUM DOUT') {
+    } else if (tempCode == 'SUM_DOUT') {
         dbus = regSum; 
-    } else if (tempCode == 'IMM DOUT') {
+    } else if (tempCode == 'IMM_DOUT') {
         dbus = parseInt(instruction.substr(instruction.length-8, 8), 2);   
     }
     // Condition check
     tempCode = cond[instruction.substr(instruction.length-16, 2)]
-    if(tempCode == 'C = 1' && regFlags.substr(1) != 1) {
+    if(tempCode == 'C=1' && regFlags.substr(1) != 1) {
         condExec = false;
-    } else if (tempCode == 'E = 1' && regFlags.substr(0) != 1) {
+    } else if (tempCode == 'E=1' && regFlags.substr(0) != 1) {
         condExec = false;
-    } else if (tempCode == 'E != 1' && regFlags.substr(0) == 1) {
+    } else if (tempCode == 'E!=1' && regFlags.substr(0) == 1) {
         condExec = false;
     } 
     // Register store
     tempCode = st[instruction.substr(instruction.length-14, 3)]
     let jump = false;
     if(condExec == true) {
-        if(tempCode == 'ACC ST') {
+        if(tempCode == 'ACC_ST') {
             regAcc = dbus;
             setDisp("regDispAcc", regAcc, regAcc.toString(16), regAcc.toString(2), 8);
-        } else if (tempCode == 'MEM ST') {
+        } else if (tempCode == 'MEM_ST') {
             datMem[regMar] = dbus.toString(16);
             datMemDump();
-        } else if (tempCode == 'SUM ST') {
+        } else if (tempCode == 'SUM_ST') {
             regSum = getSum(dbus);
             regFlags = ''.concat(condE, condC);
             setDisp("regDispFlags", regFlags, regFlags.toString(16), regFlags.toString(2), 2);
             setDisp("regDispSum", regSum, regSum.toString(16), regSum.toString(2), 8);
-        } else if (tempCode == 'MAR ST') {
+        } else if (tempCode == 'MAR_ST') {
             regMar = dbus;
             setDisp("regDispMar", regMar, regMar.toString(16), regMar.toString(2), 8);
-        } else if (tempCode == 'OP ST') {
+        } else if (tempCode == 'OP_ST') {
             regOp = dbus;
             setDisp("regDispOp", regOp, regOp.toString(16), regOp.toString(2), 8);
-        } else if (tempCode == 'PC ST') {
+        } else if (tempCode == 'PC_ST') {
             jump = true;
             regPC = dbus;
             setDisp("regDispPc", regPC, regPC.toString(16), regPC.toString(2), 8);
-        } else if (tempCode == 'DISP ST') {
+        } else if (tempCode == 'DISP_ST') {
             regDisp = dbus;
             setDisp("regDispDisp", regDisp, regDisp.toString(16), regDisp.toString(2), 8);
             document.getElementById('regDispDispBig').innerHTML = regDisp;
@@ -131,9 +129,7 @@ function execute(){
 // Read instruction pointed to by PC
 function instructionRead(){
     instruction = hex2bin(prgMem[regPC]);
-    while(instruction.length < 16) {
-        instruction = "0".concat(instruction);
-    }
+    instruction = instruction.padStart(16, '0');
     document.getElementById("instructionBin").innerHTML = instruction;
     document.getElementById("instructionHex").innerHTML = prgMem[regPC];
     document.getElementById("instructionAsm").innerHTML = disAsm(prgMem[regPC]);
@@ -154,7 +150,6 @@ function getSum(operand) {
     let thisSum = regAcc+operand;
     condC = 0;
     condE = 0;
-    
     if (thisSum > 255){
         condC = 1  
     }

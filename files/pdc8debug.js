@@ -41,16 +41,20 @@ function inputJump() {
 function disAsm(hex) {
     let hexBin = hex2bin(hex);
     let output = '';
-    while(hexBin.length < 16) {
-        hexBin = "0".concat(hexBin);
-    }
+    hexBin = hexBin.padStart(16, '0');
     if(dout[hexBin.substr(hexBin.length-11, 3)] != '') {
-        output = output.concat(dout[hexBin.substr(hexBin.length-11, 3)], ', ');
+        output = output.concat(dout[hexBin.substr(hexBin.length-11, 3)]);
     }    
     if(st[hexBin.substr(hexBin.length-14, 3)] != '') {
-        output = output.concat(st[hexBin.substr(hexBin.length-14, 3)], ', ');
+        if(dout[hexBin.substr(hexBin.length-11, 3)] != '') {
+            output = output.concat(', ');
+        }
+        output = output.concat(st[hexBin.substr(hexBin.length-14, 3)]);
      }
      if(cond[hexBin.substr(hexBin.length-16, 2)] != '') {
+        if(st[hexBin.substr(hexBin.length-14, 3)] != '') {
+            output = output.concat(', ');
+        }
          output = output.concat(cond[hexBin.substr(hexBin.length-16, 2)]);
     }  
     return output;
@@ -61,18 +65,13 @@ function datMemDump() {
     document.getElementById("datMemDisp").innerHTML = '';
     for(var i = 0; i < 128; i++) {
         if (i % 8 == 0) {
-            if ( i == 0) {
-                document.getElementById("datMemDisp").innerHTML = document.getElementById("datMemDisp").innerHTML.concat('0',i.toString(16),':');
-            } else if (i <= 15) {
-                document.getElementById("datMemDisp").innerHTML = document.getElementById("datMemDisp").innerHTML.concat('\n', '0', i.toString(16),':');
-            } else {
-                document.getElementById("datMemDisp").innerHTML = document.getElementById("datMemDisp").innerHTML.concat(' \n', i.toString(16),':');
-            }  
+            if ( i != 0) {
+                document.getElementById("datMemDisp").innerHTML = document.getElementById("datMemDisp").innerHTML.concat('\n');
+            }
+            document.getElementById("datMemDisp").innerHTML = document.getElementById("datMemDisp").innerHTML.concat(i.toString(16).padStart(2, '0'),':');
         }
-        let thisMem = datMem[i];
-        if (parseInt(datMem[i], 16) <= 15){
-            thisMem = "0".concat(thisMem);   
-        }
+        let thisMem = datMem[i].toString();
+        thisMem = thisMem.padStart(2, '0');
         document.getElementById("datMemDisp").innerHTML =   document.getElementById("datMemDisp").innerHTML.concat(' ', thisMem);
     }
 }
@@ -81,45 +80,15 @@ function datMemDump() {
 function prgMemDump() {
     document.getElementById("prgMemDisp").innerHTML = '';
     for(var i = 0; i < 256; i++) {
-        if (i % 1 == 0) {
-            if ( i == 0) {
-                document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat('0',i.toString(16),':');
-            } else if (i <= 15) {
-                document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat('\n', '0', i.toString(16),':');
-            } else {
-                document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(' \n', i.toString(16),':');
-            }  
-        }
-        document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(' ', prgMem[i]);
-        let hexBin = hex2bin(prgMem[i]);
-        while(hexBin.length < 16) {
-            hexBin = "0".concat(hexBin);
-        }
-        document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(' - ');
-        if(dout[hexBin.substr(hexBin.length-11, 3)] != '') {
-            document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(dout[hexBin.substr(hexBin.length-11, 3)], ', ');
-        }    
-        if(st[hexBin.substr(hexBin.length-14, 3)] != '') {
-            document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(st[hexBin.substr(hexBin.length-14, 3)], ', ');
-        }
-        if(cond[hexBin.substr(hexBin.length-16, 2)] != '') {
-            document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(cond[hexBin.substr(hexBin.length-16, 2)]);
-        } 
+        document.getElementById("prgMemDisp").innerHTML = document.getElementById("prgMemDisp").innerHTML.concat(i.toString(16).padStart(2, '0'),': ', prgMem[i].padStart(4, '0'), ' - ',  disAsm(prgMem[i]), '\n');
     }
 }
 
 // Set register display
 function setDisp(disp, dec, hex, bin, len) {
-        while(bin.length < 8) {
-            if (bin.length < len) {
-                bin = "0".concat(bin);
-            } else {
-                bin = "x".concat(bin);   
-            }
-        }
-        if(hex.length < 2){
-            hex = "0".concat(hex);   
-        }
+        bin = bin.padStart(len, '0')
+        bin = bin.padStart(8, 'x')
+        hex = hex.padStart(2, '0')
         document.getElementById(disp.concat("Dec")).innerHTML = dec;
         document.getElementById(disp.concat("Hex")).innerHTML = hex;
         document.getElementById(disp.concat("Bin")).innerHTML = bin;
