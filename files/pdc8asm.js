@@ -6,7 +6,10 @@ const asmLabelDefs = []; // Address:Label defined
 const asmLabelUse = []; // Address: Label used
 
 // Define regular expressions
-const reDecNum = /^#(?<num>[0-9])$/;
+const reDecNum = /^#(?<num>[0-9]+)$/;
+const reHexNum = /^#\$(?<num>[0-9A-Fa-f]+)$/;
+const reBinNum = /^#%(?<num>[0-1]+)$/;
+const reCharNum = /^#'(?<num>([\s\S]{1})|(\\n|\\a|\\b|\\t|\\r))'$/;
 
 // Operation dictionaries
 let asmDout = {
@@ -47,12 +50,10 @@ function assemble() {
         // Parse instructions
         let comment = false;
         for (var i = 0; i < thisLine.length; i++) {
-            // Check if comment
-            if (comment == false) {
-                comment = (thisLine[i].charAt(0) == ';');
-            }
             // Parse if no preceeding semicolon
             if(comment == false && thisLine[i] != '') {
+                //Check if comment
+                comment = (thisLine[i].charAt(0) == ';');
                 // Lookup mnemonic
                 if (thisLine[i] in asmDout) {
                     parsedLine = parsedLine | asmDout[thisLine[i]];
@@ -70,9 +71,13 @@ function assemble() {
     }
 }
 
+// Extract decimal number from #m
 function numParse(operand){
-    if (reDecNum.text(operand)) {
-        return    
+    if (reDecNum.test(operand)) {
+        return reDecNum.exec(operand)[1];
+    } else if (reCharNum.test(operand)){
+        return reCharNum.exec(operand)[1].charCodeAt(0);
+    } else {
+        return 0;
     }
-    return 4;
 }
