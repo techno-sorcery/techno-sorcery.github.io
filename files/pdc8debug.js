@@ -31,9 +31,9 @@ function inputJump() {
     if (parseInt(num, 16) <= 255){
         input = num;
     } 
-    	regPC = parseInt(input, 16);
-  		setDisp("regDispPc", regPC, regPC.toString(16), regPC.toString(2), 8);
-  		instructionRead();
+    regPC = parseInt(input, 16);
+  	setDisp("regDispPc", regPC, regPC.toString(16), regPC.toString(2), 8);
+  	instructionRead();
 }
 
 
@@ -42,21 +42,10 @@ function disAsm(hex) {
     let hexBin = hex2bin(hex);
     let output = '';
     hexBin = hexBin.padStart(16, '0');
-    if(dout[hexBin.substr(hexBin.length-11, 3)] != '') {
-        output = output.concat(dout[hexBin.substr(hexBin.length-11, 3)]);
-    }    
-    if(st[hexBin.substr(hexBin.length-14, 3)] != '') {
-        if(dout[hexBin.substr(hexBin.length-11, 3)] != '') {
-            output = output.concat(', ');
-        }
-        output = output.concat(st[hexBin.substr(hexBin.length-14, 3)]);
-     }
-     if(cond[hexBin.substr(hexBin.length-16, 2)] != '') {
-        if(st[hexBin.substr(hexBin.length-14, 3)] != '') {
-            output = output.concat(', ');
-        }
-         output = output.concat(cond[hexBin.substr(hexBin.length-16, 2)]);
-    }  
+    if(dout[hexBin.substr(hexBin.length-11, 3)] != '') output = output.concat(dout[hexBin.substr(hexBin.length-11, 3)],"&nbsp&nbsp"); // DOUT
+    if(st[hexBin.substr(hexBin.length-14, 3)] != '') output = output.concat(st[hexBin.substr(hexBin.length-14, 3)],"&nbsp&nbsp"); // ST
+    if(cond[hexBin.substr(hexBin.length-16, 2)] != '') output = output.concat(cond[hexBin.substr(hexBin.length-16, 2)],"&nbsp&nbsp"); // COND
+    output = output.concat("#",parseInt(hex.substr(2,3),16)); // IMM
     return output;
 }
 
