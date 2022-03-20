@@ -1,0 +1,43 @@
+.selected {
+  background-color:red;
+  font-weight:bold;
+  color:white
+  
+}
+
+.cardDiv{
+	width:18%;
+	min-width:75px;
+	display:inline-block;
+}
+
+.holdText{
+	text-align:center;
+	line-height:0px
+}
+
+.betSel{
+	display:inline;
+	white-space: nowrap;
+	padding:1%
+}
+
+.balDiv{
+	white-space: nowrap; 
+	width:18%;
+	display:inline;
+}
+
+.balDisp{
+	font-size:16px;
+	font-family:courier;
+	resize:none;
+	height:20px;
+	width:100px
+}
+
+.balText{
+	font-size:16px;
+	line-height:0px;
+	display:inline
+}
