@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Video Poker ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+            body {  
+				background-image: url(files/images/casino.jpeg); 
+			}
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="entertainment.html">Entertainment</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>A five-card draw Video Poker game, programmed in JavaScript.</p>
+	            <hr>
+	        </div>
+	        <h3>Video Poker</h3>
+	        <table style="width:93%">
+	            <tr>
+	                <th style="width:35%">Hand</th>
+	                <th style="width:15%" id="tableMult1">x1</th>
+	                <th style="width:35%">Hand</th>
+	                <th style="width:15%" id="tableMult2">x1</th>
+	            </tr><tr>
+	                <td>Royal Flush</td>
+	                <td id="table1">250</td>
+	                <td>Straight</td>
+	                <td id="table6">4</td>
+	            </tr><tr>
+	                <td>Straight Flush</td>
+	                <td id="table2">50</td>
+	                <td>3 of a kind</td>
+	                <td id="table7">3</td>
+	            </tr><tr>
+	                <td>4 of a Kind</td>
+	                <td id="table3">25</td>
+	                <td>Two Pair</td>
+	                <td id="table8">2</td>
+	            </tr><tr>
+	                <td>Full House</td>
+	                <td id="table4">9</td>
+	                <td>Jacks or better</td>
+	                <td id="table9">1</td>
+	            </tr><tr>
+	                <td>Flush</td>
+	                <td id="table5">6</td>
+	                <td>&nbsp</td>
+	                <td>&nbsp</td>
+	           </tr>	         </table>
+	        <div style="width:18%;min-width:75px;display:inline-block;">
+	        	<h4 id='text1' style="text-align:center;line-height:0px">&nbsp</h4>
+	        	<img id='card1' src='files/cards/BLUE_BACK.svg'>
+				<button id='hold1' type="button" style="width:100%" disabled onclick=hold(1)>Hold</button>
+	        </div>
+	       	<div style="width:18%;min-width:75px;display:inline-block; ">
+	        	<h4 id='text2' style="text-align:center;line-height:0px">&nbsp</h4>
+	        	<img id='card2' src='files/cards/BLUE_BACK.svg'>
+				<button id='hold2' type="button" style="width:100%" disabled onclick=hold(2)>Hold</button>
+	        </div>
+	        <div style="width:18%;min-width:75px;display:inline-block; ">
+	        	<h4 id='text3' style="text-align:center;line-height:0px">&nbsp</h4>
+	        	<img id='card3' src='files/cards/BLUE_BACK.svg'>
+				<button id='hold3' type="button" style="width:100%" disabled onclick=hold(3)>Hold</button>
+	        </div>
+	        <div style="width:18%;min-width:75px;display:inline-block; ">
+	        	<h4 id='text4' style="text-align:center;line-height:0px">&nbsp</h4>
+	        	<img id='card4' src='files/cards/BLUE_BACK.svg'>
+				<button id='hold4' type="button" style="width:100%" disabled onclick=hold(4)>Hold</button>
+	        </div>
+	        <div style="width:18%;min-width:75px;display:inline-block; ">
+	        	<h4 id='text5' style="text-align:center;line-height:0px">&nbsp</h4>
+	        	<img id='card5' src='files/cards/BLUE_BACK.svg'>
+				<button id='hold5' type="button" style="width:100%" disabled onclick=hold(5)>Hold</button>
+	        </div>
+	        <br><br>
+	        <div>
+		        <button id='bet' type="button" style="width:18%;min-width:75px" onclick=betDraw()>Bet</button>
+		         <div style='display:inline;white-space: nowrap;padding:1%'>
+		         	<p style="font-size:16px;line-height:0px;display:inline">&nbspMultiplier: </p>
+			        <select id = "myList" style="height:25px;display:inline" onchange = updateTable()>
+		                <option>1</option>
+		                <option>2</option>
+		                <option>3</option>
+		                <option>4</option>
+		                <option>5</option>
+		            </select>
+		     	</div>
+		     	<div style='white-space: nowrap; width:18%;display:inline;'>
+		     		<p style="font-size:16px;line-height:0px;display:inline">&nbspMoney: </p>
+		        	<input id="balanceDisp" style="font-size:16px;font-family:courier;resize:none;height:20px;width:100px" type="text" value="" readonly>
+		    	</div>
+		    </div>
+	        <br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        <script type="text/javascript" src='files/cardparse.js'></script>
+        <script type="text/javascript" src='files/poker.js'></script>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 
