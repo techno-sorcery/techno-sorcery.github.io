@@ -35,6 +35,7 @@ const hands = [
 	'Junk'
 ];
 	
+updateTable()
 document.getElementById('balanceDisp').value = '$'.concat(balance);
 document.getElementById('card1').setAttribute("disabled","disabled")
 
