@@ -9,6 +9,7 @@ var balanceNew = 0;
 var held = [false,false,false,false,false];
 var revealCount = 0;
 var incDraw = false;
+var running = false;
 const payTable = [
 	250,
 	50,
@@ -53,46 +54,46 @@ function betAmnt(){
 }
 
 function betDraw(){
-	//Flip cards
-	for(let i=0;i<5;i++){
-		if(!draw) document.getElementById('text'.concat(i+1)).innerHTML = "&nbsp";
-		if(!held[i]) document.getElementById('card'.concat(i+1)).src = "files/cards/BLUE_BACK.svg";
-	}
-	myInterval = setInterval(deal, 75);
-}
-
-function deal() {
-	clearInterval(myInterval);
-	//Reset paytable highlighting
-	for(let i=1;i<11;i++){
-		document.getElementById('table'.concat(i)).className = '';
-		document.getElementById('hand'.concat(i)).className = '';
-	}
-	// Generate array of random cards
-	let tempCards = cards;
-	cards = [];
-	if(draw){
+	if(!running){
+		running = true;
+		//Flip cards
 		for(let i=0;i<5;i++){
-			if(held[i]) cards[i] = tempCards[i];
-		}		
-	}
-	const rand = 0;
-	for(let i=0;i<5;i++){
-		let notEqual = false;
-		while(!notEqual){
-			if(!held[i]){
-				cards[i] = Math.floor(Math.random() * 52);
+			if(!draw) document.getElementById('text'.concat(i+1)).innerHTML = "&nbsp";
+			if(!held[i]) document.getElementById('card'.concat(i+1)).src = "files/cards/BLUE_BACK.svg";
+		}
+		setTimeout(function() {
+			//Reset paytable highlighting
+			for(let i=1;i<11;i++){
+				document.getElementById('table'.concat(i)).className = '';
+				document.getElementById('hand'.concat(i)).className = '';
 			}
-			let equalCount = 0;
-			for(let j=0;j<5;j++){
-				if(cards[i] == cards[j] && j != i){
-					equalCount++;
+			// Generate array of random cards
+			let tempCards = cards;
+			cards = [];
+			if(draw){
+				for(let i=0;i<5;i++){
+					if(held[i]) cards[i] = tempCards[i];
+				}		
+			}
+			const rand = 0;
+			for(let i=0;i<5;i++){
+				let notEqual = false;
+				while(!notEqual){
+					if(!held[i]){
+						cards[i] = Math.floor(Math.random() * 52);
+					}
+					let equalCount = 0;
+					for(let j=0;j<5;j++){
+						if(cards[i] == cards[j] && j != i){
+							equalCount++;
+						}
+					}
+					notEqual = (equalCount == 0);
 				}
 			}
-			notEqual = (equalCount == 0);
-		}
-	}
-	revealInterval = setInterval(reveal, 75);
+			revealInterval = setInterval(reveal, 75);
+		},200 );
+	}	
 }
 
 function reveal(){
@@ -100,6 +101,7 @@ function reveal(){
 		revealCount++;
 	}
 	if(revealCount > 4){
+		held = [false, false, false, false, false];
 		revealCount=0;
 		clearInterval(revealInterval);
 		toggleDraw()
@@ -132,9 +134,9 @@ function toggleDraw(){
 		balanceChange((payTable[parseInt(hand)-1])*parseInt(bet),false);
 		
 	}
-	held = [false, false, false, false, false];
 	setTimeout(function() {
 		document.getElementById('bet').disabled = false;
+	running = false;
 	},200);
 }
 
