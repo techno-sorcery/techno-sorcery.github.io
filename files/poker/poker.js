@@ -113,8 +113,8 @@ async function reveal(){
 	} else {
 		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
 		revealCount++;
-		let audio = new Audio('files/poker/ping.mp3');
-		audio.play();
+		//let audio = new Audio('files/poker/ping.mp3');
+		//audio.play();
 		setTimeout(function(){
 			requestAnimationFrame(reveal);
 		}, 75);
