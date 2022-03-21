@@ -2,7 +2,7 @@
 // Hayden Buscher ~ 2022
 var draw = false;
 var cards = []; 
-var bet = 1;
+var bet = 5;
 var drawInterval = 0;
 var balance = 100;
 var balanceNew = 0;
