@@ -108,7 +108,6 @@ function reveal(){
 		revealCount++;
 		let audio = new Audio('files/poker/ping.mp3');
 		audio.play();
-		console.log(revealCount);
 	}
 }
 
