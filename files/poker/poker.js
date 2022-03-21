@@ -92,7 +92,8 @@ function betDraw(){
 					notEqual = (equalCount == 0);
 				}
 			}
-			revealInterval = setInterval(reveal, 75);
+			reveal();
+			
 		},200 );
 	}	
 }
@@ -104,13 +105,15 @@ function reveal(){
 	if(revealCount > 4){
 		held = [false, false, false, false, false];
 		revealCount=0;
-		clearInterval(revealInterval);
 		toggleDraw()
 	} else {
 		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
 		revealCount++;
 		let audio = new Audio('files/poker/ping.mp3');
 		audio.play();
+		setTimeout(function() {
+			reveal();
+		}, 75);
 	}
 }
 
