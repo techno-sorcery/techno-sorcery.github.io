@@ -38,9 +38,17 @@ const hands = [
 ];
 	
 updateTable()
+preload();
 document.getElementById('balanceDisp').value = '$'.concat(balance);
 document.getElementById('card1').setAttribute("disabled","disabled")
 
+function preload() {
+    var img;
+    for (let i = 0; i < 52; ++i) {
+        img = new Image();
+        img.src = "files/cards/".concat(cardParse(i),'.svg');
+    }
+}
 
 function betAmnt(){
 	if(!running2){
