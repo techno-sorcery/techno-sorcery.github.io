@@ -45,17 +45,17 @@ document.getElementById('card1').setAttribute("disabled","disabled")
 function betAmnt(){
 	if(!running2){
 		running2 =true
-	document.getElementById('bet').disabled = true;
-	for(let i=0;i<5;i++){
-			document.getElementById('hold'.concat(i+1)).disabled = true;
-			document.getElementById('holdImg'.concat(i+1)).disabled = true;
-			document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
-		}	
-	//Check if balance is too low
-	if(!draw){
-		balanceChange(-bet,true);
-	} else betDraw();
-}
+		document.getElementById('bet').disabled = true;
+		for(let i=0;i<5;i++){
+				document.getElementById('hold'.concat(i+1)).disabled = true;
+				document.getElementById('holdImg'.concat(i+1)).disabled = true;
+				document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
+			}	
+		//Check if balance is too low
+		if(!draw){
+			balanceChange(-bet,true);
+		} else betDraw();
+	}
 }
 
 
@@ -103,23 +103,21 @@ function betDraw(){
 }
 
 var inx = 0;
-
 async function reveal(){
-	if(inx > 100){
-		while(held[revealCount] && revealCount < 5){
-			revealCount++;
-		}
-		if(revealCount > 4){
-			held = [false, false, false, false, false];
-			revealCount=0;
-			toggleDraw()
-		} else {
-			document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
-			revealCount++;
-			let audio = new Audio('files/poker/ping.mp3');
-			audio.play();
-			requestAnimationFrame(reveal);
-		}
+	while(held[revealCount] && revealCount < 5){
+		revealCount++;
+	}	
+	if(revealCount > 4){
+		held = [false, false, false, false, false];
+		revealCount=0;
+		toggleDraw()
+	} else {
+		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
+		revealCount++;
+		let audio = new Audio('files/poker/ping.mp3');
+		audio.play();
+		requestAnimationFrame(reveal);
+	}
 }
 
 function toggleDraw(){
