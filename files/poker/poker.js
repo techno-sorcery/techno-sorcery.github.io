@@ -103,21 +103,27 @@ function betDraw(){
 }
 
 var inx = 0;
-async function reveal(){
-	while(held[revealCount] && revealCount < 5){
-		revealCount++;
-	}	
-	if(revealCount > 4){
-		held = [false, false, false, false, false];
-		revealCount=0;
-		toggleDraw()
-	} else {
-		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
-		revealCount++;
-		let audio = new Audio('files/poker/ping.mp3');
-		audio.play();
-		requestAnimationFrame(reveal);
+function reveal(){
+	//while(held[revealCount] && revealCount < 5){
+	//	revealCount++;
+	//}	
+	//if(revealCount > 4){
+	//	held = [false, false, false, false, false];
+	//	revealCount=0;
+	//	toggleDraw()
+	//} else {
+	//	document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
+	//	revealCount++;
+	//	let audio = new Audio('files/poker/ping.mp3');
+	//	audio.play();
+	//	requestAnimationFrame(reveal);
+	for(let i=0;i<5;i++){
+		document.getElementById('card'.concat(i+1)).src = "files/cards/".concat(cardParse(cards[i]),'.svg');
 	}
+	let audio = new Audio('files/poker/ping.mp3');
+	audio.play();
+	held = [false, false, false, false, false];
+	toggleDraw();
 }
 
 function toggleDraw(){
