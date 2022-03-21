@@ -102,23 +102,24 @@ function betDraw(){
 	}	
 }
 
+var inx = 0;
+
 async function reveal(){
-	while(held[revealCount] && revealCount < 5){
-		revealCount++;
-	}
-	if(revealCount > 4){
-		held = [false, false, false, false, false];
-		revealCount=0;
-		toggleDraw()
-	} else {
-		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
-		revealCount++;
-		//let audio = new Audio('files/poker/ping.mp3');
-		//audio.play();
-		setTimeout(function(){
+	if(inx > 100){
+		while(held[revealCount] && revealCount < 5){
+			revealCount++;
+		}
+		if(revealCount > 4){
+			held = [false, false, false, false, false];
+			revealCount=0;
+			toggleDraw()
+		} else {
+			document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
+			revealCount++;
+			let audio = new Audio('files/poker/ping.mp3');
+			audio.play();
 			requestAnimationFrame(reveal);
-		}, 75);
-	}
+		}
 }
 
 function toggleDraw(){
