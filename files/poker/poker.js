@@ -115,7 +115,9 @@ async function reveal(){
 		revealCount++;
 		let audio = new Audio('files/poker/ping.mp3');
 		audio.play();
-		setTimeout(reveal, 75);
+		setTimeout(function(){
+			requestAnimationFrame(reveal);
+		}, 75);
 	}
 }
 
@@ -181,7 +183,9 @@ function balanceChange(num,drawInc){
 			alert ("Balance too low! Resetting to $100...");
 			balanceNew=100;
 		}
-	incInterval = setInterval(balanceInc, 75);
+	incInterval = setInterval(function(){
+		requestAnimationFrame(balanceInc);
+	}, 75);
 }
 
 
