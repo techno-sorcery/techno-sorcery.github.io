@@ -4,6 +4,11 @@
   color:white
 }
 
+.redSel {
+  font-weight:bold;
+  color:black
+}
+
 .handSel {
   background-color:red;
   font-weight:bold;
@@ -11,9 +16,17 @@
 }
 
 .cardDiv{
-	width:18%;
-	min-width:40px;
+	width:19%;
+	min-width:20px;
 	display:inline-block;
+}
+
+#cardDivF{
+	padding-left:1%;
+}
+
+#cardDivL{
+	padding-right:1%;
 }
 
 .holdText{
@@ -51,4 +64,8 @@
 	padding:0px;
 	background:url(files/images/bg_content.png);
 	border:none;
+}
+
+.redText{
+	color:red;
 }
