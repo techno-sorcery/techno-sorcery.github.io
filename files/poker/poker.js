@@ -4,12 +4,14 @@ var draw = false;
 var cards = []; 
 var bet = 5;
 var drawInterval = 0;
+var incInterval = 0;
 var balance = 100;
 var balanceNew = 0;
 var held = [false,false,false,false,false];
 var revealCount = 0;
 var incDraw = false;
 var running = false;
+var running2 = false;
 const payTable = [
 	250,
 	50,
@@ -41,6 +43,8 @@ document.getElementById('card1').setAttribute("disabled","disabled")
 
 
 function betAmnt(){
+	if(!running2){
+		running2 =true
 	document.getElementById('bet').disabled = true;
 	for(let i=0;i<5;i++){
 			document.getElementById('hold'.concat(i+1)).disabled = true;
@@ -51,8 +55,9 @@ function betAmnt(){
 	if(!draw){
 		balanceChange(-bet,true);
 	} else betDraw();
-	
 }
+}
+
 
 function betDraw(){
 	if(!running){
@@ -140,6 +145,7 @@ function toggleDraw(){
 	setTimeout(function() {
 		document.getElementById('bet').disabled = false;
 	running = false;
+	running2 = false;
 	},200);
 }
 
@@ -168,6 +174,9 @@ function updateTable(){
 }
 
 function balanceChange(num,drawInc){
+	
+	clearInterval(incInterval);
+	running2 = true;
 	incDraw = drawInc;
 	balanceNew= balance+num;
 	if(balanceNew < 10){
@@ -176,6 +185,7 @@ function balanceChange(num,drawInc){
 		}
 	incInterval = setInterval(balanceInc, 75);
 }
+
 
 function balanceInc(){
 	if(balance != balanceNew){
