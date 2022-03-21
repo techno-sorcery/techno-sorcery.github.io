@@ -117,8 +117,13 @@ function reveal(){
 	//	let audio = new Audio('files/poker/ping.mp3');
 	//	audio.play();
 	//	requestAnimationFrame(reveal);
+	let newCards = [];
 	for(let i=0;i<5;i++){
-		document.getElementById('card'.concat(i+1)).src = "files/cards/".concat(cardParse(cards[i]),'.svg');
+		newCards[i] = cardParse(cards[i]);
+		
+	}
+	for(let i=0;i<5;i++){
+		document.getElementById('card'.concat(i+1)).src = "files/cards/".concat(newCards[i],'.svg');
 	}
 	let audio = new Audio('files/poker/ping.mp3');
 	audio.play();
