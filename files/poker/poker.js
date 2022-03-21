@@ -102,7 +102,7 @@ function betDraw(){
 	}	
 }
 
-function reveal(){
+async function reveal(){
 	while(held[revealCount] && revealCount < 5){
 		revealCount++;
 	}
@@ -115,9 +115,7 @@ function reveal(){
 		revealCount++;
 		let audio = new Audio('files/poker/ping.mp3');
 		audio.play();
-		setTimeout(function() {
-			reveal();
-		}, 75);
+		setTimeout(reveal, 75);
 	}
 }
 
