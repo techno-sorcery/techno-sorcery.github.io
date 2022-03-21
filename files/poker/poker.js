@@ -93,7 +93,6 @@ function betDraw(){
 				}
 			}
 			reveal();
-			
 		},200 );
 	}	
 }
