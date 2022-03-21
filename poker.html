@@ -92,32 +92,32 @@
 			<br>
 	        <div class="cardDiv">
 	        	<h4 id='text1' class="holdText">&nbsp</h4>
-	        	<img id='card1' src='files/cards/BLUE_BACK.svg'>
+	        	<button class='imgButton' id='holdImg1' disabled onclick=hold(1)><img draggable="false" id='card1' src='files/cards/BLUE_BACK.svg'></button>
 				<button id='hold1' type="button" style="width:100%" disabled onclick=hold(1)>Hold</button>
 	        </div>
 	       	<div class="cardDiv">
 	        	<h4 id='text2' class="holdText">&nbsp</h4>
-	        	<img id='card2' src='files/cards/BLUE_BACK.svg'>
+	        	<button class='imgButton' id='holdImg2' disabled onclick=hold(2)><img draggable="false" id='card2' src='files/cards/BLUE_BACK.svg'></button>
 				<button id='hold2' type="button" style="width:100%" disabled onclick=hold(2)>Hold</button>
 	        </div>
 	        <div class="cardDiv">
 	        	<h4 id='text3' class="holdText">&nbsp</h4>
-	        	<img id='card3' src='files/cards/BLUE_BACK.svg'>
+	        	<button class='imgButton' id='holdImg3' disabled onclick=hold(3)><img draggable="false" id='card3' src='files/cards/BLUE_BACK.svg'></button>
 				<button id='hold3' type="button" style="width:100%" disabled onclick=hold(3)>Hold</button>
 	        </div>
 	        <div class="cardDiv">
 	        	<h4 id='text4' class="holdText">&nbsp</h4>
-	        	<img id='card4' src='files/cards/BLUE_BACK.svg'>
+	        	<button class='imgButton' id='holdImg4' disabled onclick=hold(4)><img draggable="false" id='card4' src='files/cards/BLUE_BACK.svg'></button>
 				<button id='hold4' type="button" style="width:100%" disabled onclick=hold(4)>Hold</button>
 	        </div>
 	        <div class="cardDiv">
 	        	<h4 id='text5' class="holdText">&nbsp</h4>
-	        	<img id='card5' src='files/cards/BLUE_BACK.svg'>
+	        	<button class='imgButton' id='holdImg5' disabled onclick=hold(5)><img draggable="false" id='card5' src='files/cards/BLUE_BACK.svg'></button>
 				<button id='hold5' type="button" style="width:100%" disabled onclick=hold(5)>Hold</button>
 			</div>
 	        <br><br>
 	        <div>
-		        <button id='bet' type="button" style="width:18%;min-width:75px" onclick=betDraw()>Bet</button>
+		        <button id='bet' type="button" style="width:18%;min-width:75px" onclick=betAmnt()>Bet</button>
 		         <div class="betSel">
 		         	<p style="font-size:16px;line-height:0px;display:inline">&nbspMultiplier: </p>
 			        <select id = "myList" style="height:25px;display:inline" onchange = updateTable()>
@@ -131,7 +131,6 @@
 		     	<div class="balDiv">
 		     		<p class="balText">&nbspMoney: </p>
 		        	<input id="balanceDisp" class="balDisp" type="text" value="" readonly>
-					<p class="balText" id="balAdd" style="font-weight:bold">&nbsp</p>
 		    	</div>
 		    </div>
 	        <br><br><hr><br>

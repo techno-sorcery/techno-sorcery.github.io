@@ -41,3 +41,9 @@
 	line-height:0px;
 	display:inline
 }
+
+.imgButton{
+	padding:0px;
+	background:url(files/images/bg_content.png);
+	border:none;
+}

@@ -5,8 +5,10 @@ var cards = [];
 var bet = 1;
 var drawInterval = 0;
 var balance = 100;
+var balanceNew = 0;
 var held = [false,false,false,false,false];
 var revealCount = 0;
+var incDraw = false;
 const payTable = [
 	250,
 	50,
@@ -32,27 +34,31 @@ const hands = [
 	'Junk'
 ];
 	
+document.getElementById('balanceDisp').value = '$'.concat(balance);
+document.getElementById('card1').setAttribute("disabled","disabled")
 
-renderBalance();
 
-function betDraw(){
+function betAmnt(){
 	document.getElementById('bet').disabled = true;
+	for(let i=0;i<5;i++){
+			document.getElementById('hold'.concat(i+1)).disabled = true;
+			document.getElementById('holdImg'.concat(i+1)).disabled = true;
+			document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
+		}	
 	//Check if balance is too low
 	if(!draw){
-		if(balance-bet < 10){
-			alert ("Balance too low! Resetting to $100...");
-			balance = 100+bet;
-		}
-		balance-=bet;
-		document.getElementById('balAdd').innerHTML = '&nbsp';
-		renderBalance();
-	}
+		balanceChange(-bet,true);
+	} else betDraw();
+	
+}
+
+function betDraw(){
 	//Flip cards
 	for(let i=0;i<5;i++){
 		if(!draw) document.getElementById('text'.concat(i+1)).innerHTML = "&nbsp";
 		if(!held[i]) document.getElementById('card'.concat(i+1)).src = "files/cards/BLUE_BACK.svg";
 	}
-	myInterval = setInterval(deal, 500);
+	myInterval = setInterval(deal, 75);
 }
 
 function deal() {
@@ -96,7 +102,6 @@ function reveal(){
 	if(revealCount > 4){
 		revealCount=0;
 		clearInterval(revealInterval);
-		document.getElementById('bet').disabled = false;
 		toggleDraw()
 	} else {
 		document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
@@ -113,31 +118,28 @@ function toggleDraw(){
 		document.getElementById('bet').innerHTML = "Draw";
 		for(let i=0;i<5;i++){
 			document.getElementById('hold'.concat(i+1)).disabled = false;
+			document.getElementById('holdImg'.concat(i+1)).disabled = false;
 		}	
 		document.getElementById('myList').disabled = true;
 		
 	} else {
-		document.getElementById('bet').innerHTML = "Bet";
-		for(let i=0;i<5;i++){
-			document.getElementById('hold'.concat(i+1)).disabled = true;
-			document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
-		}	
+		document.getElementById('bet').innerHTML = "Bet";		
 		document.getElementById('myList').disabled = false;
 		let hand = handParse();
 		//Set payout table style
 		document.getElementById('table'.concat(hand)).className = 'selected';
 		document.getElementById('hand'.concat(hand)).className = 'selected';
 		//Change balance
-		change = (payTable[parseInt(hand)-1])*parseInt(bet)
-		if(change >0) document.getElementById('balAdd').innerHTML = '&nbsp+'.concat(change);
-		balance+=change;
-		renderBalance();
+		balanceChange((payTable[parseInt(hand)-1])*parseInt(bet),false);
 		
 	}
 	held = [false, false, false, false, false];
+	setTimeout(function() {
+		document.getElementById('bet').disabled = false;
+	},200);
 }
 
-function hold(id){
+function hold(id){	
 	let audio = new Audio('files/poker/ping.mp3');
 	audio.play();
 	if(held[id-1]){
@@ -161,7 +163,31 @@ function updateTable(){
 	document.getElementById('tableMult2').innerHTML = 'x'.concat(bet);
 }
 
-function renderBalance(){
+function balanceChange(num,drawInc){
+	incDraw = drawInc;
+	balanceNew= balance+num;
+	if(balanceNew < 10){
+			alert ("Balance too low! Resetting to $100...");
+			balanceNew=100;
+		}
+	incInterval = setInterval(balanceInc, 75);
+}
+
+function balanceInc(){
+	if(balance != balanceNew){
+		if(balanceNew > balance){
+			balance+=1
+			let audio = new Audio('files/poker/payout.mp3');
+			audio.play();
+		}else{
+			balance-=1
+			let audio = new Audio('files/poker/payin.mp3');
+			audio.play();
+		}
+	} else {
+		clearInterval(incInterval);
+		if(incDraw) betDraw();
+	}
 	document.getElementById('balanceDisp').value = '$'.concat(balance);
 }
 
@@ -189,9 +215,9 @@ function handParse(){
 			if (pairCheck[i] && i!=j && cards[i]%13 == cards[j]%13){
 				pairs[i]++;
 				pairCheck[j]=false;
+				//Jacks or better
+				if(cards[i]%13 >= 9 && cards[i]%13 == cards[j]%13 && i!=j) jacksOrBetter = true;
 			}
-			//Jacks or better
-			if(cards[i]%13 >= 9 && cards[j]%13 >= 9 && i!=j) jacksOrBetter = true;
 		}
 		//Remove suit
 		suitless[i] = cards[i]%13;
@@ -202,41 +228,26 @@ function handParse(){
 		if(pairs[i] == 2) twoPairs++;
 	}
 	let straight = straightR||straightL;
-	console.log('Flush: '.concat(flush));
-	console.log('Straight: '.concat(straight));
-	console.log('Pairs: '.concat(pairs));
-	console.log('Jacks or better: '.concat(jacksOrBetter));
-	console.log(' ');
 	//Royal flush
 	if(flush && (suitless.toString() == [8,9,10,11,12].toString() || suitless.toString() == [12,11,10,9,8].toString())){
-		console.log('Royal flush');
 		return(1);
 	} else if(flush && straight){
-		console.log('Straight flush');
 		return(2);
 	} else if(pairs.includes(4)) {
-		console.log('4 of a kind');
 		return(3);
 	} else if(pairs.includes(3) && pairs.includes(2)){
-		console.log('Full house');
 		return(4);
 	} else if(flush){
-		console.log('Flush');
 		return(5);
 	} else if(straight){
-		console.log('Straight');
 		return(6);
 	} else if(pairs.includes(3)){
-		console.log('3 of a kind');
 		return(7);
 	} else if(twoPairs == 2){
-		console.log('Two pairs');
 		return(8);
 	} else if(jacksOrBetter){
-		console.log('Jacks or better');
 		return(9);
 	} else{
-		console.log('Junk');
 		return(10);
 	}
 }
