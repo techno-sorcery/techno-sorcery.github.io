@@ -3,15 +3,16 @@
 var draw = false;
 var cards = []; 
 var bet = 5;
-var drawInterval = 0;
 var incInterval = 0;
 var balance = 100;
 var balanceNew = 0;
 var held = [false,false,false,false,false];
-var revealCount = 0;
 var incDraw = false;
 var running = false;
 var running2 = false;
+let payoutAudio = new Audio('files/poker/payout.mp3');
+let payinAudio = new Audio('files/poker/payin.mp3');
+let pingAudio = new Audio('files/poker/ping.mp3');
 const payTable = [
 	250,
 	50,
@@ -52,7 +53,8 @@ function preload() {
 
 function betAmnt(){
 	if(!running2){
-		running2 =true
+		running2 =true;
+		preload();
 		document.getElementById('bet').disabled = true;
 		for(let i=0;i<5;i++){
 				document.getElementById('hold'.concat(i+1)).disabled = true;
@@ -65,7 +67,6 @@ function betAmnt(){
 		} else betDraw();
 	}
 }
-
 
 function betDraw(){
 	if(!running){
@@ -110,31 +111,12 @@ function betDraw(){
 	}	
 }
 
-var inx = 0;
 function reveal(){
-	//while(held[revealCount] && revealCount < 5){
-	//	revealCount++;
-	//}	
-	//if(revealCount > 4){
-	//	held = [false, false, false, false, false];
-	//	revealCount=0;
-	//	toggleDraw()
-	//} else {
-	//	document.getElementById('card'.concat(revealCount+1)).src = "files/cards/".concat(cardParse(cards[revealCount]),'.svg');
-	//	revealCount++;
-	//	let audio = new Audio('files/poker/ping.mp3');
-	//	audio.play();
-	//	requestAnimationFrame(reveal);
 	let newCards = [];
 	for(let i=0;i<5;i++){
-		newCards[i] = cardParse(cards[i]);
-		
+				document.getElementById('card'.concat(i+1)).src = "files/cards/".concat(cardParse(cards[i]),'.svg');
 	}
-	for(let i=0;i<5;i++){
-		document.getElementById('card'.concat(i+1)).src = "files/cards/".concat(newCards[i],'.svg');
-	}
-	let audio = new Audio('files/poker/ping.mp3');
-	audio.play();
+	pingAudio.play();
 	held = [false, false, false, false, false];
 	toggleDraw();
 }
@@ -168,8 +150,7 @@ function toggleDraw(){
 }
 
 function hold(id){	
-	let audio = new Audio('files/poker/ping.mp3');
-	audio.play();
+	pingAudio.play();
 	if(held[id-1]){
 		document.getElementById('text'.concat(id)).innerHTML = "&nbsp";
 		document.getElementById('hold'.concat(id)).innerHTML = "Hold";
@@ -192,7 +173,6 @@ function updateTable(){
 }
 
 function balanceChange(num,drawInc){
-	
 	clearInterval(incInterval);
 	running2 = true;
 	incDraw = drawInc;
@@ -206,17 +186,19 @@ function balanceChange(num,drawInc){
 	}, 75);
 }
 
-
-function balanceInc(){
+function balanceInc(){		
 	if(balance != balanceNew){
-		if(balanceNew > balance){
-			balance+=1
-			let audio = new Audio('files/poker/payout.mp3');
-			audio.play();
+		let thisPayinAudio = payinAudio.cloneNode();
+		let thisPayoutAudio = payoutAudio.cloneNode();
+		if(balanceNew - balance > 45){
+			balance+=45;
+			thisPayoutAudio.play();
+		}else if(balanceNew > balance){
+			balance+=1;
+			thisPayoutAudio.play();
 		}else{
-			balance-=1
-			let audio = new Audio('files/poker/payin.mp3');
-			audio.play();
+			balance-=1;
+			thisPayinAudio.play();
 		}
 	} else {
 		clearInterval(incInterval);

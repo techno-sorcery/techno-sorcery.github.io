@@ -17,7 +17,6 @@
 
 .cardDiv{
 	width:19%;
-	
 	display:inline-block;
 }
 
@@ -68,4 +67,22 @@
 
 .redText{
 	color:red;
+}
+
+@media screen and (max-width: 1020px) {
+  .cardDiv {width: 18.5%;}
+  #cardDivF{padding-left: 1.5%;}
+  #cardDivR{padding-right: 1.5%;}
+}
+
+@media screen and (max-width: 475px) {
+  .cardDiv {width: 18%;}
+  #cardDivF{padding-left: 1%;}
+  #cardDivR{padding-right: 1%;}
+}
+
+@media screen and (max-width: 330px) {
+  .cardDiv {width: 17.5%;}
+  #cardDivF{padding-left: 0%;}
+  #cardDivR{padding-right: 0%;}
 }
