@@ -142,11 +142,6 @@ function toggleDraw(){
 		balanceChange((payTable[parseInt(hand)-1])*parseInt(bet),false);
 		
 	}
-	setTimeout(function() {
-		document.getElementById('bet').disabled = false;
-	running = false;
-	running2 = false;
-	},200);
 }
 
 function hold(id){	
@@ -203,6 +198,11 @@ function balanceInc(){
 	} else {
 		clearInterval(incInterval);
 		if(incDraw) betDraw();
+			setTimeout(function() {
+				document.getElementById('bet').disabled = false;
+				running = false;
+				running2 = false;
+			},200);
 	}
 	document.getElementById('balanceDisp').value = '$'.concat(balance);
 }
