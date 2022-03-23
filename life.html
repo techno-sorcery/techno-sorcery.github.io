@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
-        <title>Entertainment ~ Techno-Sorcery</title>
+        <title>Game of Life ~ Techno-Sorcery</title>
         <style>
             html, body {
                 font-family: Arial, sans-serif;
@@ -49,22 +49,22 @@
 	        </div>
 	        <div class="border">
 	            <hr>
-	            <p>Fun games, quizzes, and more.</p>
+	            <p>A rendition of John Conway's Game of Life, which models the evolution and proliferation of cells.</p>
 	            <hr>
 	        </div>
-	        <h3>Entertainment</h3>
-			<p><b>JavaScript games</b></p>
-			<p><a href="poker.html">Video Poker</a><br>A five-card draw Video Poker game, 9/6 Jacks or Better, programmed in JavaScript.</p>
-			<p><a href="life.html">Game of Life</a><br>A rendition of John Conway's Game of Life, which models the evolution and proliferation of cells.</p>
+	        <h3>Game of Life</h3>
+	        <canvas id="myCanvas" width="513" height="513" style="background-color:DarkGray"></canvas>
 			<br>
-	        <p><b>Tests and Quizzes</b></p>
-	        <p><a href="nerd400.html">The OFFICIAL Nerd Test</a><br>Have you ever been called a nerd by a friend or thought that you might be one? Find out how much of a nerd you truly are by taking the OFFICIAL Techno-Sorcery nerd test!</p>
-	        <p><a href="old100.html">Old Person Test</a><br>Ever been told you're an "old soul"? Have an inexplicable affinity for fruitcakes and hard candies? You just might be an undercover old person-- even if you don't look the part!</p>
-	        
+			<p style="line-height:0px">Generation: <span id='genDisp'>0</span></p>
+			<p style="padding-top:1px">Live cells: <span id='liveDisp'>0</span></p>
+			<button id='toggleRun' type="button" onclick=toggleRun()>Stop</button>
+			<button type="button" onclick=step()>Step</button>
+			<button type="button" onclick=clearCells()>Clear</button>
+			<button type="button" onclick=rand()>Random</button><br>
 	        <br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
-
+		<script type="text/javascript" src='files/life/life.js'></script>
         <script>
             function myFunction() {
                 var x = document.getElementById("myLinks");
