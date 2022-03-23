@@ -6,12 +6,14 @@ var cells = new Array(height);
 cells = init(cells,true);
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-var run = true;
+var run = false;
 var generation = 0;
 var alive = 0;
 var drag = false;
 
 newInterval();
+clearInterval(renderInterval);
+render();
 
 function newInterval(){
 	renderInterval = setInterval(function(){
@@ -22,6 +24,8 @@ function newInterval(){
 
 c.addEventListener('mousedown', (e) => {
 	drag = true;
+	//let rect = c.getBoundingClientRect();
+	//cellPlace(Math.floor((e.clientX - rect.left)/8), Math.floor((e.clientY - rect.top)/8));
 });
 
 document.addEventListener('mouseup', () => {
@@ -30,13 +34,17 @@ document.addEventListener('mouseup', () => {
 
 c.addEventListener('mousemove', (e) => {
 	if(drag){
-		let rect = c.getBoundingClientRect()
-		let x = Math.floor((e.clientX - rect.left)/8);
-		let y = Math.floor((e.clientY - rect.top)/8);
+		let rect = c.getBoundingClientRect();
+		cellPlace(Math.floor((e.clientX - rect.left)/8), Math.floor((e.clientY - rect.top)/8));
+	}
+});
+
+function cellPlace(x,y){
+	if(cells[y][x] == 0){
 		cells[y][x] = 1;
 		render();
 	}
-});
+}
 
 function init(arr,rand){
 	for(let i=0;i<height;i++){
