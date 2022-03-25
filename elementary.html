@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
-        <title>Entertainment ~ Techno-Sorcery</title>
+        <title>Elementary Automaton ~ Techno-Sorcery</title>
         <style>
             html, body {
                 font-family: Arial, sans-serif;
@@ -49,21 +49,24 @@
 	        </div>
 	        <div class="border">
 	            <hr>
-	            <p>Fun games, quizzes, and more.</p>
+	            <p>Renders the Wolfram elementary cellular automata, of which there are 256.</p>
 	            <hr>
 	        </div>
-	        <h3>Entertainment</h3>
-			<p><b>JavaScript games</b></p>
-			<p><a href="poker.html">Video Poker</a><br>A five-card draw Video Poker game, 9/6 Jacks or Better, programmed in JavaScript.</p>
-			<p><a href="life.html">Game of Life</a><br>A rendition of John Conway's Game of Life, which models the evolution and proliferation of cells.</p>
+	        <h3>Elementary Automata</h3>
+	        <canvas id="myCanvas" width="512" height="512" style="background-color:white"></canvas>
 			<br>
-	        <p><b>Tests and Quizzes</b></p>
-	        <p><a href="nerd400.html">The OFFICIAL Nerd Test</a><br>Have you ever been called a nerd by a friend or thought that you might be one? Find out how much of a nerd you truly are by taking the OFFICIAL Techno-Sorcery nerd test!</p>
-	        <p><a href="old100.html">Old Person Test</a><br>Ever been told you're an "old soul"? Have an inexplicable affinity for fruitcakes and hard candies? You just might be an undercover old person-- even if you don't look the part!</p>
+			<button id='toggleRun' type="button" onclick=toggleRun()>Stop</button>
+			<button type="button" onclick=cycle()>Step</button>
+			<p style="line-height:0;display:inline">&nbspRule:</p>
+			<input id="rule" type="number" value="30" max="255" min="0" onchange=setRule()>
+			<p style="line-height:0;display:inline">&nbspInitial cells:</p>
+			<button type="button" onclick=point()>Single</button>
+			<button id='toolButton' type="button" onclick=rand()>Random</button><br><br>
+			
 	        <br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
-
+		<script type="text/javascript" src='files/automata/elementary.js'></script>
         <script>
             function myFunction() {
                 var x = document.getElementById("myLinks");
