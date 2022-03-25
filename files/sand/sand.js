@@ -89,15 +89,15 @@ function cycle(){
 					active[i+1][j] = false;
 					render(j,i+1);
 					render(j,i);
-					column = j;
+					column = true;
 				} else {
 					cells[i][j].setActive(false);
 					render(j,i);
 				}
 			}
 		}
-		for(let j=i;column>=0 && j>=0;j--){
-						cells[j][column].setActive(true);
+		for(let j=height;j>=0;j--){
+						if(column) cells[j].setActive(true);
 					}
 	}
 	ctx.fillStyle = 'gray';
