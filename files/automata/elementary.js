@@ -64,7 +64,7 @@ function render(cell,position){
 			} else {
 				ctx.fillStyle = "white";
 			}
-			ctx.fillRect(position*pixelSize-pixelSize, iterationY*pixelSize, pixelSize, pixelSize);
+			ctx.fillRect(position*pixelSize, iterationY*pixelSize, pixelSize, pixelSize);
 }
 
 function toggleRun(){
