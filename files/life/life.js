@@ -1,7 +1,8 @@
 // Game of Life
 // Hayden Buscher ~ 2022
-var width = 64;
-var height = 64;
+var width = 102;
+var height = 102;
+var pixelSize = 5;
 var cells = new Array(height);
 cells = init(cells,true);
 var c = document.getElementById("myCanvas");
@@ -10,6 +11,7 @@ var run = false;
 var generation = 0;
 var alive = 0;
 var drag = false;
+var erase = 1;
 
 newInterval();
 clearInterval(renderInterval);
@@ -24,8 +26,8 @@ function newInterval(){
 
 c.addEventListener('mousedown', (e) => {
 	drag = true;
-	//let rect = c.getBoundingClientRect();
-	//cellPlace(Math.floor((e.clientX - rect.left)/8), Math.floor((e.clientY - rect.top)/8));
+	let rect = c.getBoundingClientRect();
+	cellPlace(Math.floor((e.clientX - rect.left)/pixelSize), Math.floor((e.clientY - rect.top)/pixelSize));
 });
 
 document.addEventListener('mouseup', () => {
@@ -35,13 +37,13 @@ document.addEventListener('mouseup', () => {
 c.addEventListener('mousemove', (e) => {
 	if(drag){
 		let rect = c.getBoundingClientRect();
-		cellPlace(Math.floor((e.clientX - rect.left)/8), Math.floor((e.clientY - rect.top)/8));
+		cellPlace(Math.floor((e.clientX - rect.left)/pixelSize), Math.floor((e.clientY - rect.top)/pixelSize));
 	}
 });
 
 function cellPlace(x,y){
-	if(cells[y][x] == 0){
-		cells[y][x] = 1;
+	if(cells[y][x] != erase){
+		cells[y][x] = erase;
 		render();
 	}
 }
@@ -88,7 +90,7 @@ function render(){
 			} else {
 				ctx.fillStyle = "white";
 			}
-			ctx.fillRect(j*8+1, i*8+1, 7, 7);
+			ctx.fillRect(j*pixelSize+1, i*pixelSize+1, pixelSize-1, pixelSize-1);
 		}
 	}
 	document.getElementById('genDisp').innerHTML = generation;
@@ -140,4 +142,14 @@ function rand(){
 	generation = 0;
 	render();
 	if(run) newInterval();
+}
+
+function toggle(){
+	if(erase == 0){
+		document.getElementById('toolButton').innerHTML = "Erase";
+		erase = 1;
+	} else {
+		document.getElementById('toolButton').innerHTML = "Draw";
+		erase = 0;
+	}
 }

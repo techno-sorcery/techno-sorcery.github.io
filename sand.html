@@ -13,8 +13,9 @@
             }   
             
             .itemButton{
-                width:75px;   
+                width:75px; 
             }
+            
         </style>
     </head>
 
@@ -59,11 +60,11 @@
 	        <h3>Yet Another Sand Game</h3>
 	        <canvas id="myCanvas" width="512" height="512" style="background-color:black"></canvas>
 	        <br>
-	        <button class='itemButton' style="background-color:khaki" id='toggleRun' type="button" onclick=choose()>Sand</button>
+	        <button class='itemButton' style="background-color:khaki"  type="button" onclick=choose()><b>Sand</b></button>
 			<button class='itemButton' style="background-color:royalblue" type="button" onclick=choose()>Water</button>
 			<button class='itemButton' style="background-color:firebrick" type="button" onclick=choose()>Fire</button>
 			<br><hr>
-			<button id='toggleRun' type="button" onclick=toggleRun()>Pause</button>
+			<button id='toggleRun' type="button" id='toggleRun' onclick=toggleRun()>Pause</button>
 			<button type="button" onclick=step()>Step</button>
 			<button type="button" onclick=clearCells()>Clear</button>
 	        <br><br><hr><br>
