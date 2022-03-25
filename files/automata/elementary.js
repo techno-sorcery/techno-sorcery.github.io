@@ -1,4 +1,4 @@
-// Game of Life
+// Elementary automata
 // Hayden Buscher ~ 2022
 var width = 511;
 var height = 511;
