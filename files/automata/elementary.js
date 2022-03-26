@@ -23,8 +23,8 @@ newInterval();
 
 function newInterval(){
 	if(run){
-		cycle();
 		if(iterationY > height-1) scrollUp();
+		cycle();
 	}
 	requestAnimationFrame(newInterval);
 	
@@ -131,6 +131,6 @@ function scrollUp(){
 }
 
 function step(){
-	cycle();
 	if(iterationY > height-2) scrollUp();
+	cycle();
 }
