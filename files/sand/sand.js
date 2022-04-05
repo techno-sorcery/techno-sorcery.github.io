@@ -78,27 +78,31 @@ function init(arr,rand){
 function cycle(){
 	alive = 0;
 	let active = Array(height).fill().map(() => Array(width).fill(true));
+	let activeColumn = new Array(width).fill(-1);
 	for(let i=0;i<height;i++){
 		for(let j=0;j<width;j++){
 			//if(cells[i][j].getID() > 0) alive++;
-			var column = -1;
-			if(active[i][j] && cells[i][j].getActive()){ //
+			if(active[i][j] && cells[i][j].getActive()){
 				if(cells[i][j].getID() == 1 &&i <height-1 && cells[i+1][j].getID() == 0){
 					cells[i+1][j] = cells[i][j];
 					cells[i][j] = new particle(0,'black',false);
 					active[i+1][j] = false;
 					render(j,i+1);
 					render(j,i);
-					column = true;
+					activeColumn[j] = i;
 				} else {
 					cells[i][j].setActive(false);
 					render(j,i);
 				}
 			}
 		}
-		for(let j=height;j>=0;j--){
-						if(column) cells[j].setActive(true);
-					}
+	}
+	for(let i=0;i<width;i++){
+		if(activeColumn[i] >= 0){
+			for(let j=activeColumn[i];j>=0;j--){
+				cells[j][i].setActive(true);	
+			}
+		}	
 	}
 	ctx.fillStyle = 'gray';
 	ctx.font = "12px Arial";
@@ -121,10 +125,6 @@ function toggleRun(){
 	}
 }
 
-function step(){
-	cycle();
-}
-
 function clearCells(){
 	clearInterval(renderInterval);
 	document.getElementById('toggleRun').innerHTML = "Start";
@@ -133,4 +133,3 @@ function clearCells(){
 	alive = 0;
 	render();
 }
-

@@ -4,18 +4,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
-        <title>Yet Another Sand Game~ Techno-Sorcery</title>
+        <title>Sorting Algorithms ~ Techno-Sorcery</title>
         <style>
             html, body {
                 font-family: Arial, sans-serif;
                 height: 100%;
                 margin: 0;
             }   
-            
-            .itemButton{
-                width:75px; 
-            }
-            
         </style>
     </head>
 
@@ -54,23 +49,17 @@
 	        </div>
 	        <div class="border">
 	            <hr>
-	            <p>Yet another falling-sand game. Features several elements, which interact with each other through the laws of physics.</p>
+	            <p>Shows off some common integer sorting algorithms, complete with sound and pretty visuals.</p>
 	            <hr>
 	        </div>
-	        <h3>Yet Another Sand Game</h3>
-	        <canvas id="myCanvas" width="512" height="512" style="background-color:black"></canvas>
-	        <br>
-	        <button class='itemButton' style="background-color:khaki"  type="button" onclick=choose()><b>Sand</b></button>
-			<button class='itemButton' style="background-color:royalblue" type="button" onclick=choose()>Water</button>
-			<button class='itemButton' style="background-color:firebrick" type="button" onclick=choose()>Fire</button>
-			<br><hr>
-			<button id='toggleRun' type="button" id='toggleRun' onclick=toggleRun()>Pause</button>
-			<button type="button" onclick=cycle()>Step</button>
-			<button type="button" onclick=clearCells()>Clear</button>
+	        <h3>Sorting Algorithms</h3>
+	        <canvas id="myCanvas" width="512" height="320" style="background-color:black"></canvas>
+			<br>
+			<button id='toggleRun' type="button" onclick=toggleRun()>Stop</button>
 	        <br><br><hr><br>
 	        <p>© Hayden Buscher ~ 2022</p>
         </div>
-		<script type="text/javascript" src='files/sand/sand.js'></script>
+		<script type="text/javascript" src='files/sorting/sorting.js'></script>
         <script>
             function myFunction() {
                 var x = document.getElementById("myLinks");
