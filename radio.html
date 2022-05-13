@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Crystal Set, Mk.1 ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="entertainment.html">Entertainment</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>My first homemade radio, born out of boredom and a longing to know how wireless communications work.<br>
+				<b>Last updated ~ 5/13/2022</b></p>
+	            <hr>
+	        </div>
+            <h3>Crystal Set, Mk.1</h3>
+	        <p><b>About</b><br>
+			This is the first crystal set I've ever built, outside of activities that came with those "200-in-1 Science Fair" kit. At the time of building, I didn't exactly know enough to create my own unique design. However, I figured it would be a perfect introduction to the
+			world of radio communications. Thus, I decided to construct the project in two phases-- first, I'd make an unpowered crystal reciever. Then, I'd tack-on a simple one-transistor amplifier. 
+			<br><br>
+			<b>The reciever</b><br>
+			For the crystal reciever, I used a modified version of rimstar's "scrap radio" design. Because I didn't have a neat-and-tidy pre-built one, I chose to ommit the variable capacitor (for the time being). Although rimstar showed how to make your own variable capacitor
+			out of two towel tubes and some aluminum foil, I found his solution to be somewhat unsigntly.<br><br>
+			<img src="files/images/crystal_rimstar_schematic.png" alt="The crystal set schematic I used"><br><br>
+			
+			
+			The hardest part of the entire project was building the tuning coil. Preventing the wire from springing off or losing tension as I wound it was difficult-- I had two false-starts before I managed to nail down the technique. Although I didn't exactly pay careful attention
+			to how many turns I would, I believe the primary (antenna) coil had 25 windings, and the secondary coil had 150-160 windings. As a way of tuning the radio, I sanded off some of the wire's varnish and used a custom sliding mechanism. As I slid the tuner across the coil, a
+			metal nail would make contact with the bare wire, completing the circuit.<br><br>
+			<img src="files/images/crystal_initial.jpg" alt="A photo of the radio in action"><br><br>
+			
+			The first time I tested the radio, it barely worked. I could pick up some nearby Mexican station, but only very, very faintly. Obviously, this wasn't the result I desired. Thinking the simple point-to-point antenna I strung out in the backyard might not be good enough, I built
+			a nifty little loop antenna. However, this failed to rectify the problem. Then, it came to me: the three-inch metal stake I was using as a grounding rod might not be good enough. I decided to clip the ground wire to a water pipe and... Aha! Problem solved.<br><br>
+			<b>A simple amplifier</b><br>
+			Although I was getting much louder audio than I had before, the radio was only really able to pick up super close-by signals. At the same time, through inductance, the antenna would be almost completely ineffective if not placed on a large metal object. I felt it would be in
+			order to build an amplifier, something I had planned on doing from the start.<br><br>
+			<img src="files/images/crystal_amp_schematic.PNG" alt="The amplifier schematic I used"><br><br>
+			I decided on a relatively simple circuit from techlib.com, which only needed a single transistor. It could also be bolted on right where the earphone would have normally connected, meaning I could
+			very easily add it on to the crystal reciever.<br><br>
+			<img src="files/images/crystal_with_amplifier.jpg" alt="The radio, with its built-in amplifier, on display"><br><br>
+			With its new amplifier, the radio was much louder-- even loud enough to distort the audio output on some stations. However, I still had the issue of selectivity, or rather a lack thereof. For the time being, I'm gonna keep experimenting in order to find a way to increase the
+			selectivity. As I make progress, I'll continue to update this page.
+			</p>
+	        <br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 
