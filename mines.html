@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Minesweeeper ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="entertainment.html">Entertainment</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>The classic game of minesweeper, programmed to run in your browser.</p>
+	            <hr>
+	        </div>
+	        <h3>Minesweeper</h3>
+	        <canvas id="myCanvas" width="401" height="401" style="background-color:gray"></canvas>
+			<br>
+			<p style="line-height:0px">Mines Left: <span id='genDisp'>0</span></p>
+			<p style="padding-top:1px">Time: <span id='liveDisp'>0</span></p>
+			<button id='toggleRun' type="button" onclick=toggleRun()>Start</button
+	        <br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+		<script type="text/javascript" src='files/mines/mines.js'></script>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 
