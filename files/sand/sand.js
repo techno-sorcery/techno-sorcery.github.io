@@ -21,9 +21,9 @@ class particle{
 	}
 }
 
-var width = 256;
-var height = 256;
-var cellSize = 2;
+var width = 128;
+var height = 128;
+var cellSize = 4;
 var cells = new Array(height);
 cells = init(cells,true);
 var c = document.getElementById("myCanvas");
