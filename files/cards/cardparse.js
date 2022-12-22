@@ -1,6 +1,7 @@
 // Techno-Sorcery Card Parse
 // Hayden Buscher ~ 2022
 const cardList = [
+	'AC',
 	'2C',
 	'3C',
 	'4C',
@@ -13,7 +14,7 @@ const cardList = [
 	'JC',
 	'QC',
 	'KC',
-	'AC',
+	'AD',
 	'2D',
 	'3D',
 	'4D',
@@ -26,7 +27,7 @@ const cardList = [
 	'JD',
 	'QD',
 	'KD',
-	'AD',
+	'AH',
 	'2H',
 	'3H',
 	'4H',
@@ -39,7 +40,7 @@ const cardList = [
 	'JH',
 	'QH',
 	'KH',
-	'AH',
+	'AS',
 	'2S',
 	'3S',
 	'4S',
@@ -51,10 +52,9 @@ const cardList = [
 	'10S',
 	'JS',
 	'QS',
-	'KS',
-	'AS',
+	'KS'
 ];
 
 function cardParse(num){
-	return cardList[num];
+	return cardList[num-1];
 }

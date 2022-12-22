@@ -1,4 +1,4 @@
-// Techno-Sorcery Video Poker
+/// Techno-Sorcery Video Poker
 // Hayden Buscher ~ 2022
 var draw = false;
 var cards = []; 
@@ -10,6 +10,7 @@ var held = [false,false,false,false,false];
 var incDraw = false;
 var running = false;
 var running2 = false;
+var order = [];
 let payoutAudio = new Audio('files/poker/payout.mp3');
 let payinAudio = new Audio('files/poker/payin.mp3');
 let pingAudio = new Audio('files/poker/ping.mp3');
@@ -37,7 +38,7 @@ const hands = [
 	'Jacks or Better',
 	'Junk'
 ];
-	
+
 updateTable()
 preload();
 document.getElementById('balanceDisp').value = '$'.concat(balance);
@@ -45,7 +46,7 @@ document.getElementById('card1').setAttribute("disabled","disabled")
 
 function preload() {
     var img;
-    for (let i = 0; i < 52; ++i) {
+    for (let i = 1; i <= 52; ++i) {
         img = new Image();
         img.src = "files/cards/".concat(cardParse(i),'.svg');
     }
@@ -60,7 +61,7 @@ function betAmnt(){
 				document.getElementById('hold'.concat(i+1)).disabled = true;
 				document.getElementById('holdImg'.concat(i+1)).disabled = true;
 				document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
-			}	
+			}
 		//Check if balance is too low
 		if(!draw){
 			balanceChange(-bet,true);
@@ -88,14 +89,14 @@ function betDraw(){
 			if(draw){
 				for(let i=0;i<5;i++){
 					if(held[i]) cards[i] = tempCards[i];
-				}		
+				}
 			}
 			const rand = 0;
 			for(let i=0;i<5;i++){
 				let notEqual = false;
 				while(!notEqual){
 					if(!held[i]){
-						cards[i] = Math.floor(Math.random() * 52);
+						cards[i] = (Math.floor(Math.random() * (52) + 1));
 					}
 					let equalCount = 0;
 					for(let j=0;j<5;j++){
@@ -108,7 +109,7 @@ function betDraw(){
 			}
 			reveal();
 		},200 );
-	}	
+	}
 }
 
 function reveal(){
@@ -128,11 +129,10 @@ function toggleDraw(){
 		for(let i=0;i<5;i++){
 			document.getElementById('hold'.concat(i+1)).disabled = false;
 			document.getElementById('holdImg'.concat(i+1)).disabled = false;
-		}	
+		}
 		document.getElementById('myList').disabled = true;
-		
 	} else {
-		document.getElementById('bet').innerHTML = "Bet";		
+		document.getElementById('bet').innerHTML = "Bet";
 		document.getElementById('myList').disabled = false;
 		let hand = handParse();
 		//Set payout table style
@@ -140,11 +140,10 @@ function toggleDraw(){
 		document.getElementById('hand'.concat(hand)).className = 'selected';
 		//Change balance
 		balanceChange((payTable[parseInt(hand)-1])*parseInt(bet),false);
-		
 	}
 }
 
-function hold(id){	
+function hold(id){
 	pingAudio.play();
 	if(held[id-1]){
 		document.getElementById('text'.concat(id)).innerHTML = "&nbsp";
@@ -181,7 +180,7 @@ function balanceChange(num,drawInc){
 	}, 75);
 }
 
-function balanceInc(){		
+function balanceInc(){
 	if(balance != balanceNew){
 		let thisPayinAudio = payinAudio.cloneNode();
 		let thisPayoutAudio = payoutAudio.cloneNode();
@@ -208,61 +207,69 @@ function balanceInc(){
 }
 
 function handParse(){
-	let flush = true;
-	let straightR = true;
-	let straightL = true;
+	order = [...cards];
 	let pairs = [1,1,1,1,1];
 	let pairCheck = [true,true,true,true,true];
-	let jacksOrBetter = false;
-	let suitless = [];
+	let flush = true;
+	let straight = true;
+	let jacksOrBetter = false
 	for(let i=0;i<5;i++){
+		//Remove suit
+		suitlessI = cards[i]%13;
+		if(suitlessI == 0) suitlessI = 13;
+		order[i] = order[i]%13;
+		if(order[i] == 0) order[i] = 13;
 		//Flush
-		if(i>0 && cardParse(cards[i]).charAt(cardParse(cards[i]).length-1) != cardParse(cards[i-1]).charAt(cardParse(cards[i-1]).length-1)) flush = false;
-		//Straight R
-		if(i>0 && cards[i]%13 == 0){
-			if(cards[i-1]%13 != 12) straightR = false;
-		} else if (i>0 && (cards[i]%13)-1 != cards[i-1]%13) straightR = false;
-		//Straight L
-		if(i>0 && cards[i-1]%13 == 0){
-			if(cards[i]%13 != 12) straightL = false;
-		} else if (i>0 && (cards[i-1]%13) != (cards[i]%13)+1) straightL = false;
+		if(i<4 && cardParse(cards[i]).charAt(cardParse(cards[i]).length-1) != cardParse(cards[i+1]).charAt(cardParse(cards[i+1]).length-1)) flush = false;
 		//Pairs
 		for(let j=0;j<5;j++){
-			if (pairCheck[i] && i!=j && cards[i]%13 == cards[j]%13){
+			let suitlessJ = cards[j]%13;
+			if(suitlessJ == 0) suitlessJ = 13;
+			if(pairCheck[i] && i!=j && suitlessI == suitlessJ){
 				pairs[i]++;
 				pairCheck[j]=false;
 				//Jacks or better
-				if(cards[i]%13 >= 9 && cards[i]%13 == cards[j]%13 && i!=j) jacksOrBetter = true;
+				if((suitlessI >= 11 || suitlessI == 1) && suitlessI == suitlessJ && i!=j) jacksOrBetter = true;
 			}
 		}
-		//Remove suit
-		suitless[i] = cards[i]%13;
 	}
-	//Find how many pairs
+	//Sort
+	order.sort(function(a, b){return a - b});
+	//Number of pairs, Straight
 	let twoPairs = 0;
 	for(let i=0;i<5;i++){
+		if(i<4 && !(order[i]+1 == order[i+1] || (order[i] == 13 && order[i+1] == 1 && i == 4))) straight = false;
 		if(pairs[i] == 2) twoPairs++;
 	}
-	let straight = straightR||straightL;
+	if(order.toString(1,10,11,12,13)) straight = true;
 	//Royal flush
-	if(flush && (suitless.toString() == [8,9,10,11,12].toString() || suitless.toString() == [12,11,10,9,8].toString())){
+	if(flush && (order.toString() == [1,10,11,12,13].toString())){
 		return(1);
+	//Straight flush
 	} else if(flush && straight){
 		return(2);
+	//Four of a kind
 	} else if(pairs.includes(4)) {
 		return(3);
+	//Full house
 	} else if(pairs.includes(3) && pairs.includes(2)){
 		return(4);
+	//Flush
 	} else if(flush){
 		return(5);
+	//Straight
 	} else if(straight){
 		return(6);
+	//Three of a kind
 	} else if(pairs.includes(3)){
 		return(7);
+	//Two pairs
 	} else if(twoPairs == 2){
 		return(8);
+	//Jacks or better
 	} else if(jacksOrBetter){
 		return(9);
+	//Junk
 	} else{
 		return(10);
 	}
