@@ -241,7 +241,7 @@ function handParse(){
 		if(i<4 && !(order[i]+1 == order[i+1] || (order[i] == 13 && order[i+1] == 1 && i == 4))) straight = false;
 		if(pairs[i] == 2) twoPairs++;
 	}
-	if(order.toString(1,10,11,12,13)) straight = true;
+	if(order.toString() == [1,10,11,12,13].toString()) straight = true;
 	//Royal flush
 	if(flush && (order.toString() == [1,10,11,12,13].toString())){
 		return(1);
