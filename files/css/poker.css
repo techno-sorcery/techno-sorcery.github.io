@@ -1,0 +1,96 @@
+.redSel {
+	font-weight:bold;
+	color:black
+}
+
+.handSel {
+	background-color:red;
+	font-weight:bold;
+	color:white
+}
+
+.cardDiv{
+	width:19%;
+	display:inline-block;
+}
+
+#cardDivF{
+	padding-left:1%;
+}
+
+#cardDivL{
+	padding-right:1%;
+}
+
+.holdText{
+	text-align:center;
+	line-height:0px
+}
+
+.betSel{
+	display:inline;
+	white-space: nowrap;
+	padding:1%
+}
+
+.balDiv{
+	white-space: nowrap; 
+	width:18%;
+	display:inline;
+}
+
+.balDisp{
+	font-size:16px;
+	font-family:courier;
+	resize:none;
+	height:20px;
+	width:15%
+}
+
+.balText{
+	font-size:16px;
+	line-height:0px;
+	display:inline
+}
+
+.imgButton{
+	padding:0px;
+	background:url(/files/images/bg_content.png);
+	border:none;
+}
+
+.redText{
+	color:red;
+}
+
+.selected {
+  background-color:red;
+  font-weight:bold;
+  color:white
+}
+
+@media screen and (max-width: 1020px) {
+  .cardDiv {width: 18.5%;}
+  #cardDivF{padding-left: 1.5%;}
+  #cardDivR{padding-right: 1.5%;}
+}
+
+@media screen and (max-width: 475px) {
+  .cardDiv {width: 18%;}
+  #cardDivF{padding-left: 1%;}
+  #cardDivR{padding-right: 1%;}
+}
+
+@media screen and (max-width: 330px) {
+  .cardDiv {width: 17.5%;}
+  #cardDivF{padding-left: 0%;}
+  #cardDivR{padding-right: 0%;}
+}
+
+body {
+	background-image: url(/files/images/casino.png);
+}
+
+img, p {
+	margin-left: 0px;
+}

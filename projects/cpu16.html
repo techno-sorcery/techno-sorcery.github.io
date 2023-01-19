@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>CPU-16 ~ Techno-Sorcery</title>
+        <style>
+            html, body {
+                font-family: Arial, sans-serif;
+                height: 100%;
+                margin: 0;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html" class="active">Index</a>
+                <div id="myLinks"><br>
+                    <a href="academics.html">Academics</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="coolstuff.html">Cool stuff</a>
+                    <a href="entertainment.html">Entertainment</a>
+                    <a href="news.html">News</a><br>
+                    <a href="about.html">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="sidenav" id="sidenav"><br>
+            <a href="index.html">Index</a><br>
+            <a href="academics.html">Academics</a>
+            <a href="projects.html">Projects</a>
+            <a href="coolstuff.html">Cool stuff</a>
+            <a href="entertainment.html">Entertainment</a>
+            <a href="news.html">News</a><br>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+	        <div class="title">
+		        <br>
+		        <h1>Techno-Sorcery</h1>
+		        <h2>"Man is still the most extraordinary computer of all."</h2>
+		        <br>
+	        </div>
+	        <div class="border">
+	            <hr>
+	            <p>A 16-bit Von Neumann architecture CPU with an extremely orthagonal CISC instruction set, much akin to the Motorola 68k.</p>
+	            <hr>
+	        </div>
+            <h3>ATLAS CPU-16</h3>
+	        <p>The CPU-16, from Atlas Digital Industries (my own moniker), is a 16-bit CISC minicomputer based around the 74LS181 ALU. Its custom architecture is somewhat inspired by the Motorola 68000.<br><br>
+            <b>Links</b><br>
+	        <a href="https://github.com/techno-sorcery/CPU-16">Github</a><br>
+	        <a href="https://docs.google.com/spreadsheets/d/1oUmNbYWaNhDA6R6yvVTsaPwRNyT6d51xgqEzrvvlCoQ/edit?usp=sharing">Infosheet</a><br>
+	        <a href="https://www.youtube.com/watch?v=J5K6y3BfLHA">Assembler demo</a><br>
+	        <a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br>
+            
+            <b>Architecture</b><br>
+            <img src="files/images/cpu16_arch.png" alt="CPU-16 architectural diagram"><br><br>
+            The CPU-16 uses a Von Neumann architecture, containing a single address space for both instructions and data. This was chosen because it provides more flexibility than a Harvard architectural model.<br><br>
+            
+            There are eight general purpose registers (D0-D7). Within the instruction word, any one of them can be selected a source or destination. For stack operations, D7 is implicitly used. Like the 68000, the stack grows DOWN. There's also a 16-bit condition register (split into processor control status and flags), and a 16-bit program counter.<br><br>
+            
+            The ALU is built from four 74LS181s. Additional circuitry provides support for byte swap, right bitshift, and sign extend operations. The ALU produces four flag bits-- negative, zero, carry, overflow-- which are used for conditional jumps.<br><br>
+            
+            The CPU-16 includes support for seven maskable interrupts, as well as direct memory access by peripherals.<br><br>
+
+            A two-phase clock is used to prevent clock skew. Microcode flip-flops are clocked on the first phase, and all other synchronous chips are clocked on the second.<br><br>
+
+            The CPU-16 has a single 16-bit data bus, and a single 16-bit address bus. This allows for easy expandability, and is easy to implement.<br><br>
+            
+            A maximum of 64K words can be addressed at once, through 16-bits. For the sake of simplicity, it will (for now) feature a flat memory map with the first 48k delegated to the RAM, the next 8k delegated to device IO, and the final 8k delegated to ROM. However, I would like to eventually build a paging unit so I could run a "real" multitasking operating system.<br><br>
+            <b>Instruction set</b><br>
+            <img src="files/images/cpu16_isa.png" alt="CPU-16 instruction set"><br><br>
+            The CPU-16's instruction set is highly orthagonal, allowing the user to use any set of addressing modes with (nearly) any instruction. Supported addressing modes include:
+            <ul>
+                <li>[reg] - Register</li>
+                <li>$m - Direct address</li>
+                <li>$m(PC) - Program counter, relative</li>
+                <li>(reg) - Register indirect</li>
+                <li>$m(reg) - Register indirect, relative</li>
+                <li>(reg)+ - Register indirect, post-increment</li>
+                <li>-(reg) - Register indirect, pre-decrement</li>
+                <li>#m - Immediate</li>
+            </ul></p><p>
+            In addition, special "quick" instructions can store an immediate from 0-7 in the instruction word. Because they are only a single word long, these instructions save significant time and memory.<br><br>
+
+            Although CISC architectures tend to get a bad-rap these days, I felt that a well-designed one would be a perfect fit for the CPU-16. Not only would going with a microcoded CISC architecture increase my instruction density and thus save memory, but it would also let me use a memory word-size of 16-bits (versus the 48-bit microcode width).<br><br>
+            
+            Speaking of microcode, I'm quite proud of the design I devised for the sequencer. In order to cram 750-ish instructions into only a couple kilobytes, I couldn't waste a single address. Instead of each instruction having a set number of microcode steps, with a linearly-incremented index being kept in a counter chip, the last 10 bits (the NEXT field) of the instruction word act as the address of the next step. This means that you can jump around to any microinstruction, instead of only being able to execute one sequential step after another.<br><br>
+            
+            Instruction opcodes, interrupts, faults, and reset requests all act as starting indexes into individual microprograms, and are appropriately selected based on the current cycle, and instruction being executed.<br><br>
+            
+            <b>Assembler</b><br>
+            <img src="files/images/cpu16_asm.png" alt="CPU-16 assembly"><br><br>
+            Because I'm not a machine-code masochist, I wrote an assembler in Python. I think I've done a servicable job, though I definitely need to clean up my code.<br><br>
+            
+            Mnemonics and program structure are similar to that of many mc68000 assemblers, which makes sense considering the architecture's already heavy influence.<br><br>
+            
+            Instruction parameters are arranged as "source,destination". Instructions and addressing modes are written as they appear on the infosheet.<br><br>
+            
+            The assembler parses instructions on the first pass, and fills in labels on the second.<br><br>
+            
+            One of the hardest functions to write was the "dw" directive, which defines however many individual strings, integers, and characters the programmer desires. Especially difficult was getting it to work with strings and primitive datatypes in the same line.
+	        </p><br><br><hr><br>
+	        <p>© Hayden Buscher ~ 2022</p>
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html> 
