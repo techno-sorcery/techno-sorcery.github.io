@@ -1,150 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <title>PDC-8 ~ Techno-Sorcery</title>
-        <style>
-            html, body {
-                font-family: Arial, sans-serif;
-                height: 100%;
-                margin: 0;
-            }   
-        </style>
-    </head>
+<head>
+	<title>ATLAS PDC-8&nbsp— Techno-Sorcery</title>
+	<meta name="author" content="Hayden Buscher">
+	<meta name="description" content="An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/files/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/files/css/responsive.css">
+</head>
+<body>
+	<div id="sidenav"></div>
+	<div id="topnav"></div>
+	<div class="main" id="main">
+		<div id="header"></div>
+<div class="border header">
+<hr>
+<p>An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.</p>
+<hr>
+</div>
 
-    <body>
-        <div class="topnav">
-            <a href="index.html" class="active">Index</a>
-                <div id="myLinks"><br>
-                    <a href="academics.html">Academics</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="coolstuff.html">Cool stuff</a>
-                    <a href="entertainment.html">Entertainment</a>
-                    <a href="news.html">News</a><br>
-                    <a href="about.html">About</a>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-
-        <div class="sidenav" id="sidenav"><br>
-            <a href="index.html">Index</a><br>
-            <a href="academics.html">Academics</a>
-            <a href="projects.html">Projects</a>
-            <a href="coolstuff.html">Cool stuff</a>
-            <a href="entertainment.html">Entertainment</a>
-            <a href="news.html">News</a><br>
-            <a href="about.html">About</a>
-        </div>
-
-        <div class="main" id="main">
-	        <div class="title">
-		        <br>
-		        <h1>Techno-Sorcery</h1>
-		        <h2>"Man is still the most extraordinary computer of all."</h2>
-		        <br>
-	        </div>
-	        <div class="border">
-	            <hr>
-	            <p>An 8-bit Harvard architecture CPU centered around a single move instruction.<br>
-		    <strong>Last updated ~ 9/19/2022 &nbsp[Architectural changes]</strong></p>
-	            <hr>
-	        </div>
-	        <h3>ATLAS PDC-8</h3>
-	        <p>The ATLAS PDC-8 is a homebrew computer of my own design, which was designed when I was a high school senior.<br><br>
-	        <b>Links</b><br>
-	        <a href="https://github.com/techno-sorcery/PDC-8">Github</a><br>
-	        <a href="https://www.youtube.com/watch?v=G-2V7RjiHaM">YouTube fibonacci demo</a><br><br>
-	        
-            <b>Constraints</b><br>
-            The initialism "PDC" stands for "Personal Data Controller, which harkens back to old-school computer names like "Programmable Data Processor" (PDP) and "Universal Automatic Computer (UNIVAC). Indeed, the PDC-8 is meant to somewhat represent a low-cost, consumer-oriented minicomputer from the early 1970s.<br><br>
-            For the sake of my own time and sanity, it has been designed to be simple and easy to assemble. At the same time, I've designed it to be capable of running complex programs (not a 4-bit "toy" machine with 16 bytes of memory), and to have a high degree of expandability.<br><br>
-
-            <b>Architecture</b><br>
-            <img src="files/images/pdc_arch.png" alt "PDC-8 architectural diagram"><br><br>
-            The PDC-8 is a Harvard architecture machine, with program memory separate from data memory, and no provisions for randomly reading from/writing to program memory. This has been done for the sake of simplicity, as it greatly reduces the amount of neccessary decoding and control logic. It also eliminates the numerous bottlenecks of Von Neumann architectures, allowing for higher instruction throughput.<br><br>
-
-            It features several registers, which can be directly manipulated by the programmer.
-            <ul>
-                <li>ACC - Accumulator, general purpose register</li>
-                <li>SUM - Sum, stores ALU results</li>
-		<li>MARL - MAR Lo, first 8-bits of RAM address</li>
-		<li>MARH - MAR Hi, last 8-bits of RAM address</li>
-		<li>PCH - PC Hi, last 8-bits of PRG address</li>
-		<li>PC - Program counter, 16-bit register pointing to current instruction</li>
-            </ul></p><p>
-            The PDC-8 makes use of two 74LS181s as the ALU. The mode and carry select bits are sourced from the OP register, meaning that the programmer can use any available arithmetic/logical mode by writing an immediate value to it. Results must be saved in the SUM register before they can be outputted to the data bus and stored somewhere else. The accumulator acts as the first ALU operand, whereas the data bus acts as the second operand. <br><br>
-            The ALU produces two flags, EQUALS and CARRY, each time a calculation is stored in the SUM register. These flags can be conditionally checked, and used to determine if a particular instruction executes or not. Their values can be inverted during an arithmetic operation by writing to the OP register. This means that the PDC-8 is indeed Turing complete and therefore worthy of being considered a "real" computer. <br><br>
-            Both the program counter and memory address register are 16-bits wide, allowing the PDC-8 to access up to 64 KB  of program memory, and 64 KB of data memory. In practice, the last 32KB of the RAM address space is dedicated to IO addressing. The MAR holds the current data memory address and, since there is no dedicated address bus nor address control pins, it must be written to in a separate instruction each time the programmer desires to access a different address. Both the MAR and PC have Hi latches, which must be written to with the desired address' upper 8-bits.<br><br>
-            
-            <b>Instruction set</b><br>
-            The PDC-8 follows a simple transport triggered architectural model, as all computation is performed as a result of data being moved around by the programmer. Since the only available instruction transfers data between registers and checks a selected condition, it could also be considered an OISC (one instruction set computer).<br><br>
-            Although only having a single instruction may seem like a big limitation, the PDC-8's ISA has proven to be surprisingly efficient and versatile. Since each instruction only takes a single clock cycle to execute, many operations take less cycles on the PDC-8 than they would on a more complex machine. At the same time, being able to move data between any two registers allows for the progammer to implement subroutine jumps, stack operations, and a whole host of other advanced features.<br><br>
-
-            Each instruction is made up of an 8-bit immediate value, and an 8-bit control word, which is outlined below. This makes for a 16-bit wide program memory.<br><br>
-
-            C SSSS DDD XXXXXXXX<br><br>
-
-            Condition select<br>
-            0 - Execute conditional jump if CARRY = 1<br>
-            1 - Execute conditional jump if EQUALS = 1<br><br>
-
-            Store select<br>
-            0000 - None<br>
-            0001 - ACC store<br>
-            0010 - MEM store<br>
-            0011 - SUM store<br>
-            0100 - MAR Hi store<br>
-            0101 - MAR Lo store<br>
-            0110 - PC Hi store<br>
-            0111 - OP store<br>
-	    1000 - PC store (jmp)<br>
-	    1001 - PC conditional store (jmp)<br><br>
-
-            Data out select<br>
-            000 - None<br>
-            001 - ACC data out<br>
-            010 - MEM data out<br>
-            011 - SUM data out<br>
-            100 - IMM data out<br><br>
-
-            X = 8-bit immediate value<br><br>
-
-            For instance, if I wanted to add 1 and 3 and store it in the accumulator, I'd first set the OP register to an immediate value, telling the ALU to add without a carry. I'd then store the immediate value 1 in ACC, output the immediate value 3 to the data bus and store the ALU result in SUM, and finally output SUM to the data bus and store that value in ACC<br><br>
-            
-            00101100 00001001 - SET OP TO ADD<br>
-            00001100 00000001 - LD #1 INTO ACC<br>
-            00011100 00000011 - OUTPUT #3, STORE ACC+3 INTO SUM<br>
-            00001011 00000000 - STORE SUM INTO ACC<br><br>
-			
-	    You can select between either using the CARRY or EQUALS flag as conditionals, though this is only valid for PC conditional stores.<br><br>
-            
-	    <b>Assembly Language (WIP)</b><br>
-	    Like most other OISC architectures, programming in PDC-8 machine code is not too dissimilar to writing microcode for a CISC computer. Although this allows for a great deal of control over the system, it's also unintuitive and difficult to read. Thus, the PDC-8 assembly language is built up from macro-level instructions (LDA, STA, ADD, etc.) which are broken up into multiple individual "micro-instructions" by the assembler.<br><br>
-
-
-            <b>Implementation (WIP)</b><br>
-            <img src="files/images/pdc_sim.png" alt="PDC-8 simulator"><br><br>
-            I created a logical simulator of the PDC-8's architecture in the amazing program hneemann digital, which is pretty much a modernized derivative of logisim. It has come in handy when deciding new elements to implement/change, since I can mock everything up on my computer, as well as when testing programs I've written. If you would like to try it out for yourself, you can download a copy of the entire project in the Github repository linked at the top of this page.<br><br>
-            <img src="files/images/pdc_card1.jpg" alt="PDC-8 ALU card"><br><br>
-            I've also started work on building a physical implementation of the PDC-8 that I can use as my high school senior project. It is being built across four individual perfboard cards, which will slot into a custom 6 slot backplane. I am using the wire wrap technique as opposed to making PCBs or directly soldering down wires, as it is cheap, easily modifiable, and doesn't require me to learn how to use any CAD software. It also allows me to test everything as I go, which can't be said for a batch of PCBs ordered from China.
-            </p>
-	        <br><br><hr><br>
-	        <p>© Hayden Buscher ~ 2022</p>
-        </div>
-
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myLinks");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
-        </script>
-    </body>
+<h3>ATLAS PDC-8</h3>
+<p><strong>Links</strong><br />
+<a href="https://github.com/techno-sorcery/PDC-8">GitHub</a><br />
+<a href="https://www.youtube.com/watch?v=G-2V7RjiHaM">Fibonacci demo</a><br><br></p>
+<p><strong>Background</strong><br />
+'PDC' is an initialism for 'Personal Data Controller', similar to old-school names such as 'Programmable Data Processor' (PDP). The PDC-8 is meant to somewhat represent a low-cost minicomputer from the early 1970s, with a simple, easy-to-build, chip-reduced design.<br><br></p>
+<p><strong>Architecture</strong></p>
+<p><img alt="PDC-8 architecture flowchart" src="/files/images/pdc_arch.png" /></p>
+<p>The PDC-8 is a Harvard architecture machine, with separate address spaces for programs and data, and no provisions for random program memory operations. This was done for the sake of simplicity, as it greatly reduces the amount of neccessary control logic. By eliminating the Von Neumann bottleneck, it also allows for higher instruction throughput.</p>
+<p>Several registers are availale to the programmer:</p>
+<ul>
+<li>ACC - Accumulator, general purpose</li>
+<li>OP - Operand, set ALU function</li>
+<li>SUM - ALU result buffer</li>
+<li>MARL - RAM address, low</li>
+<li>MARH - RAM address, high</li>
+<li>PC - PC address, low</li>
+<li>PCH - PC address, high</li>
+</ul>
+<p>Two 74181s make up the ALU. Function, mode, and carry select bits are sourced from the OP register, which stores an immediate value. Results are saved in the SUM register before being moved elsewhere on the next instruction cycle. The accumulator implicitly acts as the first operand, while the data bus acts as the second.</p>
+<p>Two status flags are produced by arithmetic operations, EQUAL and CARRY. These can be used to determine whether a jump executes or not, meaning the PDC-8 is indeed turing complete.</p>
+<p>Both the program and data address busses are 16-bits wide, allowing both to access 64k of memory. Data addresses are stored in the MAR registers, which must be written to on separate instructions.<br><br></p>
+<p><strong>Instruction set</strong><br />
+The PDC-8 follows a transport-triggered architectural model, in which computation is performed as a side effect of data transport. As the only instruction is 'MOV', it could be considered an OISC (one instruction set computer).</p>
+<p>Since each instruction only occupies a single clock pulse, many algorithms take less cycles to execute than on more complex architectures. Because the programmer has control over every CPU function, advanced macroinstructions such as stack operations and subroutine jumps can be implemented.</p>
+<p>Instructions contain an 8-bit immediate, followed by an 8-bit opcode. This makes for a 16-bit wide program memory.<br><br></p>
+<p><strong>Assembler</strong><br />
+No assembler currently exists for the PDC-8. However, it would most likely convert typical 'macroinstructions' into several-step chunks of machine code.</p>		</p><br><br><hr>
+		<div id="footer"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/files/js/main.js"></script>
+</body>
 </html> 

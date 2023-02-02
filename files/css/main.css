@@ -15,7 +15,7 @@ h2 {
 
 h3 {
 	color: #505050;
-	font-size: 24px;
+	font-size: 22px;
 }
 
 a {
@@ -50,8 +50,6 @@ hr {
 	background-color: #383838;
 }
 
-
-
 .border hr {
 	border: none;
 	height: 2px;
@@ -61,14 +59,15 @@ hr {
 
 p, dl {
 	line-height: 1.25;
-	font-size:18px;
+	font-size:16px;
 	margin-left: 20px;
 	margin-right: 20px;
 }
     
-li {
-	line-height: 1.5;
-	font-size:18px;
+ol {
+	margin-left: 20px;
+	line-height: 1.35;
+	font-size:16px;
 }
 
 
@@ -76,7 +75,7 @@ img {
 	max-width: 100%;
 	height: auto;
 	width: auto\9; /* ie8 */
-	margin-left: 20px;
+	/*margin-left: 20px;*/
 }
 
 table {
@@ -118,3 +117,17 @@ button {
 	float:right;
 }
 
+pre {
+	background: lightgray;
+	word-wrap: break-word;
+	box-decoration-break: clone;
+	padding: .1rem .3rem .2rem;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: .2rem;
+}
+
+.margins {
+	margin-left: 20px;
+	margin-right: 20px;
+}

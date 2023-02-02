@@ -1,125 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <title>CPU-16 ~ Techno-Sorcery</title>
-        <style>
-            html, body {
-                font-family: Arial, sans-serif;
-                height: 100%;
-                margin: 0;
-            }   
-        </style>
-    </head>
+<head>
+	<title>ATLAS CPU-16&nbsp— Techno-Sorcery</title>
+	<meta name="author" content="Hayden Buscher">
+	<meta name="description" content="A 16-bit CISC architecture CPU, loosely based off the mc68000.">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/files/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/files/css/responsive.css">
+</head>
+<body>
+	<div id="sidenav"></div>
+	<div id="topnav"></div>
+	<div class="main" id="main">
+		<div id="header"></div>
+<div class="border header">
+<hr>
+<p>A 16-bit CISC architecture CPU, loosely based off the mc68000.</p>
+<hr>
+</div>
 
-    <body>
-        <div class="topnav">
-            <a href="index.html" class="active">Index</a>
-                <div id="myLinks"><br>
-                    <a href="academics.html">Academics</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="coolstuff.html">Cool stuff</a>
-                    <a href="entertainment.html">Entertainment</a>
-                    <a href="news.html">News</a><br>
-                    <a href="about.html">About</a>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-
-        <div class="sidenav" id="sidenav"><br>
-            <a href="index.html">Index</a><br>
-            <a href="academics.html">Academics</a>
-            <a href="projects.html">Projects</a>
-            <a href="coolstuff.html">Cool stuff</a>
-            <a href="entertainment.html">Entertainment</a>
-            <a href="news.html">News</a><br>
-            <a href="about.html">About</a>
-        </div>
-
-        <div class="main" id="main">
-	        <div class="title">
-		        <br>
-		        <h1>Techno-Sorcery</h1>
-		        <h2>"Man is still the most extraordinary computer of all."</h2>
-		        <br>
-	        </div>
-	        <div class="border">
-	            <hr>
-	            <p>A 16-bit Von Neumann architecture CPU with an extremely orthagonal CISC instruction set, much akin to the Motorola 68k.</p>
-	            <hr>
-	        </div>
-            <h3>ATLAS CPU-16</h3>
-	        <p>The CPU-16, from Atlas Digital Industries (my own moniker), is a 16-bit CISC minicomputer based around the 74LS181 ALU. Its custom architecture is somewhat inspired by the Motorola 68000.<br><br>
-            <b>Links</b><br>
-	        <a href="https://github.com/techno-sorcery/CPU-16">Github</a><br>
-	        <a href="https://docs.google.com/spreadsheets/d/1oUmNbYWaNhDA6R6yvVTsaPwRNyT6d51xgqEzrvvlCoQ/edit?usp=sharing">Infosheet</a><br>
-	        <a href="https://www.youtube.com/watch?v=J5K6y3BfLHA">Assembler demo</a><br>
-	        <a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br>
-            
-            <b>Architecture</b><br>
-            <img src="files/images/cpu16_arch.png" alt="CPU-16 architectural diagram"><br><br>
-            The CPU-16 uses a Von Neumann architecture, containing a single address space for both instructions and data. This was chosen because it provides more flexibility than a Harvard architectural model.<br><br>
-            
-            There are eight general purpose registers (D0-D7). Within the instruction word, any one of them can be selected a source or destination. For stack operations, D7 is implicitly used. Like the 68000, the stack grows DOWN. There's also a 16-bit condition register (split into processor control status and flags), and a 16-bit program counter.<br><br>
-            
-            The ALU is built from four 74LS181s. Additional circuitry provides support for byte swap, right bitshift, and sign extend operations. The ALU produces four flag bits-- negative, zero, carry, overflow-- which are used for conditional jumps.<br><br>
-            
-            The CPU-16 includes support for seven maskable interrupts, as well as direct memory access by peripherals.<br><br>
-
-            A two-phase clock is used to prevent clock skew. Microcode flip-flops are clocked on the first phase, and all other synchronous chips are clocked on the second.<br><br>
-
-            The CPU-16 has a single 16-bit data bus, and a single 16-bit address bus. This allows for easy expandability, and is easy to implement.<br><br>
-            
-            A maximum of 64K words can be addressed at once, through 16-bits. For the sake of simplicity, it will (for now) feature a flat memory map with the first 48k delegated to the RAM, the next 8k delegated to device IO, and the final 8k delegated to ROM. However, I would like to eventually build a paging unit so I could run a "real" multitasking operating system.<br><br>
-            <b>Instruction set</b><br>
-            <img src="files/images/cpu16_isa.png" alt="CPU-16 instruction set"><br><br>
-            The CPU-16's instruction set is highly orthagonal, allowing the user to use any set of addressing modes with (nearly) any instruction. Supported addressing modes include:
-            <ul>
-                <li>[reg] - Register</li>
-                <li>$m - Direct address</li>
-                <li>$m(PC) - Program counter, relative</li>
-                <li>(reg) - Register indirect</li>
-                <li>$m(reg) - Register indirect, relative</li>
-                <li>(reg)+ - Register indirect, post-increment</li>
-                <li>-(reg) - Register indirect, pre-decrement</li>
-                <li>#m - Immediate</li>
-            </ul></p><p>
-            In addition, special "quick" instructions can store an immediate from 0-7 in the instruction word. Because they are only a single word long, these instructions save significant time and memory.<br><br>
-
-            Although CISC architectures tend to get a bad-rap these days, I felt that a well-designed one would be a perfect fit for the CPU-16. Not only would going with a microcoded CISC architecture increase my instruction density and thus save memory, but it would also let me use a memory word-size of 16-bits (versus the 48-bit microcode width).<br><br>
-            
-            Speaking of microcode, I'm quite proud of the design I devised for the sequencer. In order to cram 750-ish instructions into only a couple kilobytes, I couldn't waste a single address. Instead of each instruction having a set number of microcode steps, with a linearly-incremented index being kept in a counter chip, the last 10 bits (the NEXT field) of the instruction word act as the address of the next step. This means that you can jump around to any microinstruction, instead of only being able to execute one sequential step after another.<br><br>
-            
-            Instruction opcodes, interrupts, faults, and reset requests all act as starting indexes into individual microprograms, and are appropriately selected based on the current cycle, and instruction being executed.<br><br>
-            
-            <b>Assembler</b><br>
-            <img src="files/images/cpu16_asm.png" alt="CPU-16 assembly"><br><br>
-            Because I'm not a machine-code masochist, I wrote an assembler in Python. I think I've done a servicable job, though I definitely need to clean up my code.<br><br>
-            
-            Mnemonics and program structure are similar to that of many mc68000 assemblers, which makes sense considering the architecture's already heavy influence.<br><br>
-            
-            Instruction parameters are arranged as "source,destination". Instructions and addressing modes are written as they appear on the infosheet.<br><br>
-            
-            The assembler parses instructions on the first pass, and fills in labels on the second.<br><br>
-            
-            One of the hardest functions to write was the "dw" directive, which defines however many individual strings, integers, and characters the programmer desires. Especially difficult was getting it to work with strings and primitive datatypes in the same line.
-	        </p><br><br><hr><br>
-	        <p>© Hayden Buscher ~ 2022</p>
-        </div>
-
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myLinks");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
-        </script>
-    </body>
+<h3>ATLAS CPU-16</h3>
+<p><strong>Links</strong><br />
+<a href="https://github.com/techno-sorcery/CPU-16">GitHub</a><br />
+<a href="https://docs.google.com/spreadsheets/d/1oUmNbYWaNhDA6R6yvVTsaPwRNyT6d51xgqEzrvvlCoQ/edit?usp=sharing">Infosheet</a><br />
+<a href="https://www.youtube.com/watch?v=J5K6y3BfLHA">Assembler demo</a><br />
+<a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br></p>
+<p><strong>Architecture</strong></p>
+<p><img alt="CPU-16 architecture flowchart" src="/files/images/cpu16_arch.png" /></p>
+<p>The CPU-16 uses a Von Neumann architecture, with a single address space containing both instructions and data.</p>
+<p>There are eight general-purpose registers, D0-D7. Any combination can be selected as operands within the instruction word. However, D7 is implicity used for stack operations. As with most other architectures, the stack grows down. Separately, there's a condition register (processor status/flags), and 16-bit program counter.</p>
+<p>The ALU uses four 74181s. Additional circuitry provides byte swap, right bit-shift, and sign-extend functionality. Four flags— negative, zero, carry, overflow— are set every ALU operation  and used by conditional jumps.</p>
+<p>Support is included for seven maskable interrupts, peripheral direct memory access, and (in the future) fault handling.</p>
+<p>To prevent clock skew, a two-phase clock is used. Microcode is buffered on the first phase, and all other synchronous chips are clocked on the second.</p>
+<p>A maximum of 64k words can be addressed at once, through the 16-bit address bus. However, this could be extended further with the implementation of a paging unit.<br><br></p>
+<p><strong>Instruction set</strong></p>
+<p><img alt="CPU-16 instruction list" src="/files/images/cpu16_isa.png" /></p>
+<p>The CPU-16 instruction set is orthagonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:
+- [reg] - Register
+- $m - Address, direct
+- $m(PC) - Program counter, offset
+- (reg) - Register, indirect
+- $m(reg) - Register, indirect, offset
+- (reg)+ Register, indirect, post-incremented
+- -(reg) REgister, indirect, pre-decremented
+- #m - Immediate</p>
+<p>Special "quick" instructions can use an immediate from 0-7, stored in the instruction word.</p>
+<p>A CISC instruction set was chosen for maximum instruction density, as well as because it's what the mc68000 used.</p>
+<p>Microinstructions are stored in a 2k word memory bank. 10 bit instruction opcodes act as a starting index, while an equally-wide NEXT field provides the next microaddress. Because microinstructions can jump to wherever, a significant amount of code can be reused.</p>
+<p>Interrupts, faults, and reset requests also act as microinstruction indexes, and are appropriately selected based on current execution conditions.<br><br></p>
+<p><strong>Assembler</strong></p>
+<p><img alt="CPU-16 architecture flowchart" src="/files/images/cpu16_asm.png" /></p>
+<p>A quick-and-dirty assembler was written in Python, since only masochists like programming in machine code. It's a two-pass assembler; instructions are parsed first, and labels are filled in afterward.</p>
+<p>Mnemonics and program structure are similar to that of a conventional mc68000 assembler.</p>
+<p>Parameters are aranged in the order of "source,destination". Instructions are written as they appear on the infosheet.</p>
+<p>Several directives are supported, including "dw" which defines a series of individual primative datatypes and strings in memory.</p>		</p><br><br><hr>
+		<div id="footer"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/files/js/main.js"></script>
+</body>
 </html> 

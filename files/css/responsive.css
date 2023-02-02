@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 450px){
 	.main {margin-right: 0px;padding: 25px 15px 25px 15px}
-	p,dl,img {margin-left: 0px;margin-right: 0px}	
+	p,dl,img,.margins {margin-left: 0px;margin-right: 0px}
 }
 
 @media screen and (max-height: 450px) {
