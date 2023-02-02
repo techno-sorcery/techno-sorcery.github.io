@@ -34,7 +34,7 @@ An old-school crystal radio, built out of a desire to understand wireless commun
 One time, while at Home Depot, I saw a 4' x 2' plywood sheet and decided I needed my own workbench.
 
 [MESA Machine v2](/projects/mesamachine2.html)  
-Built over a two-month period after our first machine won regionals. Heavily upgraded.
+Built over a two-month period after our first machine won prelims. Heavily upgraded.
 
 [MESA Machine v1](/projects/mesamachine1.html)  
 A Rube Goldberg machine, built in physics class for the MESA Engineering Competition.
