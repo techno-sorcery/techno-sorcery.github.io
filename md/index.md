@@ -28,6 +28,7 @@ as my personal webpage and portfolio.
 [About](/about.html) - Basic info on this site's purpose.
 
 ### Recent Additions
+**Feb 03, 2023 – **[I love old ThinkPads](/blog/thinkpads.html)  
 **Feb 01, 2023 – **[Techno-Sorcery, Revamped](/blog/revamp.html)  
 **Feb 01, 2023 – **[Workbench](/projects/workbench.html)  
 **Feb 01, 2023 – **[MESA Machine v2](/projects/mesamachine2.html)  
