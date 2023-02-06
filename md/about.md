@@ -12,7 +12,7 @@ description: Basic info on this site's purpose.
 </div>
 
 ### About me
-<p><img style="max-height:225px" src="files/images/me.png" alt="Photo of me riding an artillary cannon on the USS Missouri."></p>
+<p><img style="max-height:225px" src="files/images/me.png" alt="Photo of me riding an artillery cannon on the USS Missouri."></p>
 
 Hello, I'm Hayden Buscher. Welcome to my personal webpage-turned portfolio.
 
@@ -20,7 +20,7 @@ I'm currently studying computer engineering at Cal Poly SLO, first-year. However
 
 I've worked on a host of other projects in the meantime, including a JS Video Poker game, an assembler written in Python, a DIY wooden workbench, and (of course) this website.
 
-I greatly enjoy music, especially that from the 70s and 80s. New wave, prog, punk, ambient, and classic rock are all favorites of mine. I've also watched a ton of movies, with some of my favorites being Bladerunner, Barry Lyndon, Apocalypse Now, and Napoleon Dynamite.<br><br>
+I greatly enjoy music, especially that from the 70s and 80s. New wave, prog, punk, ambient, and classic rock are all favorites of mine. I've also watched a ton of movies, with some of my favorites being Blade Runner, Barry Lyndon, Apocalypse Now, and Napoleon Dynamite.<br><br>
 
 ### Infrequently Asked Questions
 
@@ -28,7 +28,7 @@ I greatly enjoy music, especially that from the 70s and 80s. New wave, prog, pun
 I'm admittedly not using anything special, mostly vanilla HTML/CSS/JS with a bit of Jquery and a home-rolled static site generator. For hosting, I'm using GitHub Pages with a GoDaddy .com domain.<br><br>
 
 **What computer are you using?**  
-My main computer is a 2012 ThinkPad T530 I got from a swapmeet for $20. I've put a small bit of money into getting a (really nice) FHD screen, classic-style keyboard, quad-core i7, and extended battery. It has replaced my vastly more powerful desktop since I prefer to use one computer for everything. When I get back to my room, I just set it into the dock and my peripherals are magically conncted.<br><br>
+My main computer is a 2012 ThinkPad T530 I got from a swap meet for $20. I've put a small bit of money into getting a (really nice) FHD screen, classic-style keyboard, quad-core i7, and extended battery. It has replaced my vastly more powerful desktop since I prefer to use one computer for everything. When I get back to my room, I just set it into the dock and my peripherals are magically connected.<br><br>
 
 **What OS do you use?**  
 Debian Linux. Tried Arch for a bit, but it broke after an update because I hadn't done one in two months. Debian is for people who don't want to babysit their OS. The (thoroughly tested) main repo doesn't get updated until the next version is released, preventing sporadic breakdowns. Rather than being forced to adopt a rolling-release model, you can choose to install up-to-date software from the backports repo.<br><br>

@@ -18,7 +18,7 @@ I'll start with the most important thing first, I'm now using a static site gene
 
 By the way, you should consider giving wisPy a try. Because it only really does one thing, it's a dead-simple, low-overhead way of converting a vanilla html website to use markdown content. One of my roommates actually recommended that I pitch it to some professors at my university, since lots of them have old sites they never update because they hate dealing with html.
 
-I also modernized the theme a good bit. Yes, I know it still looks old-school, but that's what I want. It's memorable, looks cool in my opinion, and is easy to work on without using a bunch of libraries and other stuff. Main things I did were remove the gap between the main page and sidenav, remove all element shading, and replace the 2008-era subtle backgrounds with solid colors. No, the orange isn't going away, but I did desaturate it a bit so it's less jarring to look at.
+I also modernized the theme a good bit. Yes, I know it still looks old-school, but that's what I want. It's memorable, looks cool in my opinion, and is easy to work on without using a bunch of libraries and other stuff. Main things I did were remove the gap between the main page and sidenav, remove all element shading, and replace the 2008-era subtle backgrounds with solid colors. No, the orange isn't going away, but I did desaturate it a bit as to appear less jarring.
 
 Though it doesn't matter to anyone other than me, I reorganized the folder structure to be more logical and less cluttered. Makes it less annoying to traverse, I'm happy.
 
