@@ -21,9 +21,9 @@ group: Homebrew CPUs
 
 **Architecture**
 
-![PDC-8 architecture flowchart](/files/images/pdc_arch.png)
+![PDC-8 architecture flowchart](/projects/img/pdc_arch.png)
 
-The PDC-8 is a Harvard architecture machine, with separate address spaces for programs and data, and no provisions for random program memory operations. This was done for the sake of simplicity, as it greatly reduces the amount of neccessary control logic. By eliminating the Von Neumann bottleneck, it also allows for higher instruction throughput.
+The PDC-8 is a Harvard architecture machine, with separate address spaces for programs and data, and no provisions for random program memory operations. This was done for the sake of simplicity, as it greatly reduces the amount of necessary control logic. By eliminating the Von Neumann bottleneck, it also allows for higher instruction throughput.
 
 Several registers are availale to the programmer:
 

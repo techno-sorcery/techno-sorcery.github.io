@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>IVANIAC&nbsp— Techno-Sorcery</title>
 	<meta name="author" content="Hayden Buscher">
 	<meta name="description" content="My first CPU, a 4-bit Harvard architecture machine built in Minecraft.">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/files/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/files/css/responsive.css">
-	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/global/css/main.css">
+<link rel="stylesheet" type="text/css" href="/global/css/responsive.css">
+<link rel="icon" type="image/x-icon" href="/global/img/favicon.ico">
 </head>
+
 <body>
-	<div id="sidenav"></div>
-	<div id="topnav"></div>
-	<div class="main" id="main">
-		<div id="header"></div>
+<div id="sidenav"></div>
+<div id="topnav"></div>
+<div class="main" id="main">
+<div id="header"></div>
 <div class="border header">
 <hr>
 <p>My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.</p>
@@ -26,12 +28,12 @@
 <a href="https://youtu.be/TZ7_-GC8dOE">YouTube demo</a><br />
 <a href="http://www.mediafire.com/file/opm06dq...">World download</a><br><br></p>
 <p><strong>Architecture</strong></p>
-<p><img alt="IVANIAC architecture flowchart" src="/files/images/ivaniac_arch.png" /></p>
+<p><img alt="IVANIAC architecture flowchart" src="/projects/img/ivaniac_arch.png" /></p>
 <p>The IVANIAC is a Harvard architecture CPU, as it stores instructions in a separate instruction space from data. It lacks a dedicated data store, instead using two general-purpose registers. Both act as ALU operands, and can freely operate upon each other. It also features a display register, and a program counter</p>
 <p>With a data width of 4 bits and no carry support, its numerical range is limited from 0 to 15. </p>
 <p>The ALU can perform one of four functions on A and B— ADD, AND, OR, or XOR. Every operation sets the "overflow" flag, which is used by conditional jumps.<br><br></p>
 <p><strong>Instruction set</strong><br />
-In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half of each byte is an opcode, and the last half can be an immedate value or address depending on the instruction.</p>
+In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half of each byte is an opcode, and the last half can be an immediate value or address depending on the instruction.</p>
 <ol>
 <li>00000000 - NOP</li>
 <li>0001xxxx - MOV xxxx TO A</li>
@@ -52,13 +54,15 @@ In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half 
 </ol>
 <p>In the demo uploaded to YouTube, the IVANIAC was shown calculating fibonacci numbers. The program alternated between adding A and B to each other, moving them to the display register, and performing a conditional jump if there was an overflow.<br><br></p>
 <p><strong>Background</strong></p>
-<p><img alt="IVANIAC flyover" src="/files/images/ivaniac_flyover.png" /></p>
+<p><img alt="IVANIAC flyover" src="/projects/img/ivaniac_flyover.png" /></p>
 <p>In retrospect, the IVANIAC is a pretty poor design. Instruction decoding relies on slow repeaters, there's no arithmetic carry, no data memory, and address space is severely limited with 4 bits. However, I'm still proud of having built it.</p>
 <p>I began working on the machine in late 2019, as a high school sophomore. I knew relatively little about computer engineering, but had nevertheless  wanted to build a redstone CPU. Far in over my head, the project quickly fizzled out. By the time April 2020 came around, I was stuck at home and had nothing better to do but finish the IVANIAC. After an entire week of building, it was finally completed.</p>
-<p>It's amazing that the IVANIAC works at all, considering I didn't have any clear plans or schematics. I came up with everything as I went along, learning CPU design for the first time. Despite its inherent quirks, I'll always champion the IVANIAC as my first-ever architecture.</p>		</p><br><br><hr>
-		<div id="footer"></div>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/files/js/main.js"></script>
+<p>It's amazing that the IVANIAC works at all, considering I didn't have any clear plans or schematics. I came up with everything as I went along, learning CPU design for the first time. Despite its inherent quirks, I'll always champion the IVANIAC as my first-ever architecture.</p></p><br><br><hr>
+<div id="footer"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/global/js/main.js"></script>
 </body>
+
 </html> 

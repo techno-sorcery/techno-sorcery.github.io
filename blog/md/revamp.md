@@ -2,6 +2,7 @@
 title: Revamp
 author: Hayden Buscher
 description: I've completely revamped this site, from top to bottom.
+date: 02/01/2023
 ---
 
 <div class="border header">

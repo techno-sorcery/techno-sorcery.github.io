@@ -19,7 +19,7 @@ group: Homebrew CPUs
 
 **Architecture**
 
-![IVANIAC architecture flowchart](/files/images/ivaniac_arch.png)
+![IVANIAC architecture flowchart](/projects/img/ivaniac_arch.png)
 
 The IVANIAC is a Harvard architecture CPU, as it stores instructions in a separate instruction space from data. It lacks a dedicated data store, instead using two general-purpose registers. Both act as ALU operands, and can freely operate upon each other. It also features a display register, and a program counter
 
@@ -28,7 +28,7 @@ With a data width of 4 bits and no carry support, its numerical range is limited
 The ALU can perform one of four functions on A and B— ADD, AND, OR, or XOR. Every operation sets the "overflow" flag, which is used by conditional jumps.<br><br>
 
 **Instruction set**  
-In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half of each byte is an opcode, and the last half can be an immedate value or address depending on the instruction.
+In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half of each byte is an opcode, and the last half can be an immediate value or address depending on the instruction.
 
 1. 00000000 - NOP
 2. 0001xxxx - MOV xxxx TO A
@@ -51,7 +51,7 @@ In the demo uploaded to YouTube, the IVANIAC was shown calculating fibonacci num
 
 **Background**
 
-![IVANIAC flyover](/files/images/ivaniac_flyover.png)
+![IVANIAC flyover](/projects/img/ivaniac_flyover.png)
 
 In retrospect, the IVANIAC is a pretty poor design. Instruction decoding relies on slow repeaters, there's no arithmetic carry, no data memory, and address space is severely limited with 4 bits. However, I'm still proud of having built it.
 

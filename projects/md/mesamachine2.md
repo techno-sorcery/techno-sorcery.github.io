@@ -21,9 +21,9 @@ I still believe the MESA Machine to be one of the coolest thing's I've ever buil
 
 **Description**  
 
-![Photo of the MESA Machine](/files/images/mesamachine2_pic.png)
+![Photo of the MESA Machine](/projects/img/mesamachine2_pic.png)
 
-A metal ball bearing starts  at the top of the machine, where it has the most potential energy. When a cord connectecd to a door is yanked, the ball bearing is released. Its motion is translated to kinetic energy as it continues down three ramps, and falls on a clapper.
+A metal ball bearing starts  at the top of the machine, where it has the most potential energy. When a cord connected to the starter door is yanked, the ball bearing is released. Its motion is translated to kinetic energy as it continues down three ramps, and falls on a clapper.
 
 The clapper translates the bearing's Y velocity into X velocity, pushing another bearing from rest. This bearing continues down another three ramps before triggering a mousetrap.
 
@@ -33,7 +33,7 @@ The switch is connected to an arduino and, when closed, it starts rotating a ser
 
 The golf balls are caught at the bottom by reservoir, where they displace the water enough for it to flow through a straw and into a pulley cup. When the pull cup contains enough water, it falls onto another switch connected to the same arduino.
 
-The arduino then triggers a second servo, also attached to a string. Once the servo has rotated enough, a third ball bearing begins rolling down a final series of three ramps. It's finally caught in a second pully cup, which falls on a switch and triggers the fan.
+The arduino then triggers a second servo, also attached to a string. Once the servo has rotated enough, a third ball bearing begins rolling down a final series of three ramps. It's finally caught in a second pulley cup, which falls on a switch and triggers the fan.
 <br><br>
 
 **Demonstration**  

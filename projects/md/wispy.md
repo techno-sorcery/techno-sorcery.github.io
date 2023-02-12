@@ -15,7 +15,7 @@ description: A dead-simple static site generator, for those who want nothing mor
 [Github repo](https://github.com/techno-sorcery/wisPy)
 
 **Description**  
-wisPy is a dead-simple static site generator, for those want nothing more than to convert markdown to html. While full CMSs have lots of useful features, many go unused with simpler wesites. This adds unneccessary complexity to otherwise straight-forward projects. 
+wisPy is a dead-simple static site generator, for those want nothing more than to convert markdown to html. While full CMSs have lots of useful features, many go unused with simpler websites. This adds unnecessary complexity to otherwise straight-forward projects. 
 
 wisPy is different- all it does is scrape markdown files from any number of input folders, apply the specified themes, and dump the resulting html files into any number of output folders. That's it. It can also parse integrated YAML metadata, and generate corresponding title/meta tags.
 

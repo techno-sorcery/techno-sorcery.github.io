@@ -13,6 +13,9 @@ date: 02/03/2023
 </div>
 
 ### I love old ThinkPads — February 03, 2023
+
+![ThinkChad T530 setup](img/thinkchad.png)
+
 For the longest time, I used a desktop as my main computer. It made sense; desktops have better thermals, better performance, and are overall a better value than laptops. I was assigned one at school, too, which covered my portable computing needs. Unfortunately, when they downgraded from Lenovo Yogas to Chromebooks, I couldn't run the software needed to work on my projects.
 
 I already had a seldom-used 2012 MacBook Pro. I managed to get it up and running and, while it served my needs until graduation, the thermal performance was abhorrent. It would spike to 75C while web browsing, even higher if doing something demanding. Not to mention the battery was worn out, keys were falling off, and it would randomly refuse to start.

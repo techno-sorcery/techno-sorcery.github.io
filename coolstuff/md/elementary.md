@@ -20,4 +20,4 @@ description: Renders Wolfram's elementary cellular automata, of which there are 
 <button type="button" onclick=point()>Single</button>
 <button id='toolButton' type="button" onclick=rand()>Random</button>
 
-<script type="text/javascript" src='/files/js/automata/elementary.js'></script>
+<script type="text/javascript" src='js/automata/elementary.js'></script>
