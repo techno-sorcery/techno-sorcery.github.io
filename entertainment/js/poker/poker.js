@@ -39,6 +39,15 @@ const hands = [
 	'Junk'
 ];
 
+addEventListener('keydown', (event) => {
+	if ('12345'.includes(event.key)){
+		hold(parseInt(event.key))
+	}
+	else if (event.key === 'Enter'){
+		betAmnt();
+	}
+});
+
 updateTable()
 preload();
 document.getElementById('balanceDisp').value = '$'.concat(balance);
