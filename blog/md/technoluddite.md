@@ -3,6 +3,7 @@ title: You should be a techno-luddite
 author: Hayden Buscher
 description: Old ThinkPads are the best computers in existence. Really.
 date: 02/06/2023
+draft: true
 ---
 
 <div class="border header">

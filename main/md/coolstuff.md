@@ -32,13 +32,13 @@ Rock music from the 70s and 80s. You could probably find it on cassette, maybe e
 Who needs music with soul? We've got drum machines!
 
 ### Academics
-[Chapter 2](/files/docs/Chapter 2 Bio Guide.pdf) - Atoms, molecules, and reaction  
-[Chapter 3](/files/docs/Chapter 2 Bio Guide.pdf) - Cells  
-[Chapter 4](/files/docs/Chapter 2 Bio Guide.pdf) - Cellular Respiration and Photosynthesis  
-[Chapter 5](/files/docs/Chapter 2 Bio Guide.pdf) - Cell Cycle and Mitosis  
-[Chapter 6](/files/docs/Chapter 2 Bio Guide.pdf) - Meiosis and Genetics  
-[Chapter 7](/files/docs/Chapter 2 Bio Guide.pdf) - Genetic Disorders  
+[Chapter 2](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Atoms, molecules, and reaction  
+[Chapter 3](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cells  
+[Chapter 4](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cellular Respiration and Photosynthesis  
+[Chapter 5](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cell Cycle and Mitosis  
+[Chapter 6](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Meiosis and Genetics  
+[Chapter 7](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Genetic Disorders  
 
-[AP Chem 2020](/files/docs/AP Chem 2020.pdf") - AP test study guide
+[AP Chem 2020](/coolstuff/docs/AP Chem 2020.pdf) - AP test study guide
 
-[Ancient Civ](/files/docs/Rome and Christianity.pdf) - Rome and Christianity
+[Ancient Civ](/coolstuff/docs/Rome and Christianity.pdf) - Rome and Christianity

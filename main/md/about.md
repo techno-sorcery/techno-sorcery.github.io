@@ -2,6 +2,7 @@
 title: About
 author: Hayden Buscher
 description: Basic info on this site's purpose.
+lastmod: 2023-02-14
 ---
 
 <div class="border header">

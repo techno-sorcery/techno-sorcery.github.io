@@ -3,6 +3,7 @@ title: I am selling my belongings
 author: Hayden Buscher
 description: I will own nothing, and I *will* be happy.
 date: 02/07/2023
+draft: true
 ---
 
 <div class="border header">

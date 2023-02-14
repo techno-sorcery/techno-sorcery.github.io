@@ -2,6 +2,7 @@
 title: Video Poker
 author: Hayden Buscher
 description: A five-card draw Video Poker game, 9/6 Jacks or Better, programmed in JavaScript.
+css: /global/css/main.css /global/css/responsive.css css/poker.css
 ---
 
 <div class="border header">
@@ -12,7 +13,6 @@ description: A five-card draw Video Poker game, 9/6 Jacks or Better, programmed 
 </div>
 
 ### Video Poker
-<link rel="stylesheet" type="text/css" href="css/poker.css">
 <table style="max-width:800px">
 <tr>
 <th style="width:35%">Hand </th>
