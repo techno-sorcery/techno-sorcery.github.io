@@ -5,14 +5,6 @@ description: A dead-simple static site generator, for those who want nothing mor
 lastmod: 2023-02-14
 ---
 
-<<<<<<< HEAD
-<div class="border header">
-<hr>
-<p>A dead-simple static site generator, for those who want nothing more than to convert markdown to html.
-</p>
-<hr>
-</div>
-
 ### Website Interpreter, Static aka wisPy  
 **Links**  
 [Github repo](https://github.com/techno-sorcery/wisPy)
@@ -22,17 +14,6 @@ wisPy is a dead-simple static site generator, for those want nothing more than t
 
 wisPy is different- all it does is scrape markdown files from any number of input folders, apply the specified themes, and dump the resulting html files into any number of output folders. It can also parse YAML-style metadata into corresponding title/meta tags, and generate xml sitemaps.
 
-=======
-### Website Interpreter, Static aka wisPy  
-**Links**  
-[Github repo](https://github.com/techno-sorcery/wisPy)
-
-**Description**  
-wisPy is a dead-simple static site generator, for those want nothing more than to convert markdown to html. While full CMSs have lots of useful features, many go unused with simpler websites. This adds unnecessary complexity to otherwise straight-forward projects. 
-
-wisPy is different- all it does is scrape markdown files from any number of input folders, apply the specified themes, and dump the resulting html files into any number of output folders. It can also parse YAML-style metadata into corresponding title/meta tags, and generate xml sitemaps.
-
->>>>>>> e4056136c437e2d441a93690fa7fa690d2322194
 If you'd like to see what wisPy can do, well... I use it to generate most of this site's content.<br><br>
 
 **Config System**  
