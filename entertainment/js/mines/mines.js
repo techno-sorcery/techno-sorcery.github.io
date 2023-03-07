@@ -10,6 +10,7 @@ const colors = ["white", "blue", "green", "red", "darkblue", "darkred", "cyan", 
 
 var grid = new Array(height);
 var playing = false;
+var firstTurn = true;
 var clicks = true;
 var timer = 0;
 var minesLeft = mines;
@@ -202,8 +203,21 @@ function uncover(y, x) {
 			grid[y][x].highlighted = true;
 
 			// Lose condition
-			gameLose();
+			if(firstTurn){
+
+				// If first click is mine, reset board
+				while(grid[y][x].number == 9){
+					reset()
+					playing = true;
+					firstTurn = false;
+				}
+				uncover(y,x)
+
+			} else {
+				gameLose();
+			}
 		}
+		firstTurn = false
 		render();
 	}
 }
@@ -336,7 +350,7 @@ c.addEventListener('mousedown', (e) => {
 		if (!grid[clickPos[0]][clickPos[1]].uncovered) {
 
 			// Flag
-			if (!grid[clickPos[0]][clickPos[1]].flagged && minesLeft > 0) {
+			if (!grid[clickPos[0]][clickPos[1]].flagged) {
 				minesLeft--;
 				grid[clickPos[0]][clickPos[1]].flagged = true;
 				if(grid[clickPos[0]][clickPos[1]].number == 9){
@@ -357,7 +371,7 @@ c.addEventListener('mousedown', (e) => {
 	}
 
 	// Win condition
-	if(actualLeft == 0 && tilesCovered == 0){
+	if(actualLeft == 0 && minesLeft >= 0 && tilesCovered == 0){
 		gameWin()
 	}
 });
@@ -399,6 +413,7 @@ function reset(){
 	// Reset vars
 	playing = false;
 	clicks = true;
+	firstTurn = true;
 	timer = 0;
 	minesLeft = mines;
 	actualLeft = mines;
