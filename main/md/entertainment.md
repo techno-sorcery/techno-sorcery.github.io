@@ -12,6 +12,9 @@ description: Games, personality quizzes, and other such fun things.
 </div>
 
 ### Games  
+[Minesweeper](/entertainment/mines.html)  
+The classic game of Minesweeper, running in your browser.
+
 [Video Poker](/entertainment/poker.html)  
 A five-card draw Video Poker game, 9/6 Jacks or Better, programmed in JavaScript.
 
