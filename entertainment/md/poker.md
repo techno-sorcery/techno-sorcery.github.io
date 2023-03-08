@@ -13,7 +13,9 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 </div>
 
 ### Video Poker
-<table style="max-width:800px">
+<div class="margins" style="width:800px">
+
+<table>
 <tr>
 <th style="width:35%">Hand </th>
 <th style="width:15%" id="tableMult1">x1</th>
@@ -50,39 +52,60 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <td id="hand10">Junk</td>
 <td id="table10">0</td>
 </tr></table>
-<div class="balls" style="max-width:800px">
+
+<table>
+<tr>
+
+<th class="noBorder">
 <div class="cardDiv" id="cardDivF">
 <h4 id='text1' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg1' disabled onclick=hold(1)>
 <img draggable="false" id='card1' src='js/cards/BLUE_BACK.svg'></button>
 <button id='hold1' type="button" style="width:100%" disabled onclick=hold(1)>Hold</button>
 </div>
+</th>
+
+<th class="noBorder">
 <div class="cardDiv">
 <h4 id='text2' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg2' disabled onclick=hold(2)>
 <img draggable="false" id='card2' src='js/cards/BLUE_BACK.svg'></button>
 <button id='hold2' type="button" style="width:100%" disabled onclick=hold(2)>Hold</button>
 </div>
+</th>
+
+<th class="noBorder">
 <div class="cardDiv">
 <h4 id='text3' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg3' disabled onclick=hold(3)>
 <img draggable="false" id='card3' src='js/cards/BLUE_BACK.svg'></button>
 <button id='hold3' type="button" style="width:100%" disabled onclick=hold(3)>Hold</button>
 </div>
+</th>
+
+<th class="noBorder">
 <div class="cardDiv">
 <h4 id='text4' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg4' disabled onclick=hold(4)>
 <img draggable="false" id='card4' src='js/cards/BLUE_BACK.svg'></button>
 <button id='hold4' type="button" style="width:100%" disabled onclick=hold(4)>Hold</button>
 </div>
+</th>
+
+<th class="noBorder">
 <div class="cardDiv"  id="cardDivL" style="padding-right:00%">
 <h4 id='text5' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg5' disabled onclick=hold(5)>
 <img draggable="false" id='card5' src='js/cards/BLUE_BACK.svg'></button>
 <button id='hold5' type="button" style="width:100%" disabled onclick=hold(5)>Hold</button>
 </div>
-</div><br>
-<button id='bet' type="button" style="width:100%;max-width:800px" onclick=betAmnt()> Bet</button><br><br>
+</th>
+
+</tr>
+</table>
+
+<br>
+<button id='bet' type="button" style="width:100%" onclick=betAmnt()> Bet</button><br><br>
 <div style="display:inline"><p style="display:inline">Bet:</p>
 <select id = "myList" onchange = updateTable()>
 <option>1</option>
@@ -95,5 +118,19 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <p class="balText">&nbspBal: </p>
 <input id="balanceDisp" class="balDisp" type="text" value="" readonly>
 </div>
+</div>
+</div>
+
+---
+
+**Instructions**  
+Click cards, 1-5 - Toggle hold  
+Bet button, Enter - Bet or draw  
+
+Select a bet multiplier using the dropdown menu.  
+"Held" cards from your first hand are kept, others are replaced upon "draw".  
+Match your hand to ones in the table to win.  
+
+
 <script src="js/cards/cardparse.js"></script>
 <script src="js/poker/poker.js"></script>

@@ -2,6 +2,7 @@
 title: Minesweeper
 author: Hayden Buscher
 description: The classic game of minesweeper, running in your browser.
+css: /global/css/main.css /global/css/responsive.css css/mines.css
 ---
 
 

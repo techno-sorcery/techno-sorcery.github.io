@@ -8,6 +8,7 @@ const pixelSize = 25;
 const mines = 40;
 const colors = ["white", "blue", "green", "red", "darkblue", "darkred", "cyan", "purple", "gray", "black"];
 
+var dispGrid = document.getElementById("grid");
 var grid = new Array(height);
 var playing = false;
 var firstTurn = true;

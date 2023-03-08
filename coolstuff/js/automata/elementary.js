@@ -16,10 +16,12 @@ var myRand = false;
 setRule();
 console.log(rule);
 
+
 for(let i=0;i<width;i++){
 	render(cells[i],i);
 }
 newInterval();
+
 
 function newInterval(){
 	if(run){
@@ -29,6 +31,7 @@ function newInterval(){
 	requestAnimationFrame(newInterval);
 	
 }
+
 
 function init(arr,rand){
 	for(let i=0;i<width;i++){
@@ -40,6 +43,7 @@ function init(arr,rand){
 	}
 	return arr;
 }
+
 
 function cycle(){
 	let temp = new Array(width);
@@ -61,12 +65,14 @@ function cycle(){
 	if(iterationY < height)iterationY++;
 }
 
+
 function render(cell,position){
 	if(cell == 1){
 		ctx.fillStyle = "#cc6600";	
 	} else ctx.fillStyle = "white";	
 	ctx.fillRect(position*pixelSize, iterationY*pixelSize, pixelSize, pixelSize);
 }
+
 
 function toggleRun(){
 	if(run){
@@ -78,6 +84,7 @@ function toggleRun(){
 	}
 }
 
+
 function clearCells(){
 	clearInterval(renderInterval);
 	document.getElementById('toggleRun').innerHTML = "Start";
@@ -87,6 +94,7 @@ function clearCells(){
 	alive = 0;
 	render();
 }
+
 
 function rand(){
 	iterationY = 0;
@@ -99,6 +107,7 @@ function rand(){
 	iterationY++;
 }
 
+
 function point(){
 	iterationY = 0;
 	ctx.clearRect(0, 0, c.width, c.height);
@@ -109,6 +118,7 @@ function point(){
 	}
 	iterationY++;
 }
+
 
 function setRule(){
 	let temp = run;
@@ -124,11 +134,12 @@ function setRule(){
 	run = temp;
 }
 
+
 function scrollUp(){
 	iterationY = height-1;
 	ctx.drawImage(ctx.canvas, 0, 0, width, height, 0, -1, width, height);
-	//ctx.clearRect(0, 0, c.width, c.height);
 }
+
 
 function step(){
 	if(iterationY > height-2) scrollUp();

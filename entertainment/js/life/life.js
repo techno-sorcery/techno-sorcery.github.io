@@ -1,10 +1,10 @@
-// Game of Life
-// Hayden Buscher ~ 2022
+// Game of Life v1.1
+// Hayden Buscher ~ 2022-2023
 var width = 102;
 var height = 102;
 var pixelSize = 5;
 var cells = new Array(height);
-cells = init(cells,true);
+
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var run = false;
@@ -13,95 +13,129 @@ var alive = 0;
 var drag = false;
 var erase = 1;
 
+cells = init(cells);
 newInterval();
 clearInterval(renderInterval);
-render();
+
 
 function newInterval(){
 	renderInterval = setInterval(function(){
 			evolve();
-			render();
-		}, 25);
+		}, 10);
 }
+
 
 c.addEventListener('mousedown', (e) => {
 	drag = true;
 	let rect = c.getBoundingClientRect();
-	cellPlace(Math.floor((e.clientX - rect.left)/pixelSize), Math.floor((e.clientY - rect.top)/pixelSize));
+	cellPlace(Math.floor((e.clientY - rect.top)/pixelSize), Math.floor((e.clientX - rect.left)/pixelSize));
 });
+
 
 document.addEventListener('mouseup', () => {
 	drag = false;
 });
 
+
 c.addEventListener('mousemove', (e) => {
 	if(drag){
 		let rect = c.getBoundingClientRect();
-		cellPlace(Math.floor((e.clientX - rect.left)/pixelSize), Math.floor((e.clientY - rect.top)/pixelSize));
+		cellPlace(Math.floor((e.clientY - rect.top)/pixelSize), Math.floor((e.clientX - rect.left)/pixelSize));
 	}
 });
 
-function cellPlace(x,y){
+
+function cellPlace(y,x){
 	if(cells[y][x] != erase){
 		cells[y][x] = erase;
-		render();
+		render(cells,y,x)
 	}
 }
 
-function init(arr,rand){
-	for(let i=0;i<height;i++){
-		arr[i] = new Array(width);
-		for(let j=0;j<width;j++){
-			if(rand){
-				arr[i][j] = Math.floor(Math.random() * 2);
-			} else arr[i][j] = 0;
+
+function init(arr){
+	for(let y = 0; y < height; y++){
+		arr[y] = new Array(width);
+		for(let x = 0; x < width; x++){
+			arr[y][x] = Math.floor(Math.random() * 2);
+			render(arr,y,x);
 		}
 	}
 	return arr;
 }
 
+
 function evolve(){
 	alive = 0;
-	let temp = new Array(height);
-	temp = init(temp,false);
-	for(let i=0;i<height;i++){
-		for(let j=0;j<width;j++){
+	let temp = new Array(height)
+	
+	// Check each cell of 2D array
+	for(let row = 0 ; row < height; row++){
+		let tempRow = new Array(width)
+		for(let col = 0; col < width; col++){
+
+			// Set scan range
 			let myW = 3;
 			let myH = 3;
-			let myX = j-1;
-			let myY = i-1;
-			if(j==0||j==width-1) myW = 2;
-			if(i==0||i==height-1) myH = 2;
-			if(myX<1) myX = j;
-			if(myY<1) myY = i;
-			if(cells[i][j]==1) alive++;
-			temp[i][j] = scan(myX,myY,myW,myH,j,i);
-		}
-	}
-	cells = temp;
-	generation++;
-}
+			let myX = col - 1;
+			let myY = row - 1;
 
-function render(){
-	for(let i=0;i<height;i++){
-		for(let j=0;j<width;j++){
-			if(cells[i][j] == 1){
+			// Transform scan range
+			if(row == 0 || row == height - 1){
+				myH = 2;
+			}
+			if(col == 0 || col == width - 1){
+				myW = 2;
+			}
+			if(myX < 1){
+				myX = col;
+			}
+			if(myY < 1){
+				myY = row;
+			}
+
+			// Scan neighbors
+			if(cells[row][col] == 1){
+				alive++;
+			}
+			tempRow[col] = scan(myX, myY, myW, myH, row, col);
+
+			// Render
+			if(tempRow[col] == 1){
 				ctx.fillStyle = "#cc6600";
 			} else {
 				ctx.fillStyle = "white";
 			}
-			ctx.fillRect(j*pixelSize+1, i*pixelSize+1, pixelSize-1, pixelSize-1);
+			ctx.fillRect(col * pixelSize + 1, row * pixelSize + 1, pixelSize - 1, pixelSize - 1);
 		}
+		temp[row] = tempRow
 	}
+	cells = temp;
+	generation++;
+
 	document.getElementById('genDisp').innerHTML = generation;
 	document.getElementById('liveDisp').innerHTML = alive;
 }
 
-function scan(x,y,w,h,sX,sY){
+
+// Display array cell
+function render(arr,y,x){
+	if(arr[y][x] == 1){
+		ctx.fillStyle = "#cc6600";
+	} else {
+		ctx.fillStyle = "white";
+	}
+	ctx.fillRect(x * pixelSize + 1, y * pixelSize + 1, pixelSize - 1, pixelSize - 1);
+}
+
+// Check neighbors to determine if cell lives, dies, or is born
+function scan(x, y, w, h, sY, sX){
 	let neighbors = 0;
-	for(let i=y;i<y+h;i++){
-		for(let j=x;j<x+w;j++){
-			if(cells[i][j]==1 && !(j==sX && i==sY)) neighbors++;
+	for(let row = y; row < y + h; row++){
+		for(let col = x; col < x + w; col++){
+			if(cells[row][col] == 1 && !(col == sX && row == sY)){
+				neighbors++;
+			}
 		}
 	}
 	if((neighbors == 2 && cells[sY][sX] == 1 )|| neighbors == 3){
@@ -109,6 +143,7 @@ function scan(x,y,w,h,sX,sY){
 	} else return 0;
 }
 
+// Toggle game run state
 function toggleRun(){
 	if(run){
 		clearInterval(renderInterval);
@@ -121,29 +156,33 @@ function toggleRun(){
 	}
 }
 
-function step(){
-	evolve();
-	render();
-}
-
+// Clear all cells
 function clearCells(){
 	clearInterval(renderInterval);
 	document.getElementById('toggleRun').innerHTML = "Start";
 	run = false;
-	cells = init(cells,false);
+	
+	ctx.fillStyle = "white";
+	for(let row = 0; row < height; row++){
+		for(let col = 0; col < width; col++){
+			cells[row][col] = 0;
+			ctx.fillRect(col*pixelSize+1, row*pixelSize+1, pixelSize-1, pixelSize-1);
+		}
+	}
+
 	generation = 0;
 	alive = 0;
-	render();
 }
 
+// Generate new, random cell array
 function rand(){
 	clearInterval(renderInterval);
-	cells = init(cells,true);
+	cells = init(cells);
 	generation = 0;
-	render();
 	if(run) newInterval();
 }
 
+// Toggle pen draw and erase
 function toggle(){
 	if(erase == 0){
 		document.getElementById('toolButton').innerHTML = "Erase";

@@ -1,3 +1,11 @@
+@media screen and (min-width: 1601px) {
+	.main {
+		padding-left: 150px;
+		padding-right: 150px;
+
+	}
+}
+
 @media screen and (min-width: 1001px){
 	.topnav {display: none;}
 }
@@ -12,7 +20,6 @@
 	h1 {font-size: 32px;}
 	h2 {font-size: 28px;}
 	h3 {font-size: 28px;}
-	
 }
 
 @media screen and (max-width: 800px){
