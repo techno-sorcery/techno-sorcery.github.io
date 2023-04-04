@@ -14,6 +14,7 @@ var order = [];
 let payoutAudio = new Audio('js/poker/payout.mp3');
 let payinAudio = new Audio('js/poker/payin.mp3');
 let pingAudio = new Audio('js/poker/ping.mp3');
+
 const payTable = [
 	250,
 	50,
@@ -26,6 +27,7 @@ const payTable = [
 	1,
 	0
 ];
+
 const hands = [
 	'Royal Flush',
 	'Straight Flush',
@@ -40,7 +42,7 @@ const hands = [
 ];
 
 addEventListener('keydown', (event) => {
-	if ('12345'.includes(event.key)){
+	if ('12345'.includes(event.key) && draw){
 		hold(parseInt(event.key))
 	}
 	else if (event.key === 'Enter'){
@@ -67,9 +69,7 @@ function betAmnt(){
 		preload();
 		document.getElementById('bet').disabled = true;
 		for(let i=0;i<5;i++){
-				document.getElementById('hold'.concat(i+1)).disabled = true;
 				document.getElementById('holdImg'.concat(i+1)).disabled = true;
-				document.getElementById('hold'.concat(i+1)).innerHTML = "Hold";
 			}
 		//Check if balance is too low
 		if(!draw){
@@ -136,7 +136,6 @@ function toggleDraw(){
 	if(draw){
 		document.getElementById('bet').innerHTML = "Draw";
 		for(let i=0;i<5;i++){
-			document.getElementById('hold'.concat(i+1)).disabled = false;
 			document.getElementById('holdImg'.concat(i+1)).disabled = false;
 		}
 		document.getElementById('myList').disabled = true;
@@ -156,11 +155,9 @@ function hold(id){
 	pingAudio.play();
 	if(held[id-1]){
 		document.getElementById('text'.concat(id)).innerHTML = "&nbsp";
-		document.getElementById('hold'.concat(id)).innerHTML = "Hold";
 		held[id-1] = false;
 	} else {
 		document.getElementById('text'.concat(id)).innerHTML = "Held";
-		document.getElementById('hold'.concat(id)).innerHTML = "<b>Held</b>";
 		held[id-1] = true;
 	}
 }

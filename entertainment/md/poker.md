@@ -13,7 +13,7 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 </div>
 
 ### Video Poker
-<div class="margins" style="width:800px">
+<div class="margins" style="max-width:800px">
 
 <table>
 <tr>
@@ -61,7 +61,6 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <h4 id='text1' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg1' disabled onclick=hold(1)>
 <img draggable="false" id='card1' src='js/cards/BLUE_BACK.svg'></button>
-<button id='hold1' type="button" style="width:100%" disabled onclick=hold(1)>Hold</button>
 </div>
 </th>
 
@@ -70,7 +69,6 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <h4 id='text2' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg2' disabled onclick=hold(2)>
 <img draggable="false" id='card2' src='js/cards/BLUE_BACK.svg'></button>
-<button id='hold2' type="button" style="width:100%" disabled onclick=hold(2)>Hold</button>
 </div>
 </th>
 
@@ -79,7 +77,6 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <h4 id='text3' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg3' disabled onclick=hold(3)>
 <img draggable="false" id='card3' src='js/cards/BLUE_BACK.svg'></button>
-<button id='hold3' type="button" style="width:100%" disabled onclick=hold(3)>Hold</button>
 </div>
 </th>
 
@@ -88,7 +85,6 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <h4 id='text4' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg4' disabled onclick=hold(4)>
 <img draggable="false" id='card4' src='js/cards/BLUE_BACK.svg'></button>
-<button id='hold4' type="button" style="width:100%" disabled onclick=hold(4)>Hold</button>
 </div>
 </th>
 
@@ -97,7 +93,6 @@ css: /global/css/main.css /global/css/responsive.css css/poker.css
 <h4 id='text5' class="holdText">&nbsp</h4>
 <button class='imgButton' id='holdImg5' disabled onclick=hold(5)>
 <img draggable="false" id='card5' src='js/cards/BLUE_BACK.svg'></button>
-<button id='hold5' type="button" style="width:100%" disabled onclick=hold(5)>Hold</button>
 </div>
 </th>
 
@@ -133,4 +128,4 @@ Match your hand to ones in the table to win.
 
 
 <script src="js/cards/cardparse.js"></script>
-<script src="js/poker/poker.js"></script>
+<script src="js/poker/pokerVideo copy.js"></script>
