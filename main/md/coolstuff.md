@@ -39,6 +39,6 @@ Who needs music with soul? We've got drum machines!
 [Chapter 6](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Meiosis and Genetics  
 [Chapter 7](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Genetic Disorders  
 
-[AP Chem 2020](/coolstuff/docs/AP Chem 2020.pdf) - AP test study guide
+[AP Chem 2020](/coolstuff/docs/AP Chem 2020.pdf2) - AP test study guide
 
 [Ancient Civ](/coolstuff/docs/Rome and Christianity.pdf) - Rome and Christianity
