@@ -12,6 +12,9 @@ description: Essays, opinions, and personal/site news.
 </div>
 
 ### Blog  
+**July 26, 2023 — ** [I got a "new laptop (among other things)](/blog/new-laptop.html)  
+I got a pretty sweet laptop, and some other things I thought I'd never have..
+
 **February 03, 2023 — ** [I love old ThinkPads](/blog/thinkpads.html)  
 Old ThinkPads are the best computers in existence. Really.
 
