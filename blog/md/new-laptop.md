@@ -1,7 +1,7 @@
 ---
 title: I got a "new" laptop
 author: Hayden Buscher
-description: I've completely revamped this site, from top to bottom.
+description: I got a pretty sweet laptop. and some other things I thought I'd never have... 
 date: 07/24/2023
 ---
 
