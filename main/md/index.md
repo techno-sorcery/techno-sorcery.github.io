@@ -28,6 +28,7 @@ as my personal webpage and portfolio.
 [About](about.html) - Basic info on this site's purpose.
 
 ### Recent Additions
+**July 28, 2023 – **[My Computers](/coolstuff/computers.html)  
 **July 26, 2023 – **[I got a "new laptop (among other things)](/blog/new-laptop.html)  
 **Mar 06, 2023 – **[Minesweeper](/entertainment/mines.html)  
 **Feb 03, 2023 – **[I love old ThinkPads](/blog/thinkpads.html)  
