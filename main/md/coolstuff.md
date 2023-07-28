@@ -15,6 +15,10 @@ description: Notable projects I've worked on.
 [Elementary Automata](/coolstuff/elementary.html)  
 Renders Wolfram's elementary cellular automata, of which there are 256.
 
+### Pages
+[My Computers](/coolstuff/computers.html)  
+A list of the most notable computers I've owned (and used).
+
 ### Playlists
 [Classic Classical](https://open.spotify.com/playlist/4gjIatZfsFxEhlnaih5mU2?si=e94790f8317d4875)  
 The best of classical music (and a tad bit of ragtime). All I listened to in 10th grade.
