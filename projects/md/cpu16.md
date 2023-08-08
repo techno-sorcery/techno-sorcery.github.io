@@ -39,7 +39,8 @@ A maximum of 64k words can be addressed at once, through the 16-bit address bus.
 
 ![CPU-16 instruction list](/projects/img/cpu16_isa.png)
 
-The CPU-16 instruction set is orthogonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:
+The CPU-16 instruction set is orthogonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:  
+
 - [reg] - Register
 - $m - Address, direct
 - $m(PC) - Program counter, offset

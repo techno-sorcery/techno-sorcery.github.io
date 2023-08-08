@@ -16,6 +16,9 @@ description: Notable projects I've worked on.
 Renders Wolfram's elementary cellular automata, of which there are 256.
 
 ### Pages
+[Things I Use](/coolstuff/things.html)  
+A list of the hardware, software, and other things I use.
+
 [My Computers](/coolstuff/computers.html)  
 A list of the most notable computers I've owned (and used).
 

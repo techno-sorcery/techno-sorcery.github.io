@@ -40,15 +40,17 @@
 <p>A maximum of 64k words can be addressed at once, through the 16-bit address bus. However, this could be extended further with the implementation of a paging unit.<br><br></p>
 <p><strong>Instruction set</strong></p>
 <p><img alt="CPU-16 instruction list" src="/projects/img/cpu16_isa.png" /></p>
-<p>The CPU-16 instruction set is orthogonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:
-- [reg] - Register
-- $m - Address, direct
-- $m(PC) - Program counter, offset
-- (reg) - Register, indirect
-- $m(reg) - Register, indirect, offset
-- (reg)+ Register, indirect, post-incremented
-- -(reg) REgister, indirect, pre-decremented
-- #m - Immediate</p>
+<p>The CPU-16 instruction set is orthogonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:  </p>
+<ul>
+<li>[reg] - Register</li>
+<li>$m - Address, direct</li>
+<li>$m(PC) - Program counter, offset</li>
+<li>(reg) - Register, indirect</li>
+<li>$m(reg) - Register, indirect, offset</li>
+<li>(reg)+ Register, indirect, post-incremented</li>
+<li>-(reg) REgister, indirect, pre-decremented</li>
+<li>#m - Immediate</li>
+</ul>
 <p>Special "quick" instructions can use an immediate from 0-7, stored in the instruction word.</p>
 <p>A CISC instruction set was chosen for maximum instruction density, as well as because it's what the mc68000 used.</p>
 <p>Microinstructions are stored in a 2k word memory bank. 10 bit instruction opcodes act as a starting index, while an equally-wide NEXT field provides the next micro-address. Because microinstructions can jump to wherever, a significant amount of code can be reused.</p>
