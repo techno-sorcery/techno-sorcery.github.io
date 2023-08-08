@@ -28,6 +28,7 @@ as my personal webpage and portfolio.
 [About](about.html) - Basic info on this site's purpose.
 
 ### Recent Additions
+**Aug 07, 2023 – **[Things I Use](/coolstuff/things.html)  
 **July 28, 2023 – **[My Computers](/coolstuff/computers.html)  
 **July 26, 2023 – **[I got a "new laptop (among other things)](/blog/new-laptop.html)  
 **Mar 06, 2023 – **[Minesweeper](/entertainment/mines.html)  
@@ -36,4 +37,3 @@ as my personal webpage and portfolio.
 **Feb 01, 2023 – **[Workbench](/projects/workbench.html)  
 **Feb 01, 2023 – **[MESA Machine v2](/projects/mesamachine2.html)  
 **Jan 30, 2023 – **[wisPy](/projects/wispy.html)  
-**Jan 12, 2023 – **[Blog](blog.html)  
