@@ -34,7 +34,7 @@ a {
 	min-height: 100vh;
 }
 	
-.header h1,h2 {
+.header h1, h2 {
 	margin: 0;
 }
 
@@ -105,13 +105,6 @@ button {
 	padding-right: 15px;
 }
 
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 50%;
-	height: 1.5rem; 
-}
-
 .floatright{
 	display:block;
 	float:right;
@@ -130,4 +123,43 @@ pre {
 .margins {
 	margin-left: 20px;
 	margin-right: 20px;
+}
+
+.sidenav {
+	height: 100%;
+	width: 170px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #343637;
+	overflow: hidden;
+	padding-top: 25px;
+}
+
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	color: silver;
+	display: block;
+}
+
+
+.sidenav a:hover {
+	color: white;
+}
+
+.topnav {
+	background-color: #343637;
+	width: 100%;
+	padding: 15px 0px 15px 0px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.topnav a {
+	padding: 0px 10px 0px 10px;
+	color: silver;
 }
