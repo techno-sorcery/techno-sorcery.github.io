@@ -135,7 +135,6 @@ def configParse(path) -> tuple:
 					globalParams['root'] = './'
 		return (params,globalParams)
 
-
 # Format single parameter
 def paramFormat(key,param) -> str:
 	pathParams = ['input','output','template','root','css']
