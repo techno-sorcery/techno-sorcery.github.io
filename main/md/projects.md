@@ -26,6 +26,9 @@ My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for
 A dead-simple static site generator, for those who want nothing more than to convert markdown to html.
 
 ### Electronics
+[FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
+An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.
+
 [Crystal radio](/projects/crystalradio.html)  
 An old-school crystal radio, built out of a desire to understand wireless communications.
 

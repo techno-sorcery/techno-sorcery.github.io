@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="wisPy v1.1.0">
+<title>ATLAS ARIX-16&nbsp— Techno-Sorcery</title>
+<meta name="author" content="Hayden Buscher">
+<meta name="description" content="A 16-bit CISC architecture CPU, loosely based off the mc68000.">
+<link rel="stylesheet" href="/global/css/main.css">
+<link rel="stylesheet" href="/global/css/responsive.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/global/img/favicon.ico">
+    </head>
+
+    <body>
+        <div class="sidenav">
+            <br>
+            <a href="/main/index.html">Index</a>
+            <br>
+            <a href="/main/blog.html">Blog</a>
+            <a href="/main/projects.html">Projects</a>
+            <a href="/main/coolstuff.html">Cool stuff</a>
+            <a href="/main/entertainment.html">Entertainment</a>
+            <br>
+            <a href="/main/about.html">About</a>
+        </div>
+
+        <div class="topnav" style="padding-top">
+            <a href="/main/index.html">Index</a>
+            <a href="/main/blog.html">Blog</a>
+            <a href="/main/projects.html">Projects</a>
+            <a href="/main/coolstuff.html">Cool stuff</a>
+            <a href="/main/entertainment.html">Entertainment</a>
+            <a href="/main/about.html">About</a>
+        </div>
+
+        <div class="main" id="main">
+            <div class="header">
+                <h1>Techno-Sorcery</h1>
+                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
+                <br>
+            </div>
+<div class="border header">
+<hr>
+<p>A 16-bit, pipelined RISC architecture.</p>
+<hr>
+</div>
+
+<h3>ATLAS CPU-16</h3>
+<p><strong>Links</strong><br />
+<a href="https://github.com/techno-sorcery/CPU-16">GitHub</a><br />
+<a href="https://docs.google.com/spreadsheets/d/1oUmNbYWaNhDA6R6yvVTsaPwRNyT6d51xgqEzrvvlCoQ/edit?usp=sharing">Info sheet</a><br />
+<a href="https://www.youtube.com/watch?v=J5K6y3BfLHA">Assembler demo</a><br />
+<a href="https://www.youtube.com/watch?v=JQ4_DpvTwrQ">"Hello, world!" demo</a><br><br></p>
+<p><strong>Architecture</strong></p>
+<p><img alt="CPU-16 architecture flowchart" src="/projects/img/cpu16_arch.png" /></p>
+<p>The ARIX-16 architecture appears to follow the Von Neumann model, though internally it separates program and data memory. Although the current implementation uses a common memory bank, separate caches could be implemented in the future.</p>
+<p>Sixteen general-purpose registers are present, alongside the program counter, condition register, and interrupt counter. Any set of general registers can be used with most operations. However, the following register convention has been defined:</p>
+<ul>
+<li>r0/a0 - Argument/return value 0</li>
+<li>r1/a1 - Argument/return value 1</li>
+<li>r2/a2 - Argument/return value 2</li>
+<li>r3/a3 - Argument/return value 3<br><br></li>
+<li>r4/t0 - Temporary register 0</li>
+<li>r5/t1 - Temporary register 1<br><br></li>
+<li>r6/v0 - Local variable 0</li>
+<li>r7/v1 - Local variable 1</li>
+<li>r8/v2 - Local variable 2</li>
+<li>r9/v3 - Local variable 3</li>
+<li>r10/v4 - Local variable 4</li>
+<li>r11/v5 - Local variable 5</li>
+<li>r12/v6 - Local variable 6<br><br></li>
+<li>r13/lr - Link register</li>
+<li>r14/fp - Frame pointer</li>
+<li>r15/sp - Stack pointer</li>
+</ul>
+<p>There are eight general-purpose registers, D0-D7. Any combination can be selected as operands within the instruction word. However, D7 is implicitly used for stack operations. As with most other architectures, the stack grows down. Separately, there's a condition register (processor status/flags), and 16-bit program counter.</p>
+<p>The ALU uses four 74181s. Additional circuitry provides byte swap, right bit-shift, and sign-extend functionality. Four flags— negative, zero, carry, overflow— are set every ALU operation  and used by conditional jumps.</p>
+<p>Support is included for seven maskable interrupts, peripheral direct memory access, and (in the future) fault handling.</p>
+<p>To prevent clock skew, a two-phase clock is used. Microcode is buffered on the first phase, and all other synchronous chips are clocked on the second.</p>
+<p>A maximum of 64k words can be addressed at once, through the 16-bit address bus. However, this could be extended further with the implementation of a paging unit.<br><br></p>
+<p><strong>Instruction set</strong></p>
+<p><img alt="CPU-16 instruction list" src="/projects/img/cpu16_isa.png" /></p>
+<p>The CPU-16 instruction set is orthogonal by design, allowing the programmer to use any set of addressing modes with (most) instructions. Supported modes include:  </p>
+<ul>
+<li>[reg] - Register</li>
+<li>$m - Address, direct</li>
+<li>$m(PC) - Program counter, offset</li>
+<li>(reg) - Register, indirect</li>
+<li>$m(reg) - Register, indirect, offset</li>
+<li>(reg)+ Register, indirect, post-incremented</li>
+<li>-(reg) REgister, indirect, pre-decremented</li>
+<li>#m - Immediate</li>
+</ul>
+<p>Special "quick" instructions can use an immediate from 0-7, stored in the instruction word.</p>
+<p>A CISC instruction set was chosen for maximum instruction density, as well as because it's what the mc68000 used.</p>
+<p>Microinstructions are stored in a 2k word memory bank. 10 bit instruction opcodes act as a starting index, while an equally-wide NEXT field provides the next micro-address. Because microinstructions can jump to wherever, a significant amount of code can be reused.</p>
+<p>Interrupts, faults, and reset requests also act as microinstruction indexes, and are appropriately selected based on current execution conditions.<br><br></p>
+<p><strong>Assembler</strong></p>
+<p><img alt="CPU-16 architecture flowchart" src="/projects/img/cpu16_asm.png" /></p>
+<p>A quick-and-dirty assembler was written in Python, since only masochists like programming in machine code. It's a two-pass assembler; instructions are parsed first, and labels are filled in afterward.</p>
+<p>Mnemonics and program structure are similar to that of a conventional mc68000 assembler.</p>
+<p>Parameters are arranged in the order of "source,destination". Instructions are written as they appear on the info sheet.</p>
+<p>Several directives are supported, including "dw" which defines a series of individual primitive data types and strings in memory.</p>            </p><br><br><hr>
+            <div class="footer">
+                <br>
+                <p>© Hayden Buscher ~ 2023</p>
+            </div>
+        </div>
+    </body>
+</html> 
