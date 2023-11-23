@@ -13,7 +13,7 @@ date: 02/01/2023
 </div>
 
 ### Revamp — February 01, 2023  
-You're looking at is a complete revamp of techno-sorcery.com. In all aspects, this site has been made better- better looking, better to read, better to navigate, better to work on, etc. I'd like to detail the improvements I've made, and how they were implemented..
+What you're looking at is a complete revamp of techno-sorcery.com. In all aspects, this site has been made better- better looking, better to read, better to navigate, better to work on, etc. I'd like to detail the improvements I've made, and how they were implemented..
 
 First, I'm now using a static site generator. Not a full-blown content management system like Hugo, but my own solution- [wisPy](/projects/wispy.html). I'm not going to repeat that page here, but all it does is convert folders full of markdown documents into folders full of themed html files. This saves me a lot of time and headache, meaning I'm more motivated to work on the site. 
 
