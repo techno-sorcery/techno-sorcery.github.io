@@ -17,34 +17,34 @@ lastmod: 2023-02-14
 
 Hello, I'm Hayden Buscher. Welcome to my personal webpage-turned portfolio.
 
-I'm currently studying computer engineering at Cal Poly SLO, second-year. However, I've been interested in the field since high school– having designed my first CPU architecture in 10th grade. It goes without saying that I enjoy learning, and spend my time reading and programming.
+I'm a second-year computer engineer at Cal Poly SLO. I've been interested in the field since high school– having designed my first CPU in 10th grade. It goes without saying that I enjoy learning, and spend my time reading and programming.
 
-I've worked on a host of other projects in the meantime, including a JS Video Poker game, an assembler written in Python, a DIY wooden workbench, and (of course) this website.
+I've worked on a host of other projects including a JS Video Poker game, Python-based macro-assembler, DIY wooden workbench, FPGA Tic-Tac-Toe game, and (of course) this website.
 
-I greatly enjoy music, especially that from the 70s and 80s. New wave, prog, post-punk, ambient, and classic rock are all favorites of mine. I've also watched a ton of movies, with some of my favorites being Blade Runner, Barry Lyndon, Apocalypse Now, and Napoleon Dynamite.<br><br>
+I greatly enjoy music, especially that from the 70s and 80s. My favorite genres are synth-pop, post-punk, prog-rock, and hard-rock. I also like hiking, cycling, and camping.<br><br>
 
 ### Infrequently Asked Questions
 
 **How did you make this site?**  
-I'm admittedly not using anything special, mostly vanilla HTML/CSS/JS with a bit of Jquery and a home-rolled static site generator. For hosting, I'm using GitHub Pages with a GoDaddy .com domain.<br><br>
+I'm not using anything special, just vanilla HTML/CSS/JS with a homemade static site generator. My host is GitHub Pages, with a GoDaddy domain.<br><br>
 
 **What computer are you using?**  
-My main computer is a 2017 ThinkPad P51 I got from a swap meet for $50. For that unbelievably low price, it came with an i7 7820HQ, Quadro M1200 GPU, and FHD IPS screen. I've put a small bit of money into upgrading the RAM to 32GB, and getting a 500GB NVME drive. It has replaced my vastly more powerful desktop since I prefer to use one computer for everything. When I get back to my room, I just set it into the dock and my peripherals are automatically connected.<br><br>
+My main computer is a 2017 ThinkPad P51 I got from a swap meet for $50. You can read about the specs [here](../coolstuff/computers.html). I've upgraded the RAM to 32GB, and installed two NVME drives (1 TB, 500 GB). It replaced my more powerful desktop since I hate using two computers. I have a drop-in dock connected to some peripherals on my desk, but I never sit there.<br><br>
 
 **What OS do you use?**  
-Debian Linux. Tried Arch for a bit, but it broke after an update because I hadn't done one in two months. Debian is for people who don't want to babysit their OS. The (thoroughly tested) main repo doesn't get updated until the next version is released, preventing sporadic breakdowns. Rather than being forced to adopt a rolling-release model, you can choose to install up-to-date software from the backports repo (or a flatpak).<br><br>
+Debian Linux. Tried Arch for a bit, but it broke after an update. Debian is for people who don't want to babysit their OS. The stable repo doesn't get updated until the next version is fully tested, preventing random breakdowns. When I need something up-to-date, I install a flatpak, appimage, backports package, or compile from source.<br><br>
 
 **What's the site background from?**  
-It's a wallpaper sourced from MacOS 8, ever-so-slightly desaturated as to appear less jarring online. No, I'm not going to change it to something you think looks better.<br><br>
+It's a wallpaper sourced from MacOS 8, desaturated to appear less jarring online. No, I'm not changing it to something you think looks better.<br><br>
 
 **Have you ever considered using a CMS?**  
-I've thought about it, but decided such a thing would be completely overkill for what I want. Plus (self-plug), I'm already using [wisPy](/projects/wispy.html).<br><br>
+I've thought about it, but decided such a thing would be completely overkill for what I want. Also (self-plug), I'm already using [wisPy](/projects/wispy.html).<br><br>
 
 **What happened to _____?**  
 It either got removed, or reworked. Sorry.<br><br>
 
 **Can you add something? Can I contribute?**  
-Sure, just drop me a line. My contact info is below. Note that I'm most likely to respond to Discord messages.<br><br>
+Sure, just drop me a line. My contact info is below.<br><br>
 
 ### Contact info
 
@@ -56,6 +56,3 @@ Sure, just drop me a line. My contact info is below. Note that I'm most likely t
 
 **GitHub**<br>
 [techno-sorcery](https://github.com/techno-sorcery)
-
-**Discord**<br>
-technosorcery

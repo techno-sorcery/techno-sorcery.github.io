@@ -44,6 +44,9 @@ c.addEventListener('mousemove', (e) => {
 	}
 });
 
+function step(){
+    evolve();
+}
 
 function cellPlace(y,x){
 	if(cells[y][x] != erase){
