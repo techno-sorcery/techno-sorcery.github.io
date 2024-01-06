@@ -26,25 +26,26 @@
         </div>
 
         <div class="topnav" style="padding-top">
-            <a href="/main/index.html">Index</a>
-            <a href="/main/blog.html">Blog</a>
-            <a href="/main/projects.html">Projects</a>
-            <a href="/main/coolstuff.html">Cool stuff</a>
-            <a href="/main/entertainment.html">Entertainment</a>
-            <a href="/main/about.html">About</a>
+            <div class= "navleft">
+                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
+            </div>
+
+            <div class="navright">
+                <a class= "navlink" href="/main/blog.html">Blog</a>
+                <a class= "navlink" href="/main/projects.html">Projects</a>
+                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
+                <a class= "navlink" href="/main/coolstuff.html">Misc</a>
+                <a class= "navlink" href="/main/about.html">About</a>
+            </div>
         </div>
 
+        <!-- <div class="header"> -->
+        <!--     <h2><-VAR:DESCRIPTION-></h2> -->
+        <!-- </div> -->
+
         <div class="main" id="main">
-            <div class="header">
-                <h1>Techno-Sorcery</h1>
-                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
-                <br>
-            </div>
-<div class="border header">
-<hr>
-<p>My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.</p>
-<hr>
-</div>
+            <h2>My first CPU, a 4-bit Harvard architecture machine built in Minecraft.</h2>
+            <hr>
 
 <h3>IVANIAC</h3>
 <p><strong>Links</strong><br />
@@ -80,11 +81,13 @@ In total, the IVANIAC has 16 bytes of 8-bit-wide program memory. The first half 
 <p><img alt="IVANIAC flyover" src="/projects/img/ivaniac_flyover.png" /></p>
 <p>In retrospect, the IVANIAC is a pretty poor design. Instruction decoding relies on slow repeaters, there's no arithmetic carry, no data memory, and address space is severely limited with 4 bits. However, I'm still proud of having built it.</p>
 <p>I began working on the machine in late 2019, as a high school sophomore. I knew relatively little about computer engineering, but had nevertheless  wanted to build a redstone CPU. Far in over my head, the project quickly fizzled out. By the time April 2020 came around, I was stuck at home and had nothing better to do but finish the IVANIAC. After an entire week of building, it was finally completed.</p>
-<p>It's amazing that the IVANIAC works at all, considering I didn't have any clear plans or schematics. I came up with everything as I went along, learning CPU design for the first time. Despite its inherent quirks, I'll always champion the IVANIAC as my first-ever architecture.</p>            </p><br><br><hr>
-            <div class="footer">
-                <br>
-                <p>© Hayden Buscher ~ 2023</p>
-            </div>
+<p>It's amazing that the IVANIAC works at all, considering I didn't have any clear plans or schematics. I came up with everything as I went along, learning CPU design for the first time. Despite its inherent quirks, I'll always champion the IVANIAC as my first-ever architecture.</p>            <br><br>
+        </div>
+
+        <div class="footer">
+            © Hayden Buscher ~ 2023
+            <!-- <div class="social"> -->
+            <!-- </div> -->
         </div>
     </body>
 </html> 

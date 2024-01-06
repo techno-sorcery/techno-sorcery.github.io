@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: Notable projects I've worked on.
 ---
 
-<div class="border header">
-<hr>
-<p>I've made some pretty cool stuff over the years; here's a portfolio of my most noteworthy projects.
-</p>
-<hr>
-</div>
-
 ### Homebrew CPUs
 [PDC-8](/projects/pdc8.html)  
 An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.
@@ -19,11 +12,13 @@ An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum s
 A 16-bit CISC architecture CPU, loosely based off the mc68000.
 
 [IVANIAC](/projects/ivaniac.html)  
-My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.
+My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.  
+<br><br>
 
 ### Software
 [wisPy](/projects/wispy.html)  
-A dead-simple static site generator, for those who want nothing more than to convert markdown to html.
+A dead-simple static site generator, for those who want nothing more than to convert markdown to html
+<br><br>
 
 ### Electronics
 [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
@@ -31,6 +26,7 @@ An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.
 
 [Crystal radio](/projects/crystalradio.html)  
 An old-school crystal radio, built out of a desire to understand wireless communications.
+<br><br>
 
 ### Construction
 [Workbench](/projects/workbench.html)  

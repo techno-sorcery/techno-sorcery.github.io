@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: A list of the hardware, software, and other things I use.
 ---
 
-<div class="border header">
-<hr>
-<p>A list of the hardware, software, and other things I use.
-</p>
-<hr>
-</div>
-
 ### Software  
 **Operating System**  
 I prefer Linux since it's customizable, uses package managers, runs well on low-spec hardware, and doesn't "phone home" with telemetry info. I use Debian since its mature release cycle alleviates the instability of rolling-release distros.  

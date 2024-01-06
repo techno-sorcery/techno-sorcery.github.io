@@ -5,13 +5,6 @@ description: I got a pretty sweet laptop.
 date: 07/24/2023
 ---
 
-<div class="border header">
-<hr>
-<p>I got a pretty sweet laptop, and some other things I thought I'd never have...
-</p>
-<hr>
-</div>
-
 ### I got a "new" laptop — July 24, 2023
 
 ![ThinkChad P51 setup](img/P51.jpg)

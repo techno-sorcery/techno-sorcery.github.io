@@ -5,12 +5,6 @@ description: An 8-bit transport triggered OISC. Uses a single 'MOV' instruction 
 group: Homebrew CPUs
 ---
 
-<div class="border header">
-<hr>
-<p>An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.</p>
-<hr>
-</div>
-
 ### ATLAS PDC-8
 **Links**  
 [GitHub](https://github.com/techno-sorcery/PDC-8)  

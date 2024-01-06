@@ -5,13 +5,6 @@ description: Old ThinkPads are the best computers in existence. Really.
 date: 02/03/2023
 ---
 
-<div class="border header">
-<hr>
-<p>Old ThinkPads are the best computers in existence. Really.
-</p>
-<hr>
-</div>
-
 ### I love old ThinkPads — February 03, 2023
 
 ![ThinkChad T530 setup](img/thinkchad.png)

@@ -26,26 +26,26 @@
         </div>
 
         <div class="topnav" style="padding-top">
-            <a href="/main/index.html">Index</a>
-            <a href="/main/blog.html">Blog</a>
-            <a href="/main/projects.html">Projects</a>
-            <a href="/main/coolstuff.html">Cool stuff</a>
-            <a href="/main/entertainment.html">Entertainment</a>
-            <a href="/main/about.html">About</a>
+            <div class= "navleft">
+                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
+            </div>
+
+            <div class="navright">
+                <a class= "navlink" href="/main/blog.html">Blog</a>
+                <a class= "navlink" href="/main/projects.html">Projects</a>
+                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
+                <a class= "navlink" href="/main/coolstuff.html">Misc</a>
+                <a class= "navlink" href="/main/about.html">About</a>
+            </div>
         </div>
 
+        <!-- <div class="header"> -->
+        <!--     <h2><-VAR:DESCRIPTION-></h2> -->
+        <!-- </div> -->
+
         <div class="main" id="main">
-            <div class="header">
-                <h1>Techno-Sorcery</h1>
-                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
-                <br>
-            </div>
-<div class="border header">
-<hr>
-<p>Renders Wolfram's elementary cellular automata, of which there are 256.
-</p>
-<hr>
-</div>
+            <h2>Renders Wolfram's elementary cellular automata, of which there are 256.</h2>
+            <hr>
 
 <h3>Elementary Automata</h3>
 <div class="margins"><canvas id="myCanvas" width="511" height="511" style="background-color:white"></canvas></div>
@@ -56,11 +56,13 @@
 <p style="line-height:0;display:inline">&nbspInitial cells:</p>
 <p><button type="button" onclick=point()>Single</button>
 <button id='toolButton' type="button" onclick=rand()>Random</button></p>
-<script type="text/javascript" src='js/automata/elementary.js'></script>            </p><br><br><hr>
-            <div class="footer">
-                <br>
-                <p>© Hayden Buscher ~ 2023</p>
-            </div>
+<script type="text/javascript" src='js/automata/elementary.js'></script>            <br><br>
+        </div>
+
+        <div class="footer">
+            © Hayden Buscher ~ 2023
+            <!-- <div class="social"> -->
+            <!-- </div> -->
         </div>
     </body>
 </html> 

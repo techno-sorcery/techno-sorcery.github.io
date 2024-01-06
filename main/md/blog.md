@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: Essays, opinions, and personal/site news.
 ---
 
-<div class="border header">
-<hr>
-<p>Essays, opinions, and other-such personal/site news.
-</p>
-<hr>
-</div>
-
 ### Blog  
 **July 26, 2023 — ** [I got a "new" laptop (among other things)](/blog/new-laptop.html)  
 I got a pretty sweet laptop, and some other things I thought I'd never have..

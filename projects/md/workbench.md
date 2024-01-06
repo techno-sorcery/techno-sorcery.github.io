@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: One time, while at Home Depot, I saw a 4' x 2' plywood sheet and decided I needed my own workbench.
 ---
 
-<div class="border header">
-<hr>
-<p>One time, while at Home Depot, I saw a 4' x 2' plywood sheet and decided I needed my own workbench.
-</p>
-<hr>
-</div>
-
 ### Workbench
 **Background**  
 

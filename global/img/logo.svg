@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="53.02253mm"
+   height="6.3817501mm"
+   viewBox="0 0 53.022529 6.3817501"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="3.5572653"
+     inkscape:cx="98.530744"
+     inkscape:cy="29.095384"
+     inkscape:window-width="1914"
+     inkscape:window-height="1058"
+     inkscape:window-x="0"
+     inkscape:window-y="16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="36.831081"
+       y="41.328766"
+       width="149.61618"
+       height="42.979313"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.40180554,2.0710451)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1"
+       style="white-space:pre;shape-inside:url(#rect1);display:inline;fill:#f07010;fill-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#f08129;fill-opacity:1;stroke-width:0.264583"
+       x="68.905556"
+       y="17.621923"
+       id="text3"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="68.905556"
+         y="17.621923"
+         id="tspan3" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';fill:#ef812a;fill-opacity:1;stroke-width:0.264583"
+       x="-0.59230554"
+       y="2.7549548"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono';stroke-width:0.264583"
+         x="-0.59230554"
+         y="2.7549548">Techno-Sorcery</tspan></text>
+  </g>
+</svg>

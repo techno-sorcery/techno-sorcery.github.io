@@ -1,31 +1,23 @@
 ---
 title: Index
 author: Hayden Buscher
-description: Welcome to my personal webpage. Take a look around, there's plenty to check out.
+description: Hello. I'm Hayden Buscher, a technology enthusiast and second-year computer engineering major at Cal Poly, San Luis Obispo. This site serves as my personal webpage and portfolio.
 ---
-
-<div class="border header">
-<hr>
-<p>Welcome to my personal webpage. Take a look around, there's plenty to check out.
-</p>
-<hr>
-</div>
 
 <div class="nowrap">
 <img class="floatright "style="padding-top:25px;max-height:300px" src="img/selfportrait.jpg" alt="Self portrait"></div>
 
-### Intro
-Hello. I'm Hayden Buscher, an amateur computer engineer, technology  
-enthusiast, and first-year CPE major at Cal Poly SLO. This site serves  
-as my personal webpage and portfolio.
-
-### Index
+### Pages
 [Index](index.html) - The page you're looking at now  
 [Blog](blog.html) - Essays, opinions, and personal/site news.  
 [Projects](projects.html) - Notable projects I've worked on.  
-[Cool stuff](coolstuff.html) - Miscellaneous stuff I think is cool.  
+[Misc](coolstuff.html) - Miscellaneous things I've made or decided to share.  
 [Entertainment](entertainment.html) - Fun games, quizzes, and more.  
 [About](about.html) - Basic info on this site's purpose.
+
+
+### Featured
+
 
 ### Recent Additions
 **Nov 19, 2023 – **[FPGA Tic-Tac-Toe](/projects/tictactoe.html)  

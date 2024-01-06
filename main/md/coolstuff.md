@@ -4,16 +4,10 @@ author: Hayden Buscher
 description: Notable projects I've worked on.
 ---
 
-<div class="border header">
-<hr>
-<p>Here's some miscellaneous stuff I couldn't put anywhere else.
-</p>
-<hr>
-</div>
-
 ### Applets
 [Elementary Automata](/coolstuff/elementary.html)  
 Renders Wolfram's elementary cellular automata, of which there are 256.
+<br><br>
 
 ### Pages
 [Things I Use](/coolstuff/things.html)  
@@ -21,6 +15,7 @@ A list of the hardware, software, and other things I use.
 
 [My Computers](/coolstuff/computers.html)  
 A list of the most notable computers I've owned (and used).
+<br><br>
 
 ### Playlists
 [Classic Classical](https://open.spotify.com/playlist/4gjIatZfsFxEhlnaih5mU2?si=e94790f8317d4875)  
@@ -37,6 +32,7 @@ Rock music from the 70s and 80s. You could probably find it on cassette, maybe e
 
 [First Wave](https://open.spotify.com/playlist/2UKaXvQ0s7c37yx3FeD7s7?si=6c6b96e929214f01)  
 Who needs music with soul? We've got drum machines!
+<br><br>
 
 ### Academics
 [Chapter 2](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Atoms, molecules, and reaction  

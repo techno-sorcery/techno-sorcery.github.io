@@ -26,26 +26,26 @@
         </div>
 
         <div class="topnav" style="padding-top">
-            <a href="/main/index.html">Index</a>
-            <a href="/main/blog.html">Blog</a>
-            <a href="/main/projects.html">Projects</a>
-            <a href="/main/coolstuff.html">Cool stuff</a>
-            <a href="/main/entertainment.html">Entertainment</a>
-            <a href="/main/about.html">About</a>
+            <div class= "navleft">
+                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
+            </div>
+
+            <div class="navright">
+                <a class= "navlink" href="/main/blog.html">Blog</a>
+                <a class= "navlink" href="/main/projects.html">Projects</a>
+                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
+                <a class= "navlink" href="/main/coolstuff.html">Misc</a>
+                <a class= "navlink" href="/main/about.html">About</a>
+            </div>
         </div>
 
+        <!-- <div class="header"> -->
+        <!--     <h2><-VAR:DESCRIPTION-></h2> -->
+        <!-- </div> -->
+
         <div class="main" id="main">
-            <div class="header">
-                <h1>Techno-Sorcery</h1>
-                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
-                <br>
-            </div>
-<div class="border header">
-<hr>
-<p>A dead-simple static site generator, for those who want nothing more than to convert markdown to html.
-</p>
-<hr>
-</div>
+            <h2>A dead-simple static site generator, for those who want nothing more than to convert markdown to html.</h2>
+            <hr>
 
 <h3>Website Interpreter, Static aka wisPy</h3>
 <p><strong>Links</strong><br />
@@ -120,11 +120,13 @@ Unlike other site generators, wisPy uses vanilla html files as templates. First,
 <p><strong>Sitemaps</strong><br />
 Generating sitemaps with wisPy is easy. Simply define a base url and root folder in the config, and mark whichever pages you want to index with "sitemap = true". wisPy sitemaps are in the XML format for maximum compatibility, and can include a variety of directives.<br><br></p>
 <p><strong>Plans</strong><br />
-wisPy will never become a content management system, that goes against its philosophy. However, features will be added if they're high in utility without adding much size to the codebase. One such thing in the works is table of contents generation. Soon, wisPy should be able to give you page, folder, and site-wide tables of contents based on metadata.</p>            </p><br><br><hr>
-            <div class="footer">
-                <br>
-                <p>© Hayden Buscher ~ 2023</p>
-            </div>
+wisPy will never become a content management system, that goes against its philosophy. However, features will be added if they're high in utility without adding much size to the codebase. One such thing in the works is table of contents generation. Soon, wisPy should be able to give you page, folder, and site-wide tables of contents based on metadata.</p>            <br><br>
+        </div>
+
+        <div class="footer">
+            © Hayden Buscher ~ 2023
+            <!-- <div class="social"> -->
+            <!-- </div> -->
         </div>
     </body>
 </html> 

@@ -26,25 +26,26 @@
         </div>
 
         <div class="topnav" style="padding-top">
-            <a href="/main/index.html">Index</a>
-            <a href="/main/blog.html">Blog</a>
-            <a href="/main/projects.html">Projects</a>
-            <a href="/main/coolstuff.html">Cool stuff</a>
-            <a href="/main/entertainment.html">Entertainment</a>
-            <a href="/main/about.html">About</a>
+            <div class= "navleft">
+                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
+            </div>
+
+            <div class="navright">
+                <a class= "navlink" href="/main/blog.html">Blog</a>
+                <a class= "navlink" href="/main/projects.html">Projects</a>
+                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
+                <a class= "navlink" href="/main/coolstuff.html">Misc</a>
+                <a class= "navlink" href="/main/about.html">About</a>
+            </div>
         </div>
 
+        <!-- <div class="header"> -->
+        <!--     <h2><-VAR:DESCRIPTION-></h2> -->
+        <!-- </div> -->
+
         <div class="main" id="main">
-            <div class="header">
-                <h1>Techno-Sorcery</h1>
-                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
-                <br>
-            </div>
-<div class="border header">
-<hr>
-<p>An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.</p>
-<hr>
-</div>
+            <h2>An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.</h2>
+            <hr>
 
 <h3>ATLAS PDC-8</h3>
 <p><strong>Links</strong><br />
@@ -73,11 +74,13 @@ The PDC-8 follows the transport-triggered model, where computation is a side eff
 <p>Since each instruction executes within a clock cycle, many operations take less time to execute than on more complex architectures. Since the programmer has control over all functions, stack operations, subroutine jumps, and other complex "macroinstructions" can be implemented.</p>
 <p>Instructions contain an 8-bit immediate, followed by an 8-bit opcode. This makes for a 16-bit wide program memory.<br><br></p>
 <p><strong>Assembler</strong><br />
-A simple two-pass microassembler was adopted from the CPU-16, allowing instructions to be defined as a sequence of moves, followed by an immediate. However, a higher-level assembler could easily be implemented.</p>            </p><br><br><hr>
-            <div class="footer">
-                <br>
-                <p>© Hayden Buscher ~ 2023</p>
-            </div>
+A simple two-pass microassembler was adopted from the CPU-16, allowing instructions to be defined as a sequence of moves, followed by an immediate. However, a higher-level assembler could easily be implemented.</p>            <br><br>
+        </div>
+
+        <div class="footer">
+            © Hayden Buscher ~ 2023
+            <!-- <div class="social"> -->
+            <!-- </div> -->
         </div>
     </body>
 </html> 

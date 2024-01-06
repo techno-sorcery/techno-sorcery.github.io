@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: Built over a two-month period after our first machine won prelims. Heavily upgraded.
 ---
 
-<div class="border header">
-<hr>
-<p>Built over a two-month period after our first machine won prelims. Heavily upgraded.
-</p>
-<hr>
-</div>
-
 ### MESA Machine v2
 **Background**  
 After placing first in the MESA prelims, it was clear we'd need a revamped machine to remain competitive in the regionals. My friend and I redid everything over the next month, adding various other mechanisms, and reimplementing the ones already in place. Cumulatively, we probably spent 4-5 full days working on the project.

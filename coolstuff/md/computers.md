@@ -5,13 +5,6 @@ description: A list of the most notable computers I've owned (and used).
 date: 07/28/2023
 ---
 
-<div class="border header">
-<hr>
-<p> A list of the most notable computers I've owned (and used).
-</p>
-<hr>
-</div>
-
 ### Current computers  
 **ThinkPad P51 (laptop)**   
 *Date: 2023 - Present  

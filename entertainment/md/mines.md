@@ -5,15 +5,6 @@ description: The classic game of minesweeper, running in your browser.
 css: /global/css/main.css /global/css/responsive.css css/mines.css
 ---
 
-
-
-<div class="border header">
-<hr>
-<p>The classic game of Minesweeper, running in your browser.
-</p>
-<hr>
-</div>  
-
 ### Minesweeper  
 <canvas id="myCanvas" class="margins" width="401" height="401" style="background-color:gray"></canvas> 
 <div style="padding-top:10px"> 

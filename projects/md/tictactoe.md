@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.
 ---
 
-<div class="border header">
-<hr>
-<p>An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.
-</p>
-<hr>
-</div>
-
 ### FPGA Tic-Tac-Toe
 **Links**  
 [Instructables](https://www.instructables.com/FPGA-Tic-Tac-Toe-1/)  

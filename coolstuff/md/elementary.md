@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: Renders Wolfram's elementary cellular automata, of which there are 256.
 ---
 
-<div class="border header">
-<hr>
-<p>Renders Wolfram's elementary cellular automata, of which there are 256.
-</p>
-<hr>
-</div>
-
 ### Elementary Automata
 <div class="margins"><canvas id="myCanvas" width="511" height="511" style="background-color:white"></canvas></div>
 

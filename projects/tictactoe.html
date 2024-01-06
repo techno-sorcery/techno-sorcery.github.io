@@ -26,26 +26,26 @@
         </div>
 
         <div class="topnav" style="padding-top">
-            <a href="/main/index.html">Index</a>
-            <a href="/main/blog.html">Blog</a>
-            <a href="/main/projects.html">Projects</a>
-            <a href="/main/coolstuff.html">Cool stuff</a>
-            <a href="/main/entertainment.html">Entertainment</a>
-            <a href="/main/about.html">About</a>
+            <div class= "navleft">
+                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
+            </div>
+
+            <div class="navright">
+                <a class= "navlink" href="/main/blog.html">Blog</a>
+                <a class= "navlink" href="/main/projects.html">Projects</a>
+                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
+                <a class= "navlink" href="/main/coolstuff.html">Misc</a>
+                <a class= "navlink" href="/main/about.html">About</a>
+            </div>
         </div>
 
+        <!-- <div class="header"> -->
+        <!--     <h2><-VAR:DESCRIPTION-></h2> -->
+        <!-- </div> -->
+
         <div class="main" id="main">
-            <div class="header">
-                <h1>Techno-Sorcery</h1>
-                <h2>"Man is still the most extraordinary computer of all." -JFK</h2>
-                <br>
-            </div>
-<div class="border header">
-<hr>
-<p>An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.
-</p>
-<hr>
-</div>
+            <h2>An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.</h2>
+            <hr>
 
 <h3>FPGA Tic-Tac-Toe</h3>
 <p><strong>Links</strong><br />
@@ -76,11 +76,13 @@
 <li>Players take turns flipping one of the first nine switches on the board.</li>
 <li>Each time a switch is flipped, a turn is taken and the chosen cell transitions to an X or O.</li>
 <li>When a row of three matching cells is made (horizontal, vertical, diagonal), the cells are turned red and the game is won. No moves can be made until the game is reset using the middle control pad button.</li>
-</ol>            </p><br><br><hr>
-            <div class="footer">
-                <br>
-                <p>© Hayden Buscher ~ 2023</p>
-            </div>
+</ol>            <br><br>
+        </div>
+
+        <div class="footer">
+            © Hayden Buscher ~ 2023
+            <!-- <div class="social"> -->
+            <!-- </div> -->
         </div>
     </body>
 </html> 

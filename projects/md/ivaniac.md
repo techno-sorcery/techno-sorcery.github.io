@@ -6,12 +6,6 @@ date: 03/07/2023
 group: Homebrew CPUs
 ---
 
-<div class="border header">
-<hr>
-<p>My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.</p>
-<hr>
-</div>
-
 ### IVANIAC
 **Links**  
 [YouTube demo](https://youtu.be/TZ7_-GC8dOE)  

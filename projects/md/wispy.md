@@ -5,13 +5,6 @@ description: A dead-simple static site generator, for those who want nothing mor
 lastmod: 2023-02-14
 ---
 
-<div class="border header">
-<hr>
-<p>A dead-simple static site generator, for those who want nothing more than to convert markdown to html.
-</p>
-<hr>
-</div>
-
 ### Website Interpreter, Static aka wisPy  
 **Links**  
 [Github repo](https://github.com/techno-sorcery/wisPy)

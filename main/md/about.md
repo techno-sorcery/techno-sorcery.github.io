@@ -5,13 +5,6 @@ description: Basic info on this site's purpose.
 lastmod: 2023-02-14
 ---
 
-<div class="border header">
-<hr>
-<p>Want to know more about this website? You've come to the right place.
-</p>
-<hr>
-</div>
-
 ### About me
 <p><img style="max-height:225px" src="img/me.png" alt="Photo of me riding an artillery cannon on the USS Missouri."></p>
 

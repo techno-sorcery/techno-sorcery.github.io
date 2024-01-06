@@ -1,22 +1,30 @@
-@media screen and (min-width: 1601px) {
-	.main {
-		padding-left: 150px;
-		padding-right: 150px;
+/* @media screen and (min-width: 1601px) { */
+/* 	.main { */
+/* 		padding-left: 150px; */
+/* 		padding-right: 150px; */
 
-	}
-}
+/* 	} */
+/* } */
 
-@media screen and (min-width: 1001px){
-	.topnav {display: none;}
-}
+/* @media screen and (min-width: 1001px){ */
+/* 	.topnav {display: none;} */
+/* } */
+
+.sidenav a {display: none;}
+.sidenav {display: none;}
 
 @media screen and (max-width: 1000px) {
-	.sidenav a {display: none;}
-	.sidenav {display: none;}
-	.main {margin-left: 0px;}
-	.main {margin-right: 47px;}
-	.main {padding: 25px 25px;}
-	.topnav {display: flex;}
+	.main {
+        margin-left: 0px;
+        margin-right: 0px; 
+        padding: 200px 0 200px;
+    }
+
+	.topnav {
+        display: flex; 
+        position: fixed;
+    }
+
 	h1 {font-size: 32px;}
 	h2 {font-size: 28px;}
 	h3 {font-size: 28px;}

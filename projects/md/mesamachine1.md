@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: A Rube Goldberg machine, built in physics class for the MESA Engineering Competition.
 ---
 
-<div class="border header">
-<hr>
-<p>A Rube Goldberg machine, built in physics class for the MESA Engineering Competition.
-</p>
-<hr>
-</div>
-
 ### MESA Machine v1
 **Background**  
 In March, 2022, we built our own Rube Goldberg machines in physics class. Though the teacher had his own rubric, he said we could compete in the MESA Engineering Competition if ours were good enough. Over the next three weeks, me and a friend built one of the most complex school projects I'd ever worked on. For our efforts, we won first place in the MESA prelims.<br><br>

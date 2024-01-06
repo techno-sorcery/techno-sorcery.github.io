@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: An old-school crystal radio, built out of a desire to understand wireless communications.
 ---
 
-<div class="border header">
-<hr>
-<p>An old-school crystal radio, built out of a desire to understand wireless communications.
-</p>
-<hr>
-</div>
-
 ### Crystal Radio  
 **Background**  
 This is my first-ever crystal set, other than one which came with a "200-in-1 Science Fair" kit. I didn't have the expertise to come up with an original design, so I incorporated elements from several others. I decided that I'd assemble the project in two phases- first an un-powered crystal receiver, then a tacked-on transistor amplifier.<br><br>

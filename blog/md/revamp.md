@@ -5,13 +5,6 @@ description: I've completely revamped this site, from top to bottom.
 date: 02/01/2023
 ---
 
-<div class="border header">
-<hr>
-<p>I've completely revamped this site, from top to bottom.
-</p>
-<hr>
-</div>
-
 ### Revamp — February 01, 2023  
 What you're looking at is a complete revamp of techno-sorcery.com. In all aspects, this site has been made better- better looking, better to read, better to navigate, better to work on, etc. I'd like to detail the improvements I've made, and how they were implemented..
 

@@ -6,12 +6,6 @@ date: 03/07/2022
 group: Homebrew CPUs
 ---
 
-<div class="border header">
-<hr>
-<p>A 16-bit, pipelined RISC architecture.</p>
-<hr>
-</div>
-
 ### ATLAS CPU-16
 **Links**  
 [GitHub](https://github.com/techno-sorcery/CPU-16)  

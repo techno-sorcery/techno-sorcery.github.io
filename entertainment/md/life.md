@@ -4,13 +4,6 @@ author: Hayden Buscher
 description: Simulates John Conway's Game of Life, arguably the best-known cellular automaton.
 ---
 
-<div class="border header">
-<hr>
-<p>Simulates John Conway's Game of Life, arguably the best-known cellular automaton.
-</p>
-<hr>
-</div>
-
 ### Game of Life
 <div class="margins"><canvas id="myCanvas" width="511" height="511" style="background-color:DarkGray"></canvas></div>
 <br>
