@@ -17,6 +17,32 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast and second-year 
 
 
 ### Featured
+<div class="featured">
+    <div class="element">
+        <a href="/projects/cpu16.html">
+            <div class="img-container"><img src="/projects/img/cpu16_arch.png"></div>
+            CPU-16 Processor
+        </a>
+    </div>
+    <div class="element">
+        <a href="/projects/tictactoe.html">
+            <div class="img-container"><img src="/projects/img/tictactoe_finished.png"></div>
+            FPGA Tic-Tac-Toe
+        </a>
+    </div>
+    <div class="element">
+        <a href="/projects/workbench.html">
+            <div class="img-container"><img src="/projects/img/workbench_finished.png"></div>
+            Workbench
+        </a>
+    </div>
+    <div class="element">
+        <a href="/projects/wispy.html">
+            <div class="img-container"><img src="/main/img/wispy.png"></div>
+            wisPy md -> html 
+        </a>
+    </div>
+</div>
 
 
 ### Recent Additions

@@ -9,11 +9,11 @@
 <priority>1</priority>
 </url>
 <url>
-<loc>https://techno-sorcery.com/main/coolstuff.html</loc>
+<loc>https://techno-sorcery.com/main/entertainment.html</loc>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://techno-sorcery.com/main/entertainment.html</loc>
+<loc>https://techno-sorcery.com/main/misc.html</loc>
 <priority>1</priority>
 </url>
 <url>
@@ -27,6 +27,9 @@
 </url>
 <url>
 <loc>https://techno-sorcery.com/blog/revamp.html</loc>
+</url>
+<url>
+<loc>https://techno-sorcery.com/blog/revamp2.html</loc>
 </url>
 <url>
 <loc>https://techno-sorcery.com/blog/thinkpads.html</loc>

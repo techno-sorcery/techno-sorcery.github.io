@@ -9,6 +9,8 @@ date: 02/03/2023
 
 ![ThinkChad T530 setup](img/thinkchad.png)
 
+Note: I've since purchased a ThinkPad P51 workstation from the same swapmeet for $50, and it's now my main laptop. The T530 is still great, having become my Dad's.
+
 For a long time, I used a desktop as my main computer. It made sense; desktops have better thermals, better performance, and are a better value than laptops. I was also assigned one at school, which covered my portable computing needs. Unfortunately, when they downgraded to Chromebooks, I couldn't run the software needed for my projects.
 
 I already had a seldom-used 2012 MacBook Pro. I got it up and running and, while it served my needs, the thermal performance was abhorrent. It would spike to 75C while web browsing, even higher if doing something demanding. Not to mention the battery was worn out, keys were falling off, and it would sporadically refuse to start.

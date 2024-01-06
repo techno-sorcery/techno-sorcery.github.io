@@ -1,7 +1,7 @@
 ---
-title: Cool stuff
+title: Miscellaneous
 author: Hayden Buscher
-description: Notable projects I've worked on.
+description: Miscellaneous things I've made or decided to share.
 ---
 
 ### Applets
