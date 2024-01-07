@@ -42,6 +42,18 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast and second-year 
             wisPy md -> html 
         </a>
     </div>
+    <div class="element">
+        <a href="/entertainment/poker.html">
+            <div class="img-container"><img src="/main/img/poker.png"></div>
+            Video Poker
+        </a>
+    </div>
+    <div class="element">
+        <a href="/entertainment/mines.html">
+            <div class="img-container"><img src="/main/img/minesweeper.png"></div>
+            Minesweeper
+        </a>
+    </div>
 </div>
 
 

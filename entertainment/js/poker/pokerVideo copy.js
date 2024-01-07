@@ -42,8 +42,11 @@ const hands = [
 ];
 
 addEventListener('keydown', (event) => {
+    console.log(event.key);
+
 	if ('12345'.includes(event.key) && draw){
-		hold(parseInt(event.key))
+		hold(parseInt(event.key));
+        console.log(parseInt(event.key));
 	}
 	else if (event.key === 'Enter'){
 		betAmnt();

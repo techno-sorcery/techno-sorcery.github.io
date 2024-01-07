@@ -1,3 +1,9 @@
+.paytable {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
 .redSel {
 	font-weight:bold;
 	color:black
@@ -9,10 +15,26 @@
 	color:white
 }
 
-.cardDiv{
-	width: 100%;
-	display:inline-block;
+
+
+.cardflex {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
 }
+
+.cardDivF{
+    padding: 0px 5px 0px 0px;
+}
+
+.cardDiv{
+    padding: 0px 5px 0px 5px;
+}
+.cardDivL{
+    padding: 0px 0px 0px 5px;
+}
+
+
 
 .holdText{
 	text-align:center;
@@ -47,6 +69,11 @@
 .imgButton{
 	padding:0px;
 	border:none;
+    width:100%;
+}
+
+.main img {
+    width: 100%;
 }
 
 .redText{
@@ -59,20 +86,27 @@
   color:white
 }
 
-body {
-	background-image: url(../img/casino.png);
-}
-
-img, p {
+.main img, p {
 	margin-left: 0px;
 }
 
 .noBorder {
 	padding: 4px;
 	border: 0px;
-	width:20%;
+	width:100%;
 }
 
-button {
+.main button {
 	padding: 0px;
+}
+
+.bet {
+    width: 100%;
+}
+
+.betdiv {
+    max-width: 1000px;
+    /* width: 100%; */
+    margin: auto;
+
 }
