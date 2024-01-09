@@ -109,6 +109,16 @@ body {
 	padding-right: 15px;
 }
 
+.main img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main canvas {
+    max-width: 100%;
+    height: auto;
+}
+
 .main .featured {
     margin-left: 20px;
     max-width: 700px;

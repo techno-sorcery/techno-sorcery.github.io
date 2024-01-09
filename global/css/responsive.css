@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 900px){
 	.main .floatright {
         float:left;
     }
@@ -60,5 +60,21 @@
 	.main p,dl,img {
         margin-left: 0px;
         margin-right: 0px
+    }
+
+    .main .featured {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main .featured .element {
+        width: 125px;
+        padding-right: 10px;
+    }
+
+    .main .featured .element img {
+        width: 125px;
+        height: 125px;
     }
 }
