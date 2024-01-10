@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 700px){
     .main{
-        padding: 80px 20px 0px 20px;
+        padding: 75px 20px 0px 20px;
     }
 
     .footer {
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 500px){
     .main{
-        padding: 100px 10px 0px 10px;
+        padding: 75px 10px 0px 10px;
     }
 
     .footer {
@@ -59,7 +59,11 @@
     }
 	.main p,dl,img {
         margin-left: 0px;
-        margin-right: 0px
+        margin-right: 0px;
+    }
+
+    .main canvas {
+        margin-left: 0px;
     }
 
     .main .featured {
@@ -67,7 +71,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 365px) {
     .main .featured .element {
         width: 125px;
         padding-right: 10px;
@@ -76,5 +80,12 @@
     .main .featured .element img {
         width: 125px;
         height: 125px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .main {
+        padding: 90px 10px 0px 10px;
+
     }
 }

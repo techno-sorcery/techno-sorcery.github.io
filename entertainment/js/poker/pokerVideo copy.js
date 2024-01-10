@@ -11,9 +11,10 @@ var incDraw = false;
 var running = false;
 var running2 = false;
 var order = [];
-let payoutAudio = new Audio('js/poker/payout.mp3');
-let payinAudio = new Audio('js/poker/payin.mp3');
-let pingAudio = new Audio('js/poker/ping.mp3');
+var payoutAudio = new Audio('js/poker/payout.mp3');
+var payinAudio = new Audio('js/poker/payin.mp3');
+var pingAudio = new Audio('js/poker/ping.mp3');
+var time = new Date().getTime();
 
 const payTable = [
 	250,

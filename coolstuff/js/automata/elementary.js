@@ -1,8 +1,8 @@
 // Elementary automata
 // Hayden Buscher ~ 2022
-var width = 511;
-var height = 511;
-var pixelSize = 1;
+var width = 304;
+var height = 304;
+var pixelSize = 2;
 var cells = new Array(width);
 cells = init(cells,false);
 var c = document.getElementById("myCanvas");
@@ -25,7 +25,7 @@ newInterval();
 
 function newInterval(){
 	if(run){
-		if(iterationY > height-1) scrollUp();
+		if(iterationY > height-pixelSize) scrollUp();
 		cycle();
 	}
 	requestAnimationFrame(newInterval);
@@ -47,6 +47,7 @@ function init(arr,rand){
 
 function cycle(){
 	let temp = new Array(width);
+
 	for(let i=0;i<width;i++){
 		if(i<1){
 			let index = cells[width-1].toString().concat(cells[i].toString(),cells[i+1].toString());
@@ -61,6 +62,7 @@ function cycle(){
 		}
 		render(temp[i],i);
 	}
+
 	cells = temp;
 	if(iterationY < height)iterationY++;
 }
@@ -136,8 +138,8 @@ function setRule(){
 
 
 function scrollUp(){
-	iterationY = height-1;
-	ctx.drawImage(ctx.canvas, 0, 0, width, height, 0, -1, width, height);
+	iterationY = height-pixelSize;
+	ctx.drawImage(ctx.canvas, 0, 0, width * pixelSize, height * pixelSize, 0, -pixelSize, width * pixelSize, height * pixelSize);
 }
 
 

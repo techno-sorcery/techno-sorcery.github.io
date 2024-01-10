@@ -5,13 +5,6 @@ description: The original Nerd Test, from the early days of this website.
 css: /global/css/main.css /global/css/responsive.css /entertainment/css/nerdtest.css
 ---
 
-<div class="border header">
-<hr>
-<p> The original Nerd Test, from the early days of this website.
-</p>
-<hr>
-</div>
-
 ### Introduction
 After a long hiatus, the Nerd Test has been brought back. Once a staple of this site, its codebase has been reworked, and the questions have been updated to be more general.
 
@@ -21,7 +14,7 @@ If you enjoyed taking this test, be sure to share it with your friends. It's jus
 <br><br>
 
 ### Part I: Education and Learning
-Answer the following questions for your highest level of education (within reason). For example, if you haven't gone to college or trade school, answer them the best you can for high school.
+Answer the following questions for your highest level of education (within reason).
 
 1. <label><input type="checkbox"> Have you ever made the dean's list?</label>  
 1. <label><input type="checkbox"> ...for a GPA above 3.6?</label>  
@@ -51,7 +44,7 @@ Answer the following questions for your highest level of education (within reaso
 1. <label><input type="checkbox"> Have you ever had debated a professor?</label>  
 1. <label><input type="checkbox"> ...and won?</label>  
 1. <label><input type="checkbox"> Have you ever taken a class pass/no pass to preserve your GPA?</label>  
-1. <label><input type="checkbox"> Has a professor ever bumped your grade out of respect?</label>  
+1. <label><input type="checkbox"> Has a professor ever boosted your grade out of respect?</label>  
 1. <label><input type="checkbox"> Have you ever taught a lecture?</label>  
 
 **Subjects**  
@@ -82,8 +75,8 @@ Answer the following questions for your highest level of education (within reaso
 
 ### Part II: Technology
 1. <label><input type="checkbox"> Have you ever built a computer?</label>  
-1. <label><input type="checkbox"> ...with your own custom architecture?</label>  
-1. <label><input type="checkbox"> Have you ever used pirated software?</label>  
+1. <label><input type="checkbox"> ...of your own design (from chips, or on an FPGA)?</label>  
+1. <label><input type="checkbox"> Have you ever installed pirated software?</label>  
 1. <label><input type="checkbox"> Do you use ergonomic or otherwise nonstandard peripherals?</label>  
 1. <label><input type="checkbox"> Do you use an older computer on purpose?</label>  
 1. <label><input type="checkbox"> Do you spend a significant amount of time on the computer?</label>  
@@ -148,8 +141,8 @@ Answer the following questions for your highest level of education (within reaso
 ### Part V: Lifestyle and Personality  
 
 1. <label><input type="checkbox"> Have you ever pulled an all-nighter?</label>  
-1. <label><input type="checkbox"> Have you ever slept a non-standard sleep cycle?</label>  
-1. <label><input type="checkbox"> ...for multiple days in a row?</label>  
+1. <label><input type="checkbox"> Have you ever slept a multi-phasic sleep cycle?</label>  
+1. <label><input type="checkbox"> ...for several days in a row?</label>  
 1. <label><input type="checkbox"> Did you skip prom or go without a date?</label>  
 1. <label><input type="checkbox"> Do you talk to yourself?</label>  
 1. <label><input type="checkbox"> Are you socially awkward, or otherwise inept?</label>  

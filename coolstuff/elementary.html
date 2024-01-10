@@ -32,14 +32,17 @@
             <hr>
 
 <h3>Elementary Automata</h3>
-<div class="margins"><canvas id="myCanvas" width="511" height="511" style="background-color:white"></canvas></div>
+<div class="margins"><canvas id="myCanvas" width="608" height="606" style="background-color:white"></canvas></div>
 
-<p><button id='toggleRun' type="button" onclick=toggleRun()>Stop</button><button type="button" onclick=step()>Step</button></p>
-<p style="line-height:0;display:inline">&nbspRule:</p>
-<p><input id="rule" type="number" value="165" max="255" min="0" onchange=setRule()></p>
-<p style="line-height:0;display:inline">&nbspInitial cells:</p>
-<p><button type="button" onclick=point()>Single</button>
-<button id='toolButton' type="button" onclick=rand()>Random</button></p>
+<p><button id='toggleRun' type="button" onclick=toggleRun()>Stop</button>
+<button type="button" onclick=step()>Step</button> 
+<button type="button" onclick=point()>Single</button>
+<button id='toolButton' type="button" onclick=rand()>Random</button>
+Rule:
+<input id="rule" type="number" value="165" max="255" min="0" onchange=setRule()></p>
+<!-- <p style="line-height:0;display:inline">&nbspRule:</p><input id="rule" type="number" value="165" max="255" min="0" onchange=setRule()> -->
+<!-- <p style="line-height:0;display:inline">&nbspInitial cells:</p> -->
+
 <script type="text/javascript" src='js/automata/elementary.js'></script>            <br><br>
         </div>
 
