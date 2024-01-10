@@ -31,6 +31,7 @@ c.addEventListener('mousedown', (e) => {
     let tempPixel = Math.floor(canvas_width / width);
     let rect = c.getBoundingClientRect();
 
+    console.log(Math.floor((e.clientY - rect.top) / tempPixel)):
     cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
 });
 
@@ -44,7 +45,8 @@ c.addEventListener('mousemove', (e) => {
     if(drag){
         let canvas_width = document.getElementById('myCanvas').offsetWidth;
         let rect = c.getBoundingClientRect();
-        let tempPixel = Math.floor(canvas_width / width);
+        let tempPi*xel = Math.floor(canvas_width / width);
+        console.log(Math.floor((e.clientY - rect.top) / tempPixel)):
         cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
     }
 });

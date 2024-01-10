@@ -4,7 +4,7 @@
 // Define variables
 const width = 16;
 const height = 16;
-const pixelSize = 32;
+const pixelSize = 30;
 const mines = 40;
 const colors = ["white", "blue", "green", "red", "darkblue", "darkred", "cyan", "purple", "gray", "black"];
 
@@ -17,6 +17,7 @@ var timer = 0;
 var minesLeft = mines;
 var actualLeft = mines;
 var tilesCovered = width * height - mines;
+var flag = false;
 
 
 // Tile class
@@ -294,6 +295,17 @@ function incrementSeconds() {
     }
 }
 
+// Toggle flag mode
+function toggle(){
+    if (flag){
+        document.getElementById('mode').innerHTML = 'Flag';
+    } else {
+        document.getElementById('mode').innerHTML = 'Uncover';
+    }
+
+    flag = !flag;
+}
+
 
 // Mouse click event
 c.addEventListener('mousedown', (e) => {
@@ -313,44 +325,45 @@ c.addEventListener('mousedown', (e) => {
         }
 
         // Left click, uncover
-        if (e.button == 0) {
-            uncover(clickPos[0], clickPos[1]);
+        if ((e.button == 0 && !flag) || e.button == 1) {
+            if (grid[clickPos[0]][clickPos[1]].uncovered) {
 
-            // Middle click, uncover neighbors
-        } else if (e.button == 1 && grid[clickPos[0]][clickPos[1]].uncovered) {
-            let myBounds = bounds(clickPos[0], clickPos[1]);
-            let tileStack = [];
-            let numFlags = 0;
+                let myBounds = bounds(clickPos[0], clickPos[1]);
+                let tileStack = [];
+                let numFlags = 0;
 
-            // Check flag count, push valid tiles to stack
-            for (let Y = 0; Y < 3; Y++) {
-                for (let X = 0; X < 3; X++) {
-                    let myCoords = myBounds[Y][X];
-                    if (myCoords != null) {
-                        if (grid[myCoords[0]][myCoords[1]].flagged) {
+                // Check flag count, push valid tiles to stack
+                for (let Y = 0; Y < 3; Y++) {
+                    for (let X = 0; X < 3; X++) {
+                        let myCoords = myBounds[Y][X];
+                        if (myCoords != null) {
+                            if (grid[myCoords[0]][myCoords[1]].flagged) {
 
-                            // Count if flagged
-                            numFlags++;
+                                // Count if flagged
+                                numFlags++;
 
-                        } else if (!grid[myCoords[0]][myCoords[1]].uncovered) {
+                            } else if (!grid[myCoords[0]][myCoords[1]].uncovered) {
 
-                            // Push coords of valid tile to stack
-                            tileStack.push(myCoords);
+                                // Push coords of valid tile to stack
+                                tileStack.push(myCoords);
+                            }
                         }
                     }
                 }
-            }
 
-            // Take valid tiles off stack
-            if (numFlags == grid[clickPos[0]][clickPos[1]].number) {
-                while (tileStack.length != 0) {
-                    let tempTile = tileStack.pop();
-                    uncover(tempTile[0], tempTile[1]);
+                // Take valid tiles off stack
+                if (numFlags == grid[clickPos[0]][clickPos[1]].number) {
+                    while (tileStack.length != 0) {
+                        let tempTile = tileStack.pop();
+                        uncover(tempTile[0], tempTile[1]);
+                    }
                 }
+            } else if (e.button == 0) {
+                uncover(clickPos[0], clickPos[1]);
             }
 
-            // Right click, toggle flag
-        } else if (e.button == 2) {
+        // Right click, toggle flag
+        } else if (e.button == 2 || (e.button == 0 && flag)) {
             if (!grid[clickPos[0]][clickPos[1]].uncovered) {
 
                 // Flag
