@@ -26,12 +26,16 @@ function newInterval(){
 
 
 c.addEventListener('mousedown', (e) => {
-    drag = true;
     let canvas_width = document.getElementById('myCanvas').offsetWidth;
     let tempPixel = Math.floor(canvas_width / width);
     let rect = c.getBoundingClientRect();
+    drag = true;
 
-    console.log(Math.floor((e.clientY - rect.top) / tempPixel)):
+    console.log(canvas_width);
+    console.log(canvas_width / width);
+    console.log(Math.floor((e.clientY - rect.top) / tempPixel));
+    console.log();
+
     cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
 });
 
@@ -42,13 +46,15 @@ document.addEventListener('mouseup', () => {
 
 
 c.addEventListener('mousemove', (e) => {
-    if(drag){
-        let canvas_width = document.getElementById('myCanvas').offsetWidth;
-        let rect = c.getBoundingClientRect();
-        let tempPi*xel = Math.floor(canvas_width / width);
-        console.log(Math.floor((e.clientY - rect.top) / tempPixel)):
-        cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
-    }
+    let a = 1231;
+    // if(drag){
+    //     let canvas_width = document.getElementById('myCanvas').offsetWidth;
+    //     let rect = c.getBoundingClientRect();
+    //     let tempPixel = Math.floor(canvas_width / width);
+
+    //     console.log(Math.floor((e.clientY - rect.top) / tempPixel));
+    //     cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
+    // }
 });
 
 function step(){
