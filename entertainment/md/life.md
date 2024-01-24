@@ -9,7 +9,7 @@ description: Simulates John Conway's Game of Life, arguably the best-known cellu
 <p style="line-height:0px">Generation: <span id='genDisp'>0</span></p>
 <p style="padding-top:1px">Live cells: <span id='liveDisp'>0</span></p>
 <button id='toggleRun' type="button" onclick=toggleRun()>Start</button>
-<button type="button" onclick=step()>Step</button>
+<button type="button" onclick=evolve()>Step</button>
 <button type="button" onclick=clearCells()>Clear</button>
 <button type="button" onclick=rand()>Random</button>
 <button id='toolButton' type="button" onclick=toggle()>Erase</button><br>

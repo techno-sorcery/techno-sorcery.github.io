@@ -310,7 +310,7 @@ function toggle(){
 // Mouse click event
 c.addEventListener('mousedown', (e) => {
     let canvas_width = document.getElementById('myCanvas').offsetWidth;
-    let tempPixel = Math.floor(canvas_width / width);
+    let tempPixel = canvas_width / width;
 
 
     // Set coordinates

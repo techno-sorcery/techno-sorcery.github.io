@@ -14,7 +14,7 @@ If you enjoyed taking this test, be sure to share it with your friends. It's jus
 <br><br>
 
 ### Part I: Education and Learning
-Answer the following questions for your highest level of education (within reason).
+**Answer the following questions for your highest level of education (within reason).**
 
 1. <label><input type="checkbox"> Have you ever made the dean's list?</label>  
 1. <label><input type="checkbox"> ...for a GPA above 3.6?</label>  
@@ -69,7 +69,7 @@ Answer the following questions for your highest level of education (within reaso
 1. <label><input type="checkbox"> Have you ever missed sleep learning how to do something?</label>  
 1. <label><input type="checkbox"> ...a social event learning how to do something?</label>  
 1. <label><input type="checkbox"> Do you default to self-teaching, rather than asking for help?</label>  
-1. <label><input type="checkbox"> Have you ever skipped class because the professor "didn't teach well"?</label>  
+1. <label><input type="checkbox"> Have you ever skipped class because the material was easier to learn on your own?</label>  
 1. <label><input type="checkbox"> ?</label>  
 1. <label><input type="checkbox"> Have you ever gotten a job based on something you taught yourself?</label>  
 
@@ -95,7 +95,7 @@ Answer the following questions for your highest level of education (within reaso
 1. <label><input type="checkbox"> Have you ever used a HAM radio?</label>  
 1. <label><input type="checkbox"> ...with an amateur radio license?</label>  
 
-**Linux (or any other UNIX-like OS)**  
+**Linux (can substitute with any other UNIX-like OS)**  
 
 1. <label><input type="checkbox"> Do you use Linux as your main OS?</label>  
 1. <label><input type="checkbox"> Do you regularly use the command line?</label>  
@@ -135,6 +135,15 @@ Answer the following questions for your highest level of education (within reaso
 1. <label><input type="checkbox"> ...uploaded something to a torrent site?</label>  
 
 ### Part III: Hobbies  
+**Gaming**  
+1. <label><input type="checkbox"> </label>  
+
+
+**Technology**
+
+
+**History**
+
 
 ### Part IV: Media  
 
@@ -150,14 +159,14 @@ Answer the following questions for your highest level of education (within reaso
 1. <label><input type="checkbox"> ...who has never been on a date?</label>  
 1. <label><input type="checkbox"> Are you a slob or neat-freak?</label>  
 1. <label><input type="checkbox"> Are you particularly obsessive?</label>  
-1. <label><input type="checkbox"> Do you have a non-standard vocabulary?</label>  
+1. <label><input type="checkbox"> Do you have a broad vocabulary?</label>  
 1. <label><input type="checkbox"> Are you relatively smart?</label>  
 1. <label><input type="checkbox"> Do you have a "catchphrase"?</label>  
 1. <label><input type="checkbox"> Have you ever given an inanimate object a name?</label>  
 1. <label><input type="checkbox"> Do you like researching categories of things?</label>  
 1. <label><input type="checkbox"> Have you ever laughed at a joke in an academic book or paper?</label>  
 1. <label><input type="checkbox"> Are you critical of trends?</label>  
-1. <label><input type="checkbox"> Do you have complex political beliefs?</label>  
+1. <label><input type="checkbox"> Do you have atypical political beliefs?</label>  
 1. <label><input type="checkbox"> ?</label>  
 1. <label><input type="checkbox"> Has someone ever called you a nerd, or a similar term?</label>  
 

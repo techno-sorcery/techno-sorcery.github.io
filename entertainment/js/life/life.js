@@ -1,8 +1,8 @@
 // Game of Life v1.1
 // Hayden Buscher ~ 2022-2023
-var width = 102;
-var height = 102;
-var pixelSize = 5;
+var width = 85;
+var height = 85;
+var pixelSize = 6;
 var cells = new Array(height);
 
 var c = document.getElementById("myCanvas");
@@ -26,17 +26,8 @@ function newInterval(){
 
 
 c.addEventListener('mousedown', (e) => {
-    let canvas_width = document.getElementById('myCanvas').offsetWidth;
-    let tempPixel = Math.floor(canvas_width / width);
-    let rect = c.getBoundingClientRect();
     drag = true;
-
-    console.log(canvas_width);
-    console.log(canvas_width / width);
-    console.log(Math.floor((e.clientY - rect.top) / tempPixel));
-    console.log();
-
-    cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
+    draw(e);
 });
 
 
@@ -46,20 +37,19 @@ document.addEventListener('mouseup', () => {
 
 
 c.addEventListener('mousemove', (e) => {
-    let a = 1231;
-    // if(drag){
-    //     let canvas_width = document.getElementById('myCanvas').offsetWidth;
-    //     let rect = c.getBoundingClientRect();
-    //     let tempPixel = Math.floor(canvas_width / width);
-
-    //     console.log(Math.floor((e.clientY - rect.top) / tempPixel));
-    //     cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
-    // }
+    if(drag){
+        draw(e);
+    }
 });
 
-function step(){
-    evolve();
+function draw(e) {
+        let canvas_width = document.getElementById('myCanvas').offsetWidth;
+        let rect = c.getBoundingClientRect();
+        let tempPixel = canvas_width / width;
+
+        cellPlace(Math.floor((e.clientY - rect.top) / tempPixel), Math.floor((e.clientX - rect.left) / tempPixel));
 }
+
 
 function cellPlace(y,x){
     if(cells[y][x] != erase){
