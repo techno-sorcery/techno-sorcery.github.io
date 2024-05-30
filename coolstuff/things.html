@@ -13,28 +13,33 @@
     </head>
 
     <body>
-        <div class="topnav" style="padding-top">
-            <div class= "left">
-                <a href="/main/index.html"><img src="/global/img/logo.svg"></a>
-            </div>
+        <div>
+            <div class="topnav" style="padding-top">
+                <div class= "left">
+                    <a href="/main/index.html"><img class="zoom" src="/global/img/logo.svg"></a>
+                </div>
 
-            <div class="right">
-                <a class= "navlink" href="/main/blog.html">Blog</a>
-                <a class= "navlink" href="/main/projects.html">Projects</a>
-                <a class= "navlink" href="/main/entertainment.html">Entertainment</a>
-                <a class= "navlink" href="/main/misc.html">Misc</a>
-                <a class= "navlink" href="/main/about.html">About</a>
+                <div class="right">
+                    <a class="navlink" href="/main/blog.html">Blog</a>
+                    <!-- <a class="navlink" href="/main/misc.html">Resume</a> -->
+                    <a class="navlink" href="/main/projects.html">Projects</a>
+                    <a class="navlink" href="/main/entertainment.html">Entertainment</a>
+                    <a class="navlink" href="/main/misc.html">Misc</a>
+                    <a class="navlink" href="/main/about.html">About</a>
+                </div>
+            </div>
+            <br>
+            <div class="header" id="header">
+                <h2>A list of the hardware, software, and other things I use.</h2>
             </div>
         </div>
-
         <div class="main" id="main">
-            <h2>A list of the hardware, software, and other things I use.</h2>
-            <hr>
-
 <h3>Software</h3>
 <p><strong>Operating System</strong><br />
-I prefer Linux since it's customizable, uses package managers, runs well on low-spec hardware, and doesn't "phone home" with telemetry info. I use Debian since its mature release cycle alleviates the instability of rolling-release distros.  </p>
-<p>I keep seeing tech-oriented people who are proudly ignorant of Linux, as if they're combatting the "mean" Linux "community". A majority of them install something "hard" like Arch, and write off the whole project when they have to use the terminal, can't run their epic games, or are hit with rolling-release instability. Linux isn't for everyone, but it figures someone who professes a love of technology would want to give it a fair shot.
+Though time-consuming to set up and annoying to troubleshoot, I prefer Linux for its customizability, performance, centralized package management, and lack of telemetry. I use Debian since its mature release cycle alleviates the instability of rolling-release distros.  </p>
+<p>While it's not necessary for one to use Linux to be an effective software engineer, it's still of importance to have at least some familiarity with the command-line and GNU system utilities. I've come across people who claim to love computers and programming, yet have an aversion to anything Linux-related. Oftentimes, it's because of the association it has with weird nerds and the "TOXIC LINUX COMMUNITY". In practice, this doesn't matter because you don't need to interact with these people, given the wealth of online documentation and old forum posts. And trust me, as long as you don't make something as trivial as an operating system your entire personality, you won't be seen as one either.  </p>
+<p>If you don't want to bother because your "time is just too valuable", I think you're failing to consider the benefits that such an endeavor would bring. Setting up your own system, learning how to use the command-line, and using text-based applications shifts you away from relying on big colorful GUI buttons to a vastly more efficient keyboard-driven approach, as well as teaching you about how operating systems work on a lower level than Windows. Command line programs also tend to be more powerful than GUI ones, allowing you to perform complex operations requiring hundreds of clicks with only a few commands. I agree that initially setting up a Linux system is annoying, but that can be mitigated by a config system like Ansible. With the scripts I spent maybe 2-3 hours writing over the summer, I can automatically install and configure everything on base Debian with a single command  </p>
+<p>That being said, I don't think Linux is meant for non-technical people who just want to play games and edit Word documents. They'll get frustrated when they inevitably run into an issue requiring some technical aptitude to solve, and flood the online forums with their angry rants. There are "noob friendly" distros out there, but in my experience they're impossible to troubleshoot when something goes wrong since they install so much stuff you don't know about, and provide their own muddled configurations.
 <br><br></p>
 <p><strong>Window Manager</strong><br />
 The first notable WM I used was FVWM, a retro CDE-style floater. I eventually got sick of manually managing windows, and switched to DWM. For a while I ran SpectrWM since it used .Xresources by default, but went back to DWM after learning how to patch it. Speaking of patches,I'm using the following:  </p>
@@ -137,12 +142,12 @@ I was into menswear at one point, but have since stopped caring. I have enough c
 
         <div class="footer">
             <div class="social">
-                <a href="https://www.linkedin.com/in/hayden-buscher/"><img src="/global/img/linkedin.svg"></a>
-                <a href="https://github.com/techno-sorcery"><img src="/global/img/github.svg"></a>
-                <a href="https://www.youtube.com/@techno-sorcery9852"><img src="/global/img/youtube.svg"></a>
+                <a href="https://www.linkedin.com/in/hayden-buscher/"><img class="zoom" src="/global/img/linkedin.svg"></a>
+                <a href="https://github.com/techno-sorcery"><img class="zoom" src="/global/img/github.svg"></a>
+                <a href="https://www.youtube.com/@techno-sorcery9852"><img class="zoom" src="/global/img/youtube.svg"></a>
             </div>
             <br>
-            hbuscher@calpoly.edu — © Hayden Buscher ~ 2023
+            hbuscher@calpoly.edu — © Hayden Buscher ~ 2024
         </div>
     </body>
 </html> 

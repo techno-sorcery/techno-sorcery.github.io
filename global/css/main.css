@@ -1,14 +1,16 @@
 body {  
-    background-color: #303030;
+    background-color: #272f34;
+    /* background-image:  url(/global/img/bg2.png); */
+    /* background-repeat: repeat; */
 	font-family: Arial, sans-serif;
 	height: 100%;
 	margin: 0;
 }
 
 
-
 .topnav {
-    background-color: #303030;
+    /* background-color: #303030; */
+    background-color: #101c24;
     padding: 15px 0px 15px 0px;
     position: fixed;
     width: 100%;
@@ -28,32 +30,60 @@ body {
     text-decoration: none;
 }
 
+.topnav .navselect {
+    color: white;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
 .topnav .left {
     float: left;
-    padding-left: 200px;
+    padding-left: 300px;
 }
 
 .topnav .right {
     float: right;
-    padding-right: 200px;
+    padding-right: 300px;
+}
+
+
+
+.zoom {
+  transition: transform .1s;
+}
+
+.zoom:hover {
+  transform: scale(1.1); 
+}
+
+
+
+.header {
+    padding: 75px 350px 50px 350px;
+}
+
+.header h2 {
+    /* color: #B0B0B0; */
+    color: #D0D0D0;
 }
 
 
 
 .main {
 	background-color: #F5F5F5;
-	padding: 60px 200px 25px 200px;
-	min-height: 85vh;
+	padding: 40px 350px 25px 350px;
+	min-height: 65vh;
 }
 
 .main h1 {
     color: #282828;
 }
 
-.main h2 {
-    color: #202020;
-    padding: 10px 0px 15px 0px;
-}
+/* .main h2 { */
+/*     color: #202020; */
+/*     padding: 10px 20px 15px 0px; */
+/* } */
+
 
 .main h3 {
     color: #505050;
@@ -66,6 +96,7 @@ body {
 }
 
 .main a:hover {
+    color: #633974;
     text-decoration: underline;
 }
 
@@ -110,6 +141,7 @@ body {
 }
 
 .main img {
+    border-radius: 5px;
     max-width: 100%;
     height: auto;
 }
@@ -118,6 +150,12 @@ body {
     max-width: 100%;
     height: auto;
     margin-left: 20px;
+}
+
+
+.main figcaption {
+    font-style: italic;
+    text-align: center;
 }
 
 .main .featured {
@@ -141,12 +179,26 @@ body {
 .main .floatright{
 	display:block;
 	float:right;
+    padding-bottom:40px;
+}
+
+.main .date {
+    display: inline-block;
+    width: 98px;
+    font-style: bold;
+}
+
+
+.vflex {
+    display: flex;
+    flex-direction: column;
 }
 
 
 
 .footer{
-    background-color: #303030;
+    /* background-color: #303030; */
+    background-color: #101c24;
     padding: 20px 200px 20px 200px;
     color: white;
     text-align: center;

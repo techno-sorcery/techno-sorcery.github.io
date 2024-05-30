@@ -2,6 +2,7 @@
 title: Projects
 author: Hayden Buscher
 description: Notable projects I've worked on.
+navproj: class="navselect"
 ---
 
 ### Homebrew CPUs

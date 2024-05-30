@@ -2,6 +2,7 @@
 title: Entertainment
 author: Hayden Buscher
 description: Games, personality quizzes, and other such fun things.
+navent: class="navselect"
 ---
 
 ### Games  

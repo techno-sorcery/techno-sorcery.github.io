@@ -2,6 +2,7 @@
 title: Miscellaneous
 author: Hayden Buscher
 description: Miscellaneous things I've made or decided to share.
+navmisc: class="navselect"
 ---
 
 ### Applets

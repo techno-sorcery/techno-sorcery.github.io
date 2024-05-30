@@ -2,11 +2,13 @@
 title: Blog
 author: Hayden Buscher
 description: Essays, opinions, and personal/site news.
+navblog: class="navselect"
 ---
 
 ### Blog  
-**July 26, 2023 — ** [I got a "new" laptop (among other things)](/blog/new-laptop.html)  
-I got a pretty sweet laptop, and some other things I thought I'd never have..
+**July 26, 2023 — ** [I got a "new" laptop](/blog/new-laptop.html)  
+The past few months have been pretty formative. For one, I got a new laptop. I also betrayed  
+Android, and became interested in Christianity.
 
 **February 03, 2023 — ** [I love old ThinkPads](/blog/thinkpads.html)  
 Old ThinkPads are the best computers in existence. Really.
