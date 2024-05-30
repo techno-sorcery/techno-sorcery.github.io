@@ -147,7 +147,8 @@ body {
 }
 
 .main canvas {
-    max-width: 100%;
+    display:block;
+    max-width: 95%;
     height: auto;
     margin-left: 20px;
 }
