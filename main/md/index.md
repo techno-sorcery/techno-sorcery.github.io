@@ -50,6 +50,12 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
             Minesweeper
         </a>
     </div>
+    <div class="element">
+        <a href="/entertainment/pentris.html">
+            <div class="img-container"><img src="/main/img/pentris.png"></div>
+            Pentris
+        </a>
+    </div>
     <!-- <div class="element"> -->
     <!--     <a href="/coolstuff/linux.html"> -->
     <!--         <div class="img-container"><img src="/main/img/tux.png"></div> -->
@@ -62,6 +68,7 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
 ### Recent Additions
 <!-- - ** <div class="date">May 29, 2023 </div> – ** [Linux Extravaganza](/coolstuff/linux.html) -->  
 
+- ** <div class="date">Jun 25, 2024 </div> – ** [Pentris](/entertainment/pentris.html)  
 - ** <div class="date">Nov 19, 2023 </div> – ** [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
 - ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/coolstuff/things.html)  
 - ** <div class="date">Jul 28, 2023 </div> – ** [My Computers](/coolstuff/computers.html)  
