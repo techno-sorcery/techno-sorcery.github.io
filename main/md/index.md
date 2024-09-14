@@ -1,11 +1,11 @@
 ---
 title: Index
 author: Hayden Buscher
-description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tinkerer, and second-year computer engineering major at Cal Poly, San Luis Obispo. This site serves as my personal webpage and portfolio.
+description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tinkerer, and third-year computer engineering major at Cal Poly, San Luis Obispo. This site serves as my personal webpage and portfolio.
 ---
 
 <div class="nowrap floatright">
-    <figure style="max-width:200px; margin-left:0px;">
+    <figure style="max-width:225px; margin-left:0px;">
         <img  style="" src="img/selfportrait.jpg" alt="Self portrait of yours truly.">
         <figcaption>Self-portrait of yours truly.</figcaption>
     </figure>
