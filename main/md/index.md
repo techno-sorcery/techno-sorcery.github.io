@@ -56,18 +56,17 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
             Pentris
         </a>
     </div>
-    <!-- <div class="element"> -->
-    <!--     <a href="/coolstuff/linux.html"> -->
-    <!--         <div class="img-container"><img src="/main/img/tux.png"></div> -->
-    <!--         Linux Extravaganza -->
-    <!--     </a> -->
-    <!-- </div> -->
+    <div class="element">
+        <a href="/coolstuff/linux.html">
+            <div class="img-container"><img src="/main/img/tux.png"></div>
+            Linux Extravaganza
+        </a>
+    </div>
 </div>
 <br>
 
 ### Recent Additions
-<!-- - ** <div class="date">May 29, 2023 </div> – ** [Linux Extravaganza](/coolstuff/linux.html) -->  
-
+- ** <div class="date">Nov 08, 2024 </div> – ** [Linux Extravaganza](/coolstuff/linux.html)  
 - ** <div class="date">Jun 25, 2024 </div> – ** [Pentris](/entertainment/pentris.html)  
 - ** <div class="date">Nov 19, 2023 </div> – ** [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
 - ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/coolstuff/things.html)  

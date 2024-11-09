@@ -2,7 +2,7 @@
 title: About
 author: Hayden Buscher
 description: Welcome to my website. Here's some basic information on who I am, and what the purpose of this website is. Also included is contact info, and some questions I predict being asked.
-lastmod: 2024-09-14
+lastmod: 2024-11-08
 navabout: class="navselect"
 ---
 
@@ -13,12 +13,11 @@ Hello, I'm Hayden Buscher. Welcome to my personal webpage.
 
 I'm a second-year computer engineer at Cal Poly San Luis Obispo. I've always been interested in computers, having written my first program in elementary school and designed my first [processor architecture](/projects/ivaniac.html) in 10th grade. Though I came into college seeing programming as a "means to an end", I've come to strongly enjoy it and would consider myself proficient in C, C++, Python, Java, Bash, and RISC-V Assembly. My specialties include systems programming, embedded development, FPGA development, programming language design, and processor design. 
 
-I'd consider myself an advocate of Linux and "free and open-source software", having been involved with both for the past few years. In addition to using Linux on a daily basis, I've helped several people transition to it and set-up their own configurations. 
-<!-- I've written a guide on doing so [here](/coolstuff/linux.html), which I suggest checking out. -->
+I'd consider myself an advocate of Linux and "free and open-source software", having been involved with both for the past few years. In addition to using Linux on a daily basis, I've helped several people transition to it and set-up their own configurations. I've written a guide on doing so [here](/coolstuff/linux.html), which I suggest checking out.
 
 Throughout my life, I've kept busy with a variety of personal projects. This includes an FPGA pipelined RISC-V processor, Python macro assembler, [wooden workbench](/projects/workbench.html), [FPGA electronic Tic-Tac-Toe game](/projects/tictactoe.html), [static site generator](/projects/wispy.html), [JS Video Poker game](/entertainment/poker.html), and (of course) this website.
 
-<!-- I'm a confirmed Lutheran, and consider my theology to be somewhere between high-church Lutheranism and historic Catholicism. I have a strong interest in church history and Bible scholarship, in addition to (foremost) serving my community. I also have an affinity for traditional sacred music/art, liturgy, sacramentology, and church traditions. -->
+I'm a confirmed Lutheran, and consider my theology to be high-church "Evangelical Catholic" Lutheranism. I have a strong interest in church history and Bible scholarship, in addition to (foremost) serving my community. I also have an affinity for traditional sacred music/art, liturgy, and church tradition.
 
 Music is my favorite art form, my genres of choice being synth pop, hard rock, progressive rock, funk, classical, and baroque. Makes sense given that both my parents are in the music biz. I also enjoy hiking, camping, cycling, and woodworking.
 <br><br>

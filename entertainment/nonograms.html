@@ -3,9 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="wisPy v1.1.0">
-<title>Falling Sand Game&nbsp— Techno-Sorcery</title>
+<title>Nonograms&nbsp— Techno-Sorcery</title>
 <meta name="author" content="Hayden Buscher">
-<meta name="description" content="A classic falling-sand type physics game.">
+<meta name="description" content="Solve the randomized nonogram puzzles!">
 <link rel="stylesheet" href="/global/css/main.css">
 <link rel="stylesheet" href="/global/css/responsive.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,27 +30,27 @@
             </div>
             <br>
             <div class="header" id="header">
-                <h2>A classic falling-sand type physics game.</h2>
+                <h2>Solve the randomized nonogram puzzles!</h2>
             </div>
         </div>
         <div class="main" id="main">
-<div class="border header">
-<hr>
-<p>A classic falling-sand type physics game.
-</p>
-<hr>
+<h3>Nonograms</h3>
+<canvas id="myCanvas" class="margins" width="481" height="481" style="background-color:gray"></canvas>
+<div style="padding-top:10px"> 
+<p style="display:inline">Time: <span id='timeDisp'>0</span></p>
 </div>
 
-<h3>Falling Sand Game</h3>
-<div class="margins"><canvas id="myCanvas" width="512" height="512" style="background-color:black"></canvas></div>
-<p style="padding-top:1px">Particles: <span id='numDisp'>0</span></p>
-<p><button id='toggleRun' type="button" onclick=toggleRun()>Start</button>
-<button type="button" onclick=step()>Step</button>
-<button type="button" onclick=clear()>Clear</button>
-<button id='toolButton' type="button" onclick=toggle()>Erase</button><br></p>
-<p><strong>Elements</strong><br />
-<button id='toolButton' type="button" style="background-color:gray" onclick=select("stone")>Stone</button><br></p>
-<script type="text/javascript" src='js/sand/sand.js'></script>            <br><br>
+<p><button type="button" onclick=reset()>New puzzle</button>  </p>
+<hr />
+<p><strong>Instructions</strong><br />
+Left-click - Uncover tile<br />
+Middle-click - Uncover neighbors<br />
+Right-click - Flag tile</p>
+<p>Number on each tile indicates amount of adjacent mines.<br />
+Mark suspected mines with a flag, so you don't click them.<br />
+Uncover all non-mine tiles to win.  </p>
+<body oncontextmenu="return false;">
+<script type="text/javascript" src='js/nonograms/nonograms.js'></script>            <br><br>
         </div>
 
         <div class="footer">
