@@ -11,15 +11,15 @@ navabout: class="navselect"
 
 Hello, I'm Hayden Buscher. Welcome to my personal webpage.
 
-I'm a second-year computer engineer at Cal Poly San Luis Obispo. I've always been interested in computers, having written my first program in elementary school and designed my first [processor architecture](/projects/ivaniac.html) in 10th grade. Though I came into college seeing programming as a "means to an end", I've come to strongly enjoy it and would consider myself proficient in C, C++, Python, Java, Bash, and RISC-V Assembly. My specialties include systems programming, embedded development, FPGA development, programming language design, and processor design. 
+I'm a third-year computer engineer at Cal Poly San Luis Obispo. I've always been interested in computers, having written my first program in elementary school and designed my first [processor architecture](/projects/ivaniac.html) in 10th grade. Though I came into college seeing programming as a "means to an end", I've come to strongly enjoy it and would consider myself proficient in C, C++, Python, Java, Bash, and RISC-V Assembly. My specialties include systems programming, embedded development, FPGA development, programming language design, and processor design. 
 
-I'd consider myself an advocate of Linux and "free and open-source software", having been involved with both for the past few years. In addition to using Linux on a daily basis, I've helped several people transition to it and set-up their own configurations. I've written a guide on doing so [here](/coolstuff/linux.html), which I suggest checking out.
+I'd consider myself an advocate of Linux and "free and open-source software", having been involved with both for the past few years. In addition to using Linux on a daily basis, I've helped several people transition to it and set-up their own configurations. I've written a guide on doing so [here](/misc/linux.html), which I suggest checking out.
 
 Throughout my life, I've kept busy with a variety of personal projects. This includes an FPGA pipelined RISC-V processor, Python macro assembler, [wooden workbench](/projects/workbench.html), [FPGA electronic Tic-Tac-Toe game](/projects/tictactoe.html), [static site generator](/projects/wispy.html), [JS Video Poker game](/entertainment/poker.html), and (of course) this website.
 
-I'm a confirmed Lutheran, and consider my theology to be high-church "Evangelical Catholic" Lutheranism. I have a strong interest in church history and Bible scholarship, in addition to (foremost) serving my community. I also have an affinity for traditional sacred music/art, liturgy, and church tradition.
+I'm a confirmed Lutheran, and consider my personal theology to be high-church "Evangelical Catholic" Lutheranism. I have a strong interest in church history and Bible scholarship, in addition to (foremost) serving my community. I also have an affinity for traditional sacred music/art, liturgy, and church tradition.
 
-Music is my favorite art form, my genres of choice being synth pop, hard rock, progressive rock, funk, classical, and baroque. Makes sense given that both my parents are in the music biz. I also enjoy hiking, camping, cycling, and woodworking.
+Music is my favorite art form, my genres of choice being synth pop, metal, hard rock, progressive rock, funk, classical, and baroque. Makes sense given that both my parents are in the music biz. I also enjoy hiking, camping, cycling, and woodworking.
 <br><br>
 
 
@@ -30,7 +30,7 @@ I'm not using anything special, just vanilla HTML/CSS/JS with a homemade static 
 <br><br>
 
 **What computer are you using?**  
-A $50 swap meet ThinkPad P51 from 2018. You can read about it [here](../coolstuff/computers.html). I've upgraded to 32GB of RAM, and installed 1.5TB of NVME storage. I use it at my desk with a dock which is connected to a 16:10 Dell UltraSharp, a USB ThinkPad keyboard, and a Kensington Orbit trackball.
+A $50 swap meet ThinkPad P51 from 2018. You can read about it [here](../misc/computers.html). I've upgraded to 32GB of RAM, and installed 1.5TB of NVME storage. I use it at my desk with a dock which is connected to a 16:10 Dell UltraSharp, a USB ThinkPad keyboard, and a Kensington Orbit trackball.
 <br><br>
 
 **What OS do you use?**  

@@ -6,15 +6,15 @@ navmisc: class="navselect"
 ---
 
 ### Applets
-[Elementary Automata](/coolstuff/elementary.html)  
+[Elementary Automata](/misc/elementary.html)  
 Renders Wolfram's elementary cellular automata, of which there are 256.
 <br><br>
 
 ### Pages
-[Things I Use](/coolstuff/things.html)  
+[Things I Use](/misc/things.html)  
 A list of the hardware, software, and other things I use.
 
-[My Computers](/coolstuff/computers.html)  
+[My Computers](/misc/computers.html)  
 A list of the most notable computers I've owned (and used).
 <br><br>
 
@@ -36,13 +36,13 @@ Who needs music with soul? We've got drum machines!
 <br><br>
 
 ### Academics
-[Chapter 2](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Atoms, molecules, and reaction  
-[Chapter 3](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cells  
-[Chapter 4](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cellular Respiration and Photosynthesis  
-[Chapter 5](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Cell Cycle and Mitosis  
-[Chapter 6](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Meiosis and Genetics  
-[Chapter 7](/coolstuff/docs/Chapter 2 Bio Guide.pdf) - Genetic Disorders  
+[Chapter 2](/misc/docs/Chapter 2 Bio Guide.pdf) - Atoms, molecules, and reaction  
+[Chapter 3](/misc/docs/Chapter 2 Bio Guide.pdf) - Cells  
+[Chapter 4](/misc/docs/Chapter 2 Bio Guide.pdf) - Cellular Respiration and Photosynthesis  
+[Chapter 5](/misc/docs/Chapter 2 Bio Guide.pdf) - Cell Cycle and Mitosis  
+[Chapter 6](/misc/docs/Chapter 2 Bio Guide.pdf) - Meiosis and Genetics  
+[Chapter 7](/misc/docs/Chapter 2 Bio Guide.pdf) - Genetic Disorders  
 
-[AP Chem 2020](/coolstuff/docs/AP Chem 2020.pdf2) - AP test study guide
+[AP Chem 2020](/misc/docs/AP Chem 2020.pdf2) - AP test study guide
 
-[Ancient Civ](/coolstuff/docs/Rome and Christianity.pdf) - Rome and Christianity
+[Ancient Civ](/misc/docs/Rome and Christianity.pdf) - Rome and Christianity

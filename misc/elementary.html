@@ -3,9 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="wisPy v1.1.0">
-<title>Projects&nbsp— Techno-Sorcery</title>
+<title>Elementary automata&nbsp— Techno-Sorcery</title>
 <meta name="author" content="Hayden Buscher">
-<meta name="description" content="Notable projects I've worked on.">
+<meta name="description" content="Renders Wolfram's elementary cellular automata, of which there are 256.">
 <link rel="stylesheet" href="/global/css/main.css">
 <link rel="stylesheet" href="/global/css/responsive.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
 
                 <div class="right">
                     <a class="navlink" href="/main/news.html">News</a>
-                    <a class="navselect" href="/main/projects.html">Projects</a>
+                    <a class="navlink" href="/main/projects.html">Projects</a>
                     <a class="navlink" href="/main/entertainment.html">Entertainment</a>
                     <a class="navlink" href="/main/misc.html">Misc</a>
                     <a class="navlink" href="/main/about.html">About</a>
@@ -29,35 +29,23 @@
             </div>
             <br>
             <div class="header" id="header">
-                <h2>Notable projects I've worked on.</h2>
+                <h2>Renders Wolfram's elementary cellular automata, of which there are 256.</h2>
             </div>
         </div>
         <div class="main" id="main">
-<h3>Homebrew CPUs</h3>
-<p><a href="/projects/pdc8.html">PDC-8</a><br />
-An 8-bit transport triggered OISC. Uses a single 'MOV' instruction for maximum simplicity.</p>
-<p><a href="/projects/cpu16.html">CPU-16</a><br />
-A 16-bit CISC architecture CPU, loosely based off the mc68000.</p>
-<p><a href="/projects/ivaniac.html">IVANIAC</a><br />
-My first CPU, a 4-bit Harvard architecture machine built in Minecraft. Named for my old pseudonym.<br />
-<br><br></p>
-<h3>Software</h3>
-<p><a href="/projects/wispy.html">wisPy</a><br />
-A dead-simple static site generator, for those who want nothing more than to convert markdown to html
-<br><br></p>
-<h3>Electronics</h3>
-<p><a href="/projects/tictactoe.html">FPGA Tic-Tac-Toe</a><br />
-An FPGA-based Tic-Tac-Toe game, built as a final project for CPE 133.</p>
-<p><a href="/projects/crystalradio.html">Crystal radio</a><br />
-An old-school crystal radio, built out of a desire to understand wireless communications.
-<br><br></p>
-<h3>Construction</h3>
-<p><a href="/projects/workbench.html">Workbench</a><br />
-One time, while at Home Depot, I saw a 4' x 2' plywood sheet and decided I needed my own workbench.</p>
-<p><a href="/projects/mesamachine2.html">MESA Machine v2</a><br />
-Built over a two-month period after our first machine won prelims. Heavily upgraded.</p>
-<p><a href="/projects/mesamachine1.html">MESA Machine v1</a><br />
-A Rube Goldberg machine, built in physics class for the MESA Engineering Competition.</p>            <br><br>
+<h3>Elementary Automata</h3>
+<div class="margins"><canvas id="myCanvas" width="608" height="606" style="background-color:white"></canvas></div>
+
+<p><button id='toggleRun' type="button" onclick=toggleRun()>Stop</button>
+<button type="button" onclick=step()>Step</button> 
+<button type="button" onclick=point()>Single</button>
+<button id='toolButton' type="button" onclick=rand()>Random</button>
+Rule:
+<input id="rule" type="number" value="165" max="255" min="0" onchange=setRule()></p>
+<!-- <p style="line-height:0;display:inline">&nbspRule:</p><input id="rule" type="number" value="165" max="255" min="0" onchange=setRule()> -->
+<!-- <p style="line-height:0;display:inline">&nbspInitial cells:</p> -->
+
+<script type="text/javascript" src='js/automata/elementary.js'></script>            <br><br>
         </div>
 
         <div class="footer">

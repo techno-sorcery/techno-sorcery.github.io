@@ -1,8 +1,8 @@
 ---
-title: Blog
+title: News
 author: Hayden Buscher
-description: Essays, opinions, and personal/site news.
-navblog: class="navselect"
+description: Personal and site news.
+navnews: class="navselect"
 ---
 
 ### Blog  

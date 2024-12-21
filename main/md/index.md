@@ -57,7 +57,7 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
         </a>
     </div>
     <div class="element">
-        <a href="/coolstuff/linux.html">
+        <a href="/misc/linux.html">
             <div class="img-container"><img src="/main/img/tux.png"></div>
             Linux Extravaganza
         </a>
@@ -66,11 +66,11 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
 <br>
 
 ### Recent Additions
-- ** <div class="date">Nov 08, 2024 </div> – ** [Linux Extravaganza](/coolstuff/linux.html)  
+- ** <div class="date">Nov 08, 2024 </div> – ** [Linux Extravaganza](/misc/linux.html)  
 - ** <div class="date">Jun 25, 2024 </div> – ** [Pentris](/entertainment/pentris.html)  
 - ** <div class="date">Nov 19, 2023 </div> – ** [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
-- ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/coolstuff/things.html)  
-- ** <div class="date">Jul 28, 2023 </div> – ** [My Computers](/coolstuff/computers.html)  
+- ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/misc/things.html)  
+- ** <div class="date">Jul 28, 2023 </div> – ** [My Computers](/misc/computers.html)  
 - ** <div class="date">Jul 26, 2023 </div> – ** [I got a "new" laptop](/blog/new-laptop.html)  
 - ** <div class="date">Mar 06, 2023 </div> – ** [Minesweeper JS](/entertainment/mines.html)  
 - ** <div class="date">Feb 03, 2023 </div> – ** [I love old ThinkPads](/blog/thinkpads.html)  

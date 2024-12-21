@@ -112,4 +112,4 @@ Match your hand to ones in the table to win.
 
 
 <script src="js/cards/cardparse.js"></script>
-<script src="js/poker/pokerVideo copy.js"></script>
+<script src="js/poker/poker.js"></script>
