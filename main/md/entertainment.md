@@ -17,8 +17,3 @@ A Tetris clone, with pentominos instead of tetrominos.
 
 [Video Poker](/entertainment/poker.html)  
 A five-card draw Video Poker game, 9/6 Jacks or Better, programmed in JavaScript.
-
-<br><br>
-
-### Quizzes
-The nerd/old person quizzes are curently being refactored. Please check back later.

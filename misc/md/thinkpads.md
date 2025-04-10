@@ -1,11 +1,11 @@
 ---
-title: I love old ThinkPads
+title: ThinkPad Love
 author: Hayden Buscher
 description: Old ThinkPads are the best computers in existence. Really.
 date: 02/03/2023
 ---
 
-### I love old ThinkPads — February 03, 2023
+### Last Updated: February 03, 2023
 
 ![ThinkChad T530 setup](img/thinkchad.png)
 

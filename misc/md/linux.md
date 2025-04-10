@@ -6,7 +6,7 @@ description: Personal opinions and recommendations, which will hopefully help yo
 
 ### Last Updated: May 29, 2024
 
-![Linux rocks.](/coolstuff/img/linux-rocks.png)
+![Linux rocks.](img/linux-rocks.png)
 
 ### Preamble  
 Though time-consuming to set up, I prefer Linux for its customizability, performance, centralized package management, and lack of telemetry. I use Debian since its mature release cycle alleviates the instability of rolling-release distros. More than anything, Linux is an operating system for people who enjoy learning about computers and want a system customized to their needs. The learning curve is steep, but it's worth it if you fit the aforementioned criteria.  

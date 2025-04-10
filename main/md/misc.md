@@ -16,7 +16,14 @@ A list of the hardware, software, and other things I use.
 
 [My Computers](/misc/computers.html)  
 A list of the most notable computers I've owned (and used).
+
+[Linux Extravaganza](/misc/linux.html)  
+Personal opinions and recommendations, which will hopefully help you more effectively use Linux.
+
+[ThinkPad Love](/misc/thinkpads.html)  
+Old ThinkPads are the best computers in existence— really
 <br><br>
+
 
 ### Playlists
 [Classic Classical](https://open.spotify.com/playlist/4gjIatZfsFxEhlnaih5mU2?si=e94790f8317d4875)  
