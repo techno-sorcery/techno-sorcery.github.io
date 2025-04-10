@@ -71,6 +71,4 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
 - ** <div class="date">Nov 19, 2023 </div> – ** [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
 - ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/misc/things.html)  
 - ** <div class="date">Jul 28, 2023 </div> – ** [My Computers](/misc/computers.html)  
-- ** <div class="date">Jul 26, 2023 </div> – ** [I got a "new" laptop](/blog/new-laptop.html)  
 - ** <div class="date">Mar 06, 2023 </div> – ** [Minesweeper JS](/entertainment/mines.html)  
-- ** <div class="date">Feb 03, 2023 </div> – ** [I love old ThinkPads](/blog/thinkpads.html)  
