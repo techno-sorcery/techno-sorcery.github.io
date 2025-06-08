@@ -2,12 +2,12 @@
 title: About
 author: Hayden Buscher
 description: Welcome to my website. Here's some basic information on who I am, and what the purpose of this website is. Also included is contact info, and some questions I predict being asked.
-lastmod: 2024-11-08
+lastmod: 2025-06-07
 navabout: class="navselect"
 ---
 
 ### About me
-<img style="max-height:350px" src="img/me.jpeg" alt="Photo of me wearing a suit and sunglasses at the beach.">
+<img style="max-height:480px" src="img/hbuscher.png" alt="Photo of me wearing a tuxedo, standing in front of some plants at night.">
 
 Hello, I'm Hayden Buscher. Welcome to my personal webpage.
 
