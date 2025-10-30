@@ -1,15 +1,8 @@
 ---
 title: Index
 author: Hayden Buscher
-description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tinkerer, and third-year computer engineering major at Cal Poly, San Luis Obispo. This site serves as my personal webpage and portfolio.
+description: Hello, I'm Hayden Buscher. This site serves as my personal webpage and portfolio.
 ---
-
-<div class="nowrap floatright">
-    <figure style="max-width:225px; margin-left:0px;">
-        <img  style="" src="img/selfportrait.jpg" alt="Self portrait of yours truly.">
-        <figcaption>Self-portrait of yours truly.</figcaption>
-    </figure>
-</div>
 
 
 ### Featured
@@ -66,9 +59,9 @@ description: Hello. I'm Hayden Buscher, a technology enthusiast, electronics tin
 <br>
 
 ### Recent Additions
-- ** <div class="date">Nov 08, 2024 </div> – ** [Linux Extravaganza](/misc/linux.html)  
-- ** <div class="date">Jun 25, 2024 </div> – ** [Pentris](/entertainment/pentris.html)  
-- ** <div class="date">Nov 19, 2023 </div> – ** [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
-- ** <div class="date">Aug 07, 2023 </div> – ** [Things I Use](/misc/things.html)  
-- ** <div class="date">Jul 28, 2023 </div> – ** [My Computers](/misc/computers.html)  
-- ** <div class="date">Mar 06, 2023 </div> – ** [Minesweeper JS](/entertainment/mines.html)  
+- <div class="date">Nov 08, 2024 </div> – [Linux Extravaganza](/misc/linux.html)  
+- <div class="date">Jun 25, 2024 </div> – [Pentris](/entertainment/pentris.html)  
+- <div class="date">Nov 19, 2023 </div> – [FPGA Tic-Tac-Toe](/projects/tictactoe.html)  
+- <div class="date">Aug 07, 2023 </div> – [Things I Use](/misc/things.html)  
+- <div class="date">Jul 28, 2023 </div> – [My Computers](/misc/computers.html)  
+- <div class="date">Mar 06, 2023 </div> – [Minesweeper JS](/entertainment/mines.html)  
